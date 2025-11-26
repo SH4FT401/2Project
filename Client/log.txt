@@ -1,0 +1,858 @@
+1123 22:14:00003 :: 
+1123 22:14:00003 :: ## Network - OffLine Phase ##
+1123 22:14:00003 :: 
+1123 22:14:00025 :: SYSERR: Dynamic module name created. net -> Y1KlbqqC9m2Q
+1123 22:14:00025 :: SYSERR: Dynamic module name created. chr -> SvWYmAOyCRcq
+1123 22:14:00025 :: SYSERR: Dynamic module name created. chrmgr -> t9zHMWcDMhgq
+1123 22:14:00025 :: SYSERR: Dynamic module name created. app -> Yh7V9W1Dv8f9
+1123 22:14:00025 :: SYSERR: Dynamic module name created. pack -> p1EWKU96xcx8
+1123 22:14:00026 :: SYSERR: Dynamic module name created. player -> E5EzIZQzK0gn
+1123 22:14:00029 :: importing from pack debugInfo
+1123 22:14:00031 :: importing from pack localeInfo
+1123 22:14:00033 :: importing from pack constInfo
+1123 22:14:00123 :: importing from pack mouseModule
+1123 22:14:00125 :: importing from pack ui
+1123 22:14:00159 :: importing from pack networkModule
+1123 22:14:00162 :: importing from pack playerSettingModule
+1123 22:14:00163 :: importing from pack uiPhaseCurtain
+1123 22:14:00164 :: importing from pack uiCandidate
+1123 22:14:00165 :: importing from pack musicInfo
+1123 22:14:00166 :: importing from pack stringCommander
+1123 22:14:00597 :: NEWMAIN STREAM ----------------------------------------------------------------------------1123 22:14:00598 :: 
+1123 22:14:00598 :: importing from pack exception
+1123 22:14:00599 :: ===== Load Script File : UIScript/PopupDialog.py1123 22:14:00599 :: 
+1123 22:14:00600 :: importing from pack uiScriptLocale
+1123 22:14:00617 :: 
+1123 22:14:00618 :: ## Network - OffLine Phase ##
+1123 22:14:00619 :: 
+1123 22:14:00620 :: importing from pack introLogin
+1123 22:14:00626 :: importing from pack serverInfo
+1123 22:14:00627 :: importing from pack uiCommon
+1123 22:14:00630 :: importing from pack uiToolTip
+1123 22:14:00647 :: importing from lib time
+1123 22:14:00647 :: importing from pack serverCommandParser
+1123 22:14:00648 :: importing from lib _winreg
+1123 22:14:00649 :: importing from pack uiTarget
+1123 22:14:00653 :: importing from pack uiGuild
+1123 22:14:00663 :: importing from pack uiPickMoney
+1123 22:14:00664 :: importing from pack uiUploadMark
+1123 22:14:00666 :: ===== Load Script File : UIScript/loginwindow.py1123 22:14:00666 :: 
+1123 22:14:00821 :: SYSERR: CResourceManager::GetResourcePointer: File not exist d:/ymir work/ui/game/flags/flag_fr_norm.tga
+1123 22:14:00822 :: CResource::Load file not exist d:\ymir work\ui\game\flags\flag_fr_norm.tga
+1123 22:14:00823 :: SYSERR: CResourceManager::GetResourcePointer: File not exist d:/ymir work/ui/game/flags/flag_fr_over.tga
+1123 22:14:00823 :: CResource::Load file not exist d:\ymir work\ui\game\flags\flag_fr_over.tga
+1123 22:14:00823 :: SYSERR: CResourceManager::GetResourcePointer: File not exist d:/ymir work/ui/game/flags/flag_fr_down.tga
+1123 22:14:00823 :: CResource::Load file not exist d:\ymir work\ui\game\flags\flag_fr_down.tga
+1123 22:14:00848 :: Succeed connecting.
+1123 22:14:03069 :: PointWindow: LoginWindow
+1123 22:14:03158 :: PointWindow: Background
+1123 22:14:04094 :: PointWindow: NONAME_Window
+1123 22:14:04159 :: HANDSHAKE RECV 2236450 0
+1123 22:14:04160 :: HANDSHAKE SEND 2236450
+1123 22:14:04236 :: HANDSHAKE RECV 2236529 39
+1123 22:14:04237 :: HANDSHAKE SEND 2236607
+1123 22:14:04653 :: Succeed connecting.
+1123 22:14:04720 :: 
+1123 22:14:04722 :: ## Network - Hand Shake Phase ##
+1123 22:14:04723 :: 
+1123 22:14:04730 :: HANDSHAKE RECV 2240010 0
+1123 22:14:04731 :: HANDSHAKE SEND 2240010
+1123 22:14:04796 :: HANDSHAKE RECV 2240090 40
+1123 22:14:04797 :: HANDSHAKE SEND 2240170
+1123 22:14:04885 :: 
+1123 22:14:04886 :: ## Network - Login Phase ##
+1123 22:14:04887 :: 
+1123 22:14:04890 :: SetDropSoundFile 0 : sound/ui/drop.wav
+1123 22:14:04891 :: SetDropSoundFile 4 : sound/ui/equip_ring_amulet.wav
+1123 22:14:04891 :: SetDropSoundFile 1 : sound/ui/equip_metal_armor.wav
+1123 22:14:04892 :: SetDropSoundFile 3 : sound/ui/equip_bow.wav
+1123 22:14:04892 :: SetDropSoundFile 2 : sound/ui/equip_metal_weapon.wav
+1123 22:14:05012 :: SYSERR: CResourceManager::GetResourcePointer: File not exist d:/ymir work/pc/sura/effect/skull_f.mde
+1123 22:14:05013 :: CResource::Load file not exist d:\ymir work\pc\sura\effect\skull_f.mde
+1123 22:14:05702 :: SYSERR: CResourceManager::GetResourcePointer: File not exist d:/ymir work/effect/affect/damagevalue/0.jpg
+1123 22:14:05702 :: CResource::Load file not exist d:\ymir work\effect\affect\damagevalue\0.jpg
+1123 22:14:05707 :: SYSERR: CResourceManager::GetResourcePointer: File not exist d:/ymir work/effect/affect/damagevalue/poison0.jpg
+1123 22:14:05707 :: CResource::Load file not exist d:\ymir work\effect\affect\damagevalue\poison0.jpg
+1123 22:14:05799 :: SYSERR: CResourceManager::GetResourcePointer: File not exist D:\Ymir Work\pc\assassin\effect\7-2.dds
+1123 22:14:05803 :: CResource::Load file not exist d:\ymir work\pc\assassin\effect\7-2.dds
+1123 22:14:05988 :: CRaceManager::CreateRace(dwRaceIndex=0)
+1123 22:14:06552 :: SYSERR: CResourceManager::GetResourcePointer: File not exist d:/ymir work/guild/effect/star.jpg
+1123 22:14:06568 :: SYSERR: CResourceManager::GetResourcePointer: File not exist D:\Ymir Work\pc\assassin\effect\16-bottom.jpg
+1123 22:14:06584 :: SYSERR: CResourceManager::GetResourcePointer: File not exist D:\Ymir Work\pc\shaman\effect\jigam.jpg
+1123 22:14:06585 :: SYSERR: CResourceManager::GetResourcePointer: File not exist D:\Ymir Work\pc\shaman\effect\w_ring.jpg
+1123 22:14:06585 :: SYSERR: CResourceManager::GetResourcePointer: File not exist D:\Ymir Work\pc\shaman\effect\white_sphere.jpg
+1123 22:14:06586 :: SYSERR: CResourceManager::GetResourcePointer: File not exist D:\Ymir Work\pc\shaman\effect\wind.jpg
+1123 22:14:06586 :: SYSERR: CResourceManager::GetResourcePointer: File not exist D:\Ymir Work\pc\shaman\effect\W_star.jpg
+1123 22:14:06586 :: SYSERR: CResourceManager::GetResourcePointer: File not exist D:\Ymir Work\pc\shaman\effect\jigam_ring.jpg
+1123 22:14:06587 :: SYSERR: CResourceManager::GetResourcePointer: File not exist D:\Ymir Work\pc\shaman\effect\gyeokgong_triple_loop_2.jpg
+1123 22:14:06587 :: SYSERR: CResourceManager::GetResourcePointer: File not exist D:\Ymir Work\pc\shaman\effect\noe_w_ring.jpg
+1123 22:14:06943 :: SYSERR: CResourceManager::GetResourcePointer: File not exist d:/ymir work/pc/warrior/action/ridack_warrior_m.dds
+1123 22:14:07202 :: CRaceManager::CreateRace(dwRaceIndex=4)
+1123 22:14:07931 :: CRaceManager::CreateRace(dwRaceIndex=1)
+1123 22:14:09067 :: CRaceManager::CreateRace(dwRaceIndex=5)
+1123 22:14:09637 :: SYSERR: CResourceManager::GetResourcePointer: File not exist d:/ymir work/pc/warrior/general/ridack_warrior_m.dds
+1123 22:14:09930 :: CRaceManager::CreateRace(dwRaceIndex=2)
+1123 22:14:10974 :: CRaceManager::CreateRace(dwRaceIndex=6)
+1123 22:14:11728 :: CRaceManager::CreateRace(dwRaceIndex=3)
+1123 22:14:12704 :: CRaceManager::CreateRace(dwRaceIndex=7)
+1123 22:14:13507 :: 
+1123 22:14:13508 :: ## Network - Select Phase ##
+1123 22:14:13509 :: 
+1123 22:14:13706 :: SYSERR:          English(#2    ) cannot find icon file. setting to default.
+1123 22:14:13713 :: SYSERR:  Bright Shield+0(#13180) cannot find icon file. setting to default.
+1123 22:14:13713 :: SYSERR:  Bright Shield+1(#13181) cannot find icon file. setting to default.
+1123 22:14:13714 :: SYSERR:  Bright Shield+2(#13182) cannot find icon file. setting to default.
+1123 22:14:13714 :: SYSERR:  Bright Shield+3(#13183) cannot find icon file. setting to default.
+1123 22:14:13714 :: SYSERR:  Bright Shield+4(#13184) cannot find icon file. setting to default.
+1123 22:14:13715 :: SYSERR:  Bright Shield+5(#13185) cannot find icon file. setting to default.
+1123 22:14:13716 :: SYSERR:  Bright Shield+6(#13186) cannot find icon file. setting to default.
+1123 22:14:13716 :: SYSERR:  Bright Shield+7(#13187) cannot find icon file. setting to default.
+1123 22:14:13716 :: SYSERR:  Bright Shield+8(#13188) cannot find icon file. setting to default.
+1123 22:14:13717 :: SYSERR:  Bright Shield+9(#13189) cannot find icon file. setting to default.
+1123 22:14:13737 :: SYSERR:            Paper(#22020) cannot find icon file. setting to default.
+1123 22:14:13738 :: SYSERR:  Teleport Scroll(#22030) cannot find icon file. setting to default.
+1123 22:14:13738 :: SYSERR:      Life Scroll(#22040) cannot find icon file. setting to default.
+1123 22:14:13739 :: SYSERR: Incarnation Scroll(#22050) cannot find icon file. setting to default.
+1123 22:14:13741 :: SYSERR: Golden Orc Tooth(#30103) cannot find icon file. setting to default.
+1123 22:14:13741 :: SYSERR: Desert Spider Web(#30104) cannot find icon file. setting to default.
+1123 22:14:13741 :: SYSERR: Medicine for Yu-Rang(#30106) cannot find icon file. setting to default.
+1123 22:14:13742 :: SYSERR:         Orc Fang(#30107) cannot find icon file. setting to default.
+1123 22:14:13742 :: SYSERR:   Ceramic Enamel(#30108) cannot find icon file. setting to default.
+1123 22:14:13743 :: SYSERR: Desert Spider Web(#30109) cannot find icon file. setting to default.
+1123 22:14:13743 :: SYSERR: Letter from Huahn-So(#30110) cannot find icon file. setting to default.
+1123 22:14:13743 :: SYSERR: Stinger Scorpion Tail(#30111) cannot find icon file. setting to default.
+1123 22:14:13744 :: SYSERR: Esoteric Scripture(#30113) cannot find icon file. setting to default.
+1123 22:14:13744 :: SYSERR:           Plague(#30114) cannot find icon file. setting to default.
+1123 22:14:13744 :: SYSERR:      Plague Cure(#30115) cannot find icon file. setting to default.
+1123 22:14:13745 :: SYSERR: Demon's Jewellery Box(#30118) cannot find icon file. setting to default.
+1123 22:14:13750 :: SYSERR:    Sounding Bell(#40005) cannot find icon file. setting to default.
+1123 22:14:13750 :: SYSERR: Savage Delivery Receipt(#40006) cannot find icon file. setting to default.
+1123 22:14:13751 :: SYSERR: Letter from Savage Boss(#40007) cannot find icon file. setting to default.
+1123 22:14:13753 :: SYSERR:    Riding Manual(#50062) cannot find icon file. setting to default.
+1123 22:14:13755 :: SYSERR:      Lilac Juice(#50805) cannot find icon file. setting to default.
+1123 22:14:13756 :: SYSERR: Tue Fungal Resin(#50806) cannot find icon file. setting to default.
+1123 22:14:13756 :: SYSERR: Alpine Rose Juice(#50807) cannot find icon file. setting to default.
+1123 22:14:13756 :: SYSERR:   Mulberry Juice(#50808) cannot find icon file. setting to default.
+1123 22:14:13757 :: SYSERR:  Dandelion Juice(#50809) cannot find icon file. setting to default.
+1123 22:14:13757 :: SYSERR:    Thistle Juice(#50810) cannot find icon file. setting to default.
+1123 22:14:13757 :: SYSERR:     Date Extract(#50811) cannot find icon file. setting to default.
+1123 22:14:13758 :: SYSERR: Juice of Sam-Zi Plant(#50812) cannot find icon file. setting to default.
+1123 22:14:13759 :: SYSERR: Recipe for Sim Water(#50905) cannot find icon file. setting to default.
+1123 22:14:13759 :: SYSERR: Recipe for Dok Water(#50906) cannot find icon file. setting to default.
+1123 22:14:13759 :: SYSERR: Recipe for Bo Water(#50907) cannot find icon file. setting to default.
+1123 22:14:13760 :: SYSERR: Recipe for Young Water(#50908) cannot find icon file. setting to default.
+1123 22:14:13760 :: SYSERR: Recipe for Zin Water(#50909) cannot find icon file. setting to default.
+1123 22:14:13760 :: SYSERR: Recipe for Hwal Water(#50910) cannot find icon file. setting to default.
+1123 22:14:13761 :: SYSERR:      Bambi Chest(#53507) cannot find icon file. setting to default.
+1123 22:14:13762 :: SYSERR:      Knuud Chest(#53508) cannot find icon file. setting to default.
+1123 22:14:13762 :: SYSERR:    Bao Bao Chest(#53509) cannot find icon file. setting to default.
+1123 22:14:13762 :: SYSERR:   Leonidas Chest(#53510) cannot find icon file. setting to default.
+1123 22:14:13763 :: SYSERR:       Khan Chest(#53511) cannot find icon file. setting to default.
+1123 22:14:13763 :: SYSERR:      Porky Chest(#53512) cannot find icon file. setting to default.
+1123 22:14:13764 :: SYSERR:      Rufus Chest(#53513) cannot find icon file. setting to default.
+1123 22:14:13765 :: SYSERR: Mini-Executor Chest(#53514) cannot find icon file. setting to default.
+1123 22:14:13765 :: SYSERR: Mini-ExecutorChest(Gold)(#53515) cannot find icon file. setting to default.
+1123 22:14:13766 :: SYSERR:       Bone Chest(#53516) cannot find icon file. setting to default.
+1123 22:14:13766 :: SYSERR:        Jade Cage(#53517) cannot find icon file. setting to default.
+1123 22:14:13767 :: SYSERR:            Sutra(#70103) cannot find icon file. setting to default.
+1123 22:14:13768 :: SYSERR: Dragon God Support(#71031) cannot find icon file. setting to default.
+1123 22:14:13769 :: SYSERR: Spirit Stone Tincture(#71047) cannot find icon file. setting to default.
+1123 22:14:13770 :: SYSERR: Tincture of Trade(#71091) cannot find icon file. setting to default.
+1123 22:14:13771 :: SYSERR: Lovebird Feather(#72010) cannot find icon file. setting to default.
+1123 22:14:13771 :: SYSERR: Lovebird Feather(#72011) cannot find icon file. setting to default.
+1123 22:14:13772 :: SYSERR: Lovebird Feather(#72012) cannot find icon file. setting to default.
+1123 22:14:13772 :: SYSERR:  Experience Ring(#72303) cannot find icon file. setting to default.
+1123 22:14:13773 :: SYSERR:  Blessing Marble(#72304) cannot find icon file. setting to default.
+1123 22:14:13774 :: SYSERR: Magic Copper Ore(#72308) cannot find icon file. setting to default.
+1123 22:14:13774 :: SYSERR: Blacksmith Handbook(#72309) cannot find icon file. setting to default.
+1123 22:14:13775 :: SYSERR:  Exorcism Scroll(#72310) cannot find icon file. setting to default.
+1123 22:14:13775 :: SYSERR: Blessing of the Dragon(#72311) cannot find icon file. setting to default.
+1123 22:14:13775 :: SYSERR: Dragon God Attack(#72312) cannot find icon file. setting to default.
+1123 22:14:13776 :: SYSERR: Dragon God Defence(#72313) cannot find icon file. setting to default.
+1123 22:14:13776 :: SYSERR:    Dragon Scroll(#72314) cannot find icon file. setting to default.
+1123 22:14:13777 :: SYSERR:      Blank Paper(#80002) cannot find icon file. setting to default.
+1123 22:14:13808 :: CPythonNonPlayer::LoadNonPlayerData: locale/tr/mob_proto, sizeof(TMobTable)=303
+1123 22:14:13834 :: CPythonSkill::RegisterSkillTable(locale/common/SkillTable.txt) - NOT EXIST SkillDesc [Vnum:158 Line:65]
+1123 22:14:13835 :: CPythonSkill::RegisterSkillTable(locale/common/SkillTable.txt) - NOT EXIST SkillDesc [Vnum:159 Line:66]
+1123 22:14:13835 :: CPythonSkill::RegisterSkillTable(locale/common/SkillTable.txt) - NOT EXIST SkillDesc [Vnum:160 Line:67]
+1123 22:14:13835 :: CPythonSkill::RegisterSkillTable(locale/common/SkillTable.txt) - NOT EXIST SkillDesc [Vnum:161 Line:68]
+1123 22:14:13836 :: CPythonSkill::RegisterSkillTable(locale/common/SkillTable.txt) - NOT EXIST SkillDesc [Vnum:162 Line:69]
+1123 22:14:13836 :: CPythonSkill::RegisterSkillTable(locale/common/SkillTable.txt) - NOT EXIST SkillDesc [Vnum:256 Line:70]
+1123 22:14:13836 :: CPythonSkill::RegisterSkillTable(locale/common/SkillTable.txt) - NOT EXIST SkillDesc [Vnum:257 Line:71]
+1123 22:14:13837 :: CPythonSkill::RegisterSkillTable(locale/common/SkillTable.txt) - NOT EXIST SkillDesc [Vnum:258 Line:72]
+1123 22:14:13837 :: CPythonSkill::RegisterSkillTable(locale/common/SkillTable.txt) - NOT EXIST SkillDesc [Vnum:259 Line:73]
+1123 22:14:13837 :: CPythonSkill::RegisterSkillTable(locale/common/SkillTable.txt) - NOT EXIST SkillDesc [Vnum:260 Line:74]
+1123 22:14:13838 :: CPythonSkill::RegisterSkillTable(locale/common/SkillTable.txt) - NOT EXIST SkillDesc [Vnum:261 Line:75]
+1123 22:14:13838 :: CPythonSkill::RegisterSkillTable(locale/common/SkillTable.txt) - NOT EXIST SkillDesc [Vnum:262 Line:76]
+1123 22:14:13865 :: SYSERR: CResourceManager::GetResourcePointer: File not exist d:/ymir work/ui/skill/pet/jijoong.sub
+1123 22:14:13866 :: SYSERR: CResourceManager::GetResourcePointer: File not exist d:/ymir work/ui/skill/pet/pacheon.sub
+1123 22:14:13866 :: SYSERR: CResourceManager::GetResourcePointer: File not exist d:/ymir work/ui/skill/pet/cheonryeong.sub
+1123 22:14:13867 :: SYSERR: CResourceManager::GetResourcePointer: File not exist d:/ymir work/ui/skill/pet/banya.sub
+1123 22:14:13867 :: SYSERR: CResourceManager::GetResourcePointer: File not exist d:/ymir work/ui/skill/pet/choehoenbimu.sub
+1123 22:14:13867 :: SYSERR: CResourceManager::GetResourcePointer: File not exist d:/ymir work/ui/skill/pet/heal.sub
+1123 22:14:13868 :: SYSERR: CResourceManager::GetResourcePointer: File not exist d:/ymir work/ui/skill/pet/stealhp.sub
+1123 22:14:13868 :: SYSERR: CResourceManager::GetResourcePointer: File not exist d:/ymir work/ui/skill/pet/stealmp.sub
+1123 22:14:13868 :: SYSERR: CResourceManager::GetResourcePointer: File not exist d:/ymir work/ui/skill/pet/block.sub
+1123 22:14:13868 :: SYSERR: CResourceManager::GetResourcePointer: File not exist d:/ymir work/ui/skill/pet/reflect_melee.sub
+1123 22:14:13869 :: SYSERR: CResourceManager::GetResourcePointer: File not exist d:/ymir work/ui/skill/pet/gold_drop.sub
+1123 22:14:13870 :: SYSERR: CResourceManager::GetResourcePointer: File not exist d:/ymir work/ui/skill/pet/bow_distance.sub
+1123 22:14:13870 :: SYSERR: CResourceManager::GetResourcePointer: File not exist d:/ymir work/ui/skill/pet/invincibility.sub
+1123 22:14:13870 :: SYSERR: CResourceManager::GetResourcePointer: File not exist d:/ymir work/ui/skill/pet/removal.sub
+1123 22:14:13870 :: SYSERR: CResourceManager::GetResourcePointer: File not exist d:/ymir work/ui/skill/pet/potion.sub
+1123 22:14:13871 :: SYSERR: CResourceManager::GetResourcePointer: File not exist d:/ymir work/ui/skill/pet/mob_bonus.sub
+1123 22:14:13871 :: SYSERR: CResourceManager::GetResourcePointer: File not exist d:/ymir work/ui/skill/pet/exp.sub
+1123 22:14:13872 :: SYSERR: CResourceManager::GetResourcePointer: File not exist d:/ymir work/ui/skill/pet/hp_recover.sub
+1123 22:14:13872 :: SYSERR: CResourceManager::GetResourcePointer: File not exist d:/ymir work/ui/skill/pet/feather.sub
+1123 22:14:13912 :: importing from pack introSelect
+1123 22:14:13916 :: DeleteCharacterInstance: no vid by 0
+1123 22:14:13917 :: DeleteCharacterInstance: no vid by 1
+1123 22:14:13917 :: DeleteCharacterInstance: no vid by 2
+1123 22:14:13918 :: DeleteCharacterInstance: no vid by 3
+1123 22:14:13918 :: ===== Load Script File : UIScript/selectcharacterwindow.py1123 22:14:13918 :: 
+1123 22:14:14140 :: PointWindow: BackGround
+1123 22:14:14768 :: PointWindow: NONAME_Window
+1123 22:14:14824 :: PointWindow: PlayButton
+1123 22:14:15098 :: Succeed connecting.
+1123 22:14:15142 :: 
+1123 22:14:15144 :: ## Network - Hand Shake Phase ##
+1123 22:14:15145 :: 
+1123 22:14:15153 :: HANDSHAKE RECV 2248429 0
+1123 22:14:15154 :: HANDSHAKE SEND 2248429
+1123 22:14:15220 :: HANDSHAKE RECV 2248509 40
+1123 22:14:15221 :: HANDSHAKE SEND 2248589
+1123 22:14:15231 :: PointWindow: NONAME_Window
+1123 22:14:15297 :: 
+1123 22:14:15298 :: ## Network - Login Phase ##
+1123 22:14:15299 :: 
+1123 22:14:15396 :: PointWindow: BackGround
+1123 22:14:15880 :: 
+1123 22:14:15882 :: ## Network - Select Phase ##
+1123 22:14:15883 :: 
+1123 22:14:15939 :: PointWindow: NONAME_Window
+1123 22:14:16320 :: 
+1123 22:14:16322 :: ## Network - Loading Phase ##
+1123 22:14:16323 :: 
+1123 22:14:16586 :: Property already registered, replace t:/m2project/tools/_unpacked/property/devils_dragon_island/mtthunder_thorn01.prb to T:\M2Project\Tools\_unpacked\property\devils_dragon_island\mtthund_thorn01.prb
+1123 22:14:16589 :: Property already registered, replace t:/m2project/tools/_unpacked/property/devils_dragon_island/mtthund_thorn01.prb to T:\M2Project\Tools\_unpacked\property\devils_dragon_island\thing\obj_mtthund_thorn01.prb
+1123 22:14:16638 :: Property already registered, replace t:/m2project/tools/_unpacked/property/plechi_dungeon/shadow_devil_tower/corridor_1_1.prd to T:\M2Project\Tools\_unpacked\property\shadow_devil_tower\corridor_1_1.prd
+1123 22:14:16639 :: Property already registered, replace t:/m2project/tools/_unpacked/property/plechi_dungeon/shadow_devil_tower/corridor_1_2.prd to T:\M2Project\Tools\_unpacked\property\shadow_devil_tower\corridor_1_2.prd
+1123 22:14:16640 :: Property already registered, replace t:/m2project/tools/_unpacked/property/plechi_dungeon/shadow_devil_tower/corridor_1_3.prd to T:\M2Project\Tools\_unpacked\property\shadow_devil_tower\corridor_1_3.prd
+1123 22:14:16640 :: Property already registered, replace t:/m2project/tools/_unpacked/property/plechi_dungeon/shadow_devil_tower/corridor_1_4.prd to T:\M2Project\Tools\_unpacked\property\shadow_devil_tower\corridor_1_4.prd
+1123 22:14:16640 :: Property already registered, replace t:/m2project/tools/_unpacked/property/plechi_dungeon/shadow_devil_tower/corridor_1_gate.prd to T:\M2Project\Tools\_unpacked\property\shadow_devil_tower\corridor_1_gate.prd
+1123 22:14:16641 :: Property already registered, replace t:/m2project/tools/_unpacked/property/plechi_dungeon/shadow_devil_tower/effect/fire_green.pre to T:\M2Project\Tools\_unpacked\property\shadow_devil_tower\effect\fire_green.pre
+1123 22:14:16641 :: Property already registered, replace t:/m2project/tools/_unpacked/property/plechi_dungeon/shadow_devil_tower/effect/fire_green_big.pre to T:\M2Project\Tools\_unpacked\property\shadow_devil_tower\effect\fire_green_big.pre
+1123 22:14:16642 :: Property already registered, replace t:/m2project/tools/_unpacked/property/plechi_dungeon/shadow_devil_tower/effect/fire_green_small.pre to T:\M2Project\Tools\_unpacked\property\shadow_devil_tower\effect\fire_green_small.pre
+1123 22:14:16643 :: Property already registered, replace t:/m2project/tools/_unpacked/property/plechi_dungeon/shadow_devil_tower/effect/fire_pruple.pre to T:\M2Project\Tools\_unpacked\property\shadow_devil_tower\effect\fire_pruple.pre
+1123 22:14:16643 :: Property already registered, replace t:/m2project/tools/_unpacked/property/plechi_dungeon/shadow_devil_tower/effect/shine00a.pre to T:\M2Project\Tools\_unpacked\property\shadow_devil_tower\effect\shine00a.pre
+1123 22:14:16644 :: Property already registered, replace t:/m2project/tools/_unpacked/property/plechi_dungeon/shadow_devil_tower/effect/shine00b.pre to T:\M2Project\Tools\_unpacked\property\shadow_devil_tower\effect\shine00b.pre
+1123 22:14:16644 :: Property already registered, replace t:/m2project/tools/_unpacked/property/plechi_dungeon/shadow_devil_tower/effect/skull_eye_eff.pre to T:\M2Project\Tools\_unpacked\property\shadow_devil_tower\effect\skull_eye_eff.pre
+1123 22:14:16644 :: Property already registered, replace t:/m2project/tools/_unpacked/property/plechi_dungeon/shadow_devil_tower/effect/web00a.pre to T:\M2Project\Tools\_unpacked\property\shadow_devil_tower\effect\web00a.pre
+1123 22:14:16645 :: Property already registered, replace t:/m2project/tools/_unpacked/property/plechi_dungeon/shadow_devil_tower/effect/web00b.pre to T:\M2Project\Tools\_unpacked\property\shadow_devil_tower\effect\web00b.pre
+1123 22:14:16645 :: Property already registered, replace t:/m2project/tools/_unpacked/property/plechi_dungeon/shadow_devil_tower/effect/web00c.pre to T:\M2Project\Tools\_unpacked\property\shadow_devil_tower\effect\web00c.pre
+1123 22:14:16645 :: Property already registered, replace t:/m2project/tools/_unpacked/property/plechi_dungeon/shadow_devil_tower/obj/bone00a.prd to T:\M2Project\Tools\_unpacked\property\shadow_devil_tower\obj\bone00a.prd
+1123 22:14:16646 :: Property already registered, replace t:/m2project/tools/_unpacked/property/plechi_dungeon/shadow_devil_tower/obj/cage00a.prd to T:\M2Project\Tools\_unpacked\property\shadow_devil_tower\obj\cage00a.prd
+1123 22:14:16646 :: Property already registered, replace t:/m2project/tools/_unpacked/property/plechi_dungeon/shadow_devil_tower/obj/chain00a.prd to T:\M2Project\Tools\_unpacked\property\shadow_devil_tower\obj\chain00a.prd
+1123 22:14:16646 :: Property already registered, replace t:/m2project/tools/_unpacked/property/plechi_dungeon/shadow_devil_tower/obj/skull00a.prd to T:\M2Project\Tools\_unpacked\property\shadow_devil_tower\obj\skull00a.prd
+1123 22:14:16647 :: Property already registered, replace t:/m2project/tools/_unpacked/property/plechi_dungeon/shadow_devil_tower/obj/skull00b.prd to T:\M2Project\Tools\_unpacked\property\shadow_devil_tower\obj\skull00b.prd
+1123 22:14:16647 :: Property already registered, replace t:/m2project/tools/_unpacked/property/plechi_dungeon/shadow_devil_tower/obj/skull00c.prd to T:\M2Project\Tools\_unpacked\property\shadow_devil_tower\obj\skull00c.prd
+1123 22:14:16648 :: Property already registered, replace t:/m2project/tools/_unpacked/property/plechi_dungeon/shadow_devil_tower/obj/skull00d.prd to T:\M2Project\Tools\_unpacked\property\shadow_devil_tower\obj\skull00d.prd
+1123 22:14:16649 :: Property already registered, replace t:/m2project/tools/_unpacked/property/plechi_dungeon/shadow_devil_tower/obj/skull_obj00.prb to T:\M2Project\Tools\_unpacked\property\shadow_devil_tower\obj\skull_obj00.prb
+1123 22:14:16650 :: Property already registered, replace t:/m2project/tools/_unpacked/property/plechi_dungeon/shadow_devil_tower/room00.prd to T:\M2Project\Tools\_unpacked\property\shadow_devil_tower\room00.prd
+1123 22:14:16650 :: Property already registered, replace t:/m2project/tools/_unpacked/property/plechi_dungeon/shadow_devil_tower/room01.prd to T:\M2Project\Tools\_unpacked\property\shadow_devil_tower\room01.prd
+1123 22:14:16650 :: Property already registered, replace t:/m2project/tools/_unpacked/property/plechi_dungeon/shadow_devil_tower/room02.prd to T:\M2Project\Tools\_unpacked\property\shadow_devil_tower\room02.prd
+1123 22:14:16651 :: Property already registered, replace t:/m2project/tools/_unpacked/property/plechi_dungeon/shadow_devil_tower/tower.prb to T:\M2Project\Tools\_unpacked\property\shadow_devil_tower\tower.prb
+1123 22:14:16651 :: Property already registered, replace t:/m2project/tools/_unpacked/property/plechi_dungeon/shadow_devil_tower/tower_entrance.prb to T:\M2Project\Tools\_unpacked\property\shadow_devil_tower\tower_entrance.prb
+1123 22:14:16769 :: LoadWaterMapFile metin2_map_c1\000000\water.wtr 0
+1123 22:14:16770 :: LoadRawHeightMapFile metin2_map_c1\000000\height.raw 1123 22:14:16773 :: LoadHeightMap::CalculateNormal 2 ms
+1123 22:14:16773 :: LoadAttrMapFile metin2_map_c1\000000\attr.atr 1123 22:14:16774 :: 1
+1123 22:14:16774 :: LoadSplatFile metin2_map_c1\000000\tile.raw 1123 22:14:16782 :: CTerrain::RAW_AllocateSplats 8
+1123 22:14:16783 :: CTerrain::LoadShadowTexture 0 ms
+1123 22:14:16783 :: LoadShadowMap metin2_map_c1\000000\shadowmap.raw 1123 22:14:16784 :: 1 ms
+1123 22:14:16785 :: CTerrain::LoadMiniMapTexture 1 ms
+1123 22:14:16787 :: CMapOutdoor::LoadTerrain 18
+1123 22:14:16787 :: CMapOutdoor::LoadArea1 0
+1123 22:14:16790 :: CMapOutdoor::LoadArea2 3
+1123 22:14:16790 :: CMapOutdoor::LoadArea3 0
+1123 22:14:16791 :: LoadWaterMapFile metin2_map_c1\001000\water.wtr 0
+1123 22:14:16792 :: LoadRawHeightMapFile metin2_map_c1\001000\height.raw 1123 22:14:16794 :: LoadHeightMap::CalculateNormal 2 ms
+1123 22:14:16795 :: LoadAttrMapFile metin2_map_c1\001000\attr.atr 1123 22:14:16795 :: 1
+1123 22:14:16796 :: LoadSplatFile metin2_map_c1\001000\tile.raw 1123 22:14:16805 :: CTerrain::RAW_AllocateSplats 9
+1123 22:14:16806 :: CTerrain::LoadShadowTexture 1 ms
+1123 22:14:16807 :: LoadShadowMap metin2_map_c1\001000\shadowmap.raw 1123 22:14:16807 :: 1 ms
+1123 22:14:16808 :: CTerrain::LoadMiniMapTexture 1 ms
+1123 22:14:16809 :: CMapOutdoor::LoadTerrain 19
+1123 22:14:16810 :: CMapOutdoor::LoadArea1 0
+1123 22:14:16813 :: CMapOutdoor::LoadArea2 2
+1123 22:14:16813 :: CMapOutdoor::LoadArea3 0
+1123 22:14:16815 :: LoadWaterMapFile metin2_map_c1\002000\water.wtr 0
+1123 22:14:16815 :: LoadRawHeightMapFile metin2_map_c1\002000\height.raw 1123 22:14:16820 :: LoadHeightMap::CalculateNormal 2 ms
+1123 22:14:16821 :: LoadAttrMapFile metin2_map_c1\002000\attr.atr 1123 22:14:16822 :: 2
+1123 22:14:16822 :: LoadSplatFile metin2_map_c1\002000\tile.raw 1123 22:14:16834 :: CTerrain::RAW_AllocateSplats 10
+1123 22:14:16835 :: CTerrain::LoadShadowTexture 0 ms
+1123 22:14:16835 :: LoadShadowMap metin2_map_c1\002000\shadowmap.raw 1123 22:14:16835 :: 0 ms
+1123 22:14:16836 :: CTerrain::LoadMiniMapTexture 1 ms
+1123 22:14:16837 :: CMapOutdoor::LoadTerrain 24
+1123 22:14:16838 :: CMapOutdoor::LoadArea1 0
+1123 22:14:16840 :: CMapOutdoor::LoadArea2 2
+1123 22:14:16840 :: CMapOutdoor::LoadArea3 0
+1123 22:14:16842 :: LoadWaterMapFile metin2_map_c1\003000\water.wtr 1
+1123 22:14:16842 :: LoadRawHeightMapFile metin2_map_c1\003000\height.raw 1123 22:14:16845 :: LoadHeightMap::CalculateNormal 3 ms
+1123 22:14:16845 :: LoadAttrMapFile metin2_map_c1\003000\attr.atr 1123 22:14:16845 :: 0
+1123 22:14:16846 :: LoadSplatFile metin2_map_c1\003000\tile.raw 1123 22:14:16856 :: CTerrain::RAW_AllocateSplats 10
+1123 22:14:16857 :: CTerrain::LoadShadowTexture 0 ms
+1123 22:14:16857 :: LoadShadowMap metin2_map_c1\003000\shadowmap.raw 1123 22:14:16858 :: 1 ms
+1123 22:14:16858 :: CTerrain::LoadMiniMapTexture 0 ms
+1123 22:14:16861 :: CMapOutdoor::LoadTerrain 21
+1123 22:14:16861 :: CMapOutdoor::LoadArea1 0
+1123 22:14:16862 :: CMapOutdoor::LoadArea2 1
+1123 22:14:16863 :: CMapOutdoor::LoadArea3 0
+1123 22:14:16863 :: LoadWaterMapFile metin2_map_c1\000001\water.wtr 0
+1123 22:14:16864 :: LoadRawHeightMapFile metin2_map_c1\000001\height.raw 1123 22:14:16866 :: LoadHeightMap::CalculateNormal 2 ms
+1123 22:14:16867 :: LoadAttrMapFile metin2_map_c1\000001\attr.atr 1123 22:14:16868 :: 1
+1123 22:14:16868 :: LoadSplatFile metin2_map_c1\000001\tile.raw 1123 22:14:16877 :: CTerrain::RAW_AllocateSplats 7
+1123 22:14:16878 :: CTerrain::LoadShadowTexture 0 ms
+1123 22:14:16879 :: LoadShadowMap metin2_map_c1\000001\shadowmap.raw 1123 22:14:16880 :: 1 ms
+1123 22:14:16881 :: CTerrain::LoadMiniMapTexture 1 ms
+1123 22:14:16883 :: CMapOutdoor::LoadTerrain 19
+1123 22:14:16883 :: CMapOutdoor::LoadArea1 0
+1123 22:14:16886 :: CMapOutdoor::LoadArea2 3
+1123 22:14:16886 :: CMapOutdoor::LoadArea3 0
+1123 22:14:16887 :: LoadWaterMapFile metin2_map_c1\001001\water.wtr 0
+1123 22:14:16888 :: LoadRawHeightMapFile metin2_map_c1\001001\height.raw 1123 22:14:16891 :: LoadHeightMap::CalculateNormal 2 ms
+1123 22:14:16891 :: LoadAttrMapFile metin2_map_c1\001001\attr.atr 1123 22:14:16892 :: 1
+1123 22:14:16893 :: LoadSplatFile metin2_map_c1\001001\tile.raw 1123 22:14:16903 :: CTerrain::RAW_AllocateSplats 9
+1123 22:14:16904 :: CTerrain::LoadShadowTexture 1 ms
+1123 22:14:16905 :: LoadShadowMap metin2_map_c1\001001\shadowmap.raw 1123 22:14:16905 :: 1 ms
+1123 22:14:16906 :: CTerrain::LoadMiniMapTexture 1 ms
+1123 22:14:16907 :: CMapOutdoor::LoadTerrain 21
+1123 22:14:16908 :: CMapOutdoor::LoadArea1 0
+1123 22:14:16916 :: CMapOutdoor::LoadArea2 8
+1123 22:14:16916 :: CMapOutdoor::LoadArea3 0
+1123 22:14:16918 :: LoadWaterMapFile metin2_map_c1\002001\water.wtr 1
+1123 22:14:16918 :: LoadRawHeightMapFile metin2_map_c1\002001\height.raw 1123 22:14:16920 :: LoadHeightMap::CalculateNormal 2 ms
+1123 22:14:16921 :: LoadAttrMapFile metin2_map_c1\002001\attr.atr 1123 22:14:16922 :: 2
+1123 22:14:16922 :: LoadSplatFile metin2_map_c1\002001\tile.raw 1123 22:14:16929 :: CTerrain::RAW_AllocateSplats 7
+1123 22:14:16930 :: CTerrain::LoadShadowTexture 1 ms
+1123 22:14:16930 :: LoadShadowMap metin2_map_c1\002001\shadowmap.raw 1123 22:14:16931 :: 1 ms
+1123 22:14:16931 :: CTerrain::LoadMiniMapTexture 0 ms
+1123 22:14:16933 :: CMapOutdoor::LoadTerrain 16
+1123 22:14:16933 :: CMapOutdoor::LoadArea1 0
+1123 22:14:16940 :: CMapOutdoor::LoadArea2 6
+1123 22:14:16941 :: CMapOutdoor::LoadArea3 0
+1123 22:14:16942 :: LoadWaterMapFile metin2_map_c1\003001\water.wtr 1
+1123 22:14:16942 :: LoadRawHeightMapFile metin2_map_c1\003001\height.raw 1123 22:14:16945 :: LoadHeightMap::CalculateNormal 2 ms
+1123 22:14:16946 :: LoadAttrMapFile metin2_map_c1\003001\attr.atr 1123 22:14:16946 :: 1
+1123 22:14:16947 :: LoadSplatFile metin2_map_c1\003001\tile.raw 1123 22:14:16959 :: CTerrain::RAW_AllocateSplats 11
+1123 22:14:16960 :: CTerrain::LoadShadowTexture 1 ms
+1123 22:14:16960 :: LoadShadowMap metin2_map_c1\003001\shadowmap.raw 1123 22:14:16961 :: 1 ms
+1123 22:14:16962 :: CTerrain::LoadMiniMapTexture 0 ms
+1123 22:14:16965 :: CMapOutdoor::LoadTerrain 24
+1123 22:14:16965 :: CMapOutdoor::LoadArea1 0
+1123 22:14:16967 :: CMapOutdoor::LoadArea2 2
+1123 22:14:16968 :: CMapOutdoor::LoadArea3 0
+1123 22:14:16969 :: LoadWaterMapFile metin2_map_c1\000002\water.wtr 0
+1123 22:14:16970 :: LoadRawHeightMapFile metin2_map_c1\000002\height.raw 1123 22:14:16973 :: LoadHeightMap::CalculateNormal 2 ms
+1123 22:14:16973 :: LoadAttrMapFile metin2_map_c1\000002\attr.atr 1123 22:14:16973 :: 0
+1123 22:14:16974 :: LoadSplatFile metin2_map_c1\000002\tile.raw 1123 22:14:16982 :: CTerrain::RAW_AllocateSplats 8
+1123 22:14:16982 :: CTerrain::LoadShadowTexture 0 ms
+1123 22:14:16983 :: LoadShadowMap metin2_map_c1\000002\shadowmap.raw 1123 22:14:16983 :: 1 ms
+1123 22:14:16984 :: CTerrain::LoadMiniMapTexture 1 ms
+1123 22:14:16985 :: CMapOutdoor::LoadTerrain 16
+1123 22:14:16985 :: CMapOutdoor::LoadArea1 0
+1123 22:14:16992 :: CMapOutdoor::LoadArea2 7
+1123 22:14:16993 :: CMapOutdoor::LoadArea3 0
+1123 22:14:16994 :: LoadWaterMapFile metin2_map_c1\001002\water.wtr 1
+1123 22:14:16994 :: LoadRawHeightMapFile metin2_map_c1\001002\height.raw 1123 22:14:16996 :: LoadHeightMap::CalculateNormal 2 ms
+1123 22:14:16997 :: LoadAttrMapFile metin2_map_c1\001002\attr.atr 1123 22:14:16997 :: 1
+1123 22:14:16997 :: LoadSplatFile metin2_map_c1\001002\tile.raw 1123 22:14:17006 :: CTerrain::RAW_AllocateSplats 8
+1123 22:14:17008 :: CTerrain::LoadShadowTexture 1 ms
+1123 22:14:17008 :: LoadShadowMap metin2_map_c1\001002\shadowmap.raw 1123 22:14:17008 :: 0 ms
+1123 22:14:17009 :: CTerrain::LoadMiniMapTexture 1 ms
+1123 22:14:17010 :: CMapOutdoor::LoadTerrain 17
+1123 22:14:17011 :: CMapOutdoor::LoadArea1 0
+1123 22:14:17023 :: CMapOutdoor::LoadArea2 12
+1123 22:14:17023 :: CMapOutdoor::LoadArea3 0
+1123 22:14:17024 :: LoadWaterMapFile metin2_map_c1\002002\water.wtr 0
+1123 22:14:17025 :: LoadRawHeightMapFile metin2_map_c1\002002\height.raw 1123 22:14:17027 :: LoadHeightMap::CalculateNormal 2 ms
+1123 22:14:17027 :: LoadAttrMapFile metin2_map_c1\002002\attr.atr 1123 22:14:17028 :: 1
+1123 22:14:17028 :: LoadSplatFile metin2_map_c1\002002\tile.raw 1123 22:14:17036 :: CTerrain::RAW_AllocateSplats 8
+1123 22:14:17037 :: CTerrain::LoadShadowTexture 1 ms
+1123 22:14:17037 :: LoadShadowMap metin2_map_c1\002002\shadowmap.raw 1123 22:14:17037 :: 0 ms
+1123 22:14:17038 :: CTerrain::LoadMiniMapTexture 1 ms
+1123 22:14:17039 :: CMapOutdoor::LoadTerrain 16
+1123 22:14:17040 :: CMapOutdoor::LoadArea1 0
+1123 22:14:17042 :: CMapOutdoor::LoadArea2 2
+1123 22:14:17043 :: CMapOutdoor::LoadArea3 0
+1123 22:14:17043 :: LoadWaterMapFile metin2_map_c1\003002\water.wtr 0
+1123 22:14:17044 :: LoadRawHeightMapFile metin2_map_c1\003002\height.raw 1123 22:14:17046 :: LoadHeightMap::CalculateNormal 2 ms
+1123 22:14:17046 :: LoadAttrMapFile metin2_map_c1\003002\attr.atr 1123 22:14:17047 :: 1
+1123 22:14:17047 :: LoadSplatFile metin2_map_c1\003002\tile.raw 1123 22:14:17054 :: CTerrain::RAW_AllocateSplats 7
+1123 22:14:17055 :: CTerrain::LoadShadowTexture 1 ms
+1123 22:14:17055 :: LoadShadowMap metin2_map_c1\003002\shadowmap.raw 1123 22:14:17056 :: 1 ms
+1123 22:14:17056 :: CTerrain::LoadMiniMapTexture 0 ms
+1123 22:14:17058 :: CMapOutdoor::LoadTerrain 15
+1123 22:14:17059 :: CMapOutdoor::LoadArea1 0
+1123 22:14:17060 :: CMapOutdoor::LoadArea2 0
+1123 22:14:17060 :: CMapOutdoor::LoadArea3 0
+1123 22:14:17061 :: LoadWaterMapFile metin2_map_c1\000003\water.wtr 1
+1123 22:14:17061 :: LoadRawHeightMapFile metin2_map_c1\000003\height.raw 1123 22:14:17063 :: LoadHeightMap::CalculateNormal 2 ms
+1123 22:14:17064 :: LoadAttrMapFile metin2_map_c1\000003\attr.atr 1123 22:14:17064 :: 1
+1123 22:14:17064 :: LoadSplatFile metin2_map_c1\000003\tile.raw 1123 22:14:17072 :: CTerrain::RAW_AllocateSplats 7
+1123 22:14:17073 :: CTerrain::LoadShadowTexture 0 ms
+1123 22:14:17073 :: LoadShadowMap metin2_map_c1\000003\shadowmap.raw 1123 22:14:17073 :: 0 ms
+1123 22:14:17074 :: CTerrain::LoadMiniMapTexture 1 ms
+1123 22:14:17076 :: CMapOutdoor::LoadTerrain 15
+1123 22:14:17076 :: CMapOutdoor::LoadArea1 0
+1123 22:14:17079 :: CMapOutdoor::LoadArea2 3
+1123 22:14:17079 :: CMapOutdoor::LoadArea3 0
+1123 22:14:17080 :: LoadWaterMapFile metin2_map_c1\001003\water.wtr 0
+1123 22:14:17081 :: LoadRawHeightMapFile metin2_map_c1\001003\height.raw 1123 22:14:17083 :: LoadHeightMap::CalculateNormal 2 ms
+1123 22:14:17083 :: LoadAttrMapFile metin2_map_c1\001003\attr.atr 1123 22:14:17084 :: 1
+1123 22:14:17084 :: LoadSplatFile metin2_map_c1\001003\tile.raw 1123 22:14:17090 :: CTerrain::RAW_AllocateSplats 6
+1123 22:14:17091 :: CTerrain::LoadShadowTexture 1 ms
+1123 22:14:17091 :: LoadShadowMap metin2_map_c1\001003\shadowmap.raw 1123 22:14:17092 :: 1 ms
+1123 22:14:17092 :: CTerrain::LoadMiniMapTexture 0 ms
+1123 22:14:17094 :: CMapOutdoor::LoadTerrain 15
+1123 22:14:17094 :: CMapOutdoor::LoadArea1 0
+1123 22:14:17102 :: CMapOutdoor::LoadArea2 8
+1123 22:14:17102 :: CMapOutdoor::LoadArea3 0
+1123 22:14:17103 :: LoadWaterMapFile metin2_map_c1\002003\water.wtr 0
+1123 22:14:17103 :: LoadRawHeightMapFile metin2_map_c1\002003\height.raw 1123 22:14:17106 :: LoadHeightMap::CalculateNormal 2 ms
+1123 22:14:17106 :: LoadAttrMapFile metin2_map_c1\002003\attr.atr 1123 22:14:17106 :: 0
+1123 22:14:17107 :: LoadSplatFile metin2_map_c1\002003\tile.raw 1123 22:14:17114 :: CTerrain::RAW_AllocateSplats 6
+1123 22:14:17114 :: CTerrain::LoadShadowTexture 0 ms
+1123 22:14:17115 :: LoadShadowMap metin2_map_c1\002003\shadowmap.raw 1123 22:14:17115 :: 1 ms
+1123 22:14:17116 :: CTerrain::LoadMiniMapTexture 1 ms
+1123 22:14:17117 :: CMapOutdoor::LoadTerrain 15
+1123 22:14:17117 :: CMapOutdoor::LoadArea1 0
+1123 22:14:17120 :: CMapOutdoor::LoadArea2 3
+1123 22:14:17121 :: CMapOutdoor::LoadArea3 0
+1123 22:14:17122 :: LoadWaterMapFile metin2_map_c1\003003\water.wtr 0
+1123 22:14:17122 :: LoadRawHeightMapFile metin2_map_c1\003003\height.raw 1123 22:14:17124 :: LoadHeightMap::CalculateNormal 2 ms
+1123 22:14:17124 :: LoadAttrMapFile metin2_map_c1\003003\attr.atr 1123 22:14:17125 :: 0
+1123 22:14:17125 :: LoadSplatFile metin2_map_c1\003003\tile.raw 1123 22:14:17130 :: CTerrain::RAW_AllocateSplats 5
+1123 22:14:17131 :: CTerrain::LoadShadowTexture 1 ms
+1123 22:14:17131 :: LoadShadowMap metin2_map_c1\003003\shadowmap.raw 1123 22:14:17132 :: 1 ms
+1123 22:14:17132 :: CTerrain::LoadMiniMapTexture 0 ms
+1123 22:14:17134 :: CMapOutdoor::LoadTerrain 13
+1123 22:14:17135 :: CMapOutdoor::LoadArea1 0
+1123 22:14:17136 :: CMapOutdoor::LoadArea2 1
+1123 22:14:17136 :: CMapOutdoor::LoadArea3 0
+1123 22:14:17137 :: LoadWaterMapFile metin2_map_c1\000004\water.wtr 1
+1123 22:14:17137 :: LoadRawHeightMapFile metin2_map_c1\000004\height.raw 1123 22:14:17140 :: LoadHeightMap::CalculateNormal 2 ms
+1123 22:14:17141 :: LoadAttrMapFile metin2_map_c1\000004\attr.atr 1123 22:14:17141 :: 1
+1123 22:14:17141 :: LoadSplatFile metin2_map_c1\000004\tile.raw 1123 22:14:17148 :: CTerrain::RAW_AllocateSplats 5
+1123 22:14:17148 :: CTerrain::LoadShadowTexture 0 ms
+1123 22:14:17148 :: LoadShadowMap metin2_map_c1\000004\shadowmap.raw 1123 22:14:17149 :: 1 ms
+1123 22:14:17149 :: CTerrain::LoadMiniMapTexture 0 ms
+1123 22:14:17151 :: CMapOutdoor::LoadTerrain 15
+1123 22:14:17151 :: CMapOutdoor::LoadArea1 0
+1123 22:14:17153 :: CMapOutdoor::LoadArea2 2
+1123 22:14:17153 :: CMapOutdoor::LoadArea3 0
+1123 22:14:17154 :: LoadWaterMapFile metin2_map_c1\001004\water.wtr 0
+1123 22:14:17154 :: LoadRawHeightMapFile metin2_map_c1\001004\height.raw 1123 22:14:17157 :: LoadHeightMap::CalculateNormal 1 ms
+1123 22:14:17158 :: LoadAttrMapFile metin2_map_c1\001004\attr.atr 1123 22:14:17158 :: 1
+1123 22:14:17159 :: LoadSplatFile metin2_map_c1\001004\tile.raw 1123 22:14:17166 :: CTerrain::RAW_AllocateSplats 7
+1123 22:14:17167 :: CTerrain::LoadShadowTexture 1 ms
+1123 22:14:17167 :: LoadShadowMap metin2_map_c1\001004\shadowmap.raw 1123 22:14:17168 :: 1 ms
+1123 22:14:17168 :: CTerrain::LoadMiniMapTexture 0 ms
+1123 22:14:17170 :: CMapOutdoor::LoadTerrain 17
+1123 22:14:17170 :: CMapOutdoor::LoadArea1 0
+1123 22:14:17172 :: CMapOutdoor::LoadArea2 2
+1123 22:14:17173 :: CMapOutdoor::LoadArea3 0
+1123 22:14:17174 :: LoadWaterMapFile metin2_map_c1\002004\water.wtr 0
+1123 22:14:17174 :: LoadRawHeightMapFile metin2_map_c1\002004\height.raw 1123 22:14:17176 :: LoadHeightMap::CalculateNormal 2 ms
+1123 22:14:17177 :: LoadAttrMapFile metin2_map_c1\002004\attr.atr 1123 22:14:17177 :: 1
+1123 22:14:17177 :: LoadSplatFile metin2_map_c1\002004\tile.raw 1123 22:14:17185 :: CTerrain::RAW_AllocateSplats 7
+1123 22:14:17185 :: CTerrain::LoadShadowTexture 0 ms
+1123 22:14:17186 :: LoadShadowMap metin2_map_c1\002004\shadowmap.raw 1123 22:14:17186 :: 1 ms
+1123 22:14:17187 :: CTerrain::LoadMiniMapTexture 1 ms
+1123 22:14:17188 :: CMapOutdoor::LoadTerrain 15
+1123 22:14:17188 :: CMapOutdoor::LoadArea1 0
+1123 22:14:17190 :: CMapOutdoor::LoadArea2 1
+1123 22:14:17190 :: CMapOutdoor::LoadArea3 0
+1123 22:14:17191 :: LoadWaterMapFile metin2_map_c1\003004\water.wtr 1
+1123 22:14:17191 :: LoadRawHeightMapFile metin2_map_c1\003004\height.raw 1123 22:14:17193 :: LoadHeightMap::CalculateNormal 2 ms
+1123 22:14:17194 :: LoadAttrMapFile metin2_map_c1\003004\attr.atr 1123 22:14:17194 :: 1
+1123 22:14:17194 :: LoadSplatFile metin2_map_c1\003004\tile.raw 1123 22:14:17202 :: CTerrain::RAW_AllocateSplats 7
+1123 22:14:17202 :: CTerrain::LoadShadowTexture 0 ms
+1123 22:14:17203 :: LoadShadowMap metin2_map_c1\003004\shadowmap.raw 1123 22:14:17204 :: 2 ms
+1123 22:14:17204 :: CTerrain::LoadMiniMapTexture 0 ms
+1123 22:14:17206 :: CMapOutdoor::LoadTerrain 16
+1123 22:14:17207 :: CMapOutdoor::LoadArea1 0
+1123 22:14:17207 :: CMapOutdoor::LoadArea2 0
+1123 22:14:17208 :: CMapOutdoor::LoadArea3 0
+1123 22:14:17208 :: Update::Load spent 440 ms
+
+1123 22:14:17252 :: importing from pack game
+1123 22:14:17267 :: importing from pack uiMapNameShower
+1123 22:14:17269 :: importing from pack uiAffectShower
+1123 22:14:17274 :: importing from lib math
+1123 22:14:17274 :: importing from pack collections
+1123 22:14:17277 :: importing from lib _collections
+1123 22:14:17277 :: importing from lib keyword
+1123 22:14:17278 :: importing from lib heapq
+1123 22:14:17278 :: importing from lib itertools
+1123 22:14:17279 :: importing from lib bisect
+1123 22:14:17279 :: importing from lib _bisect
+1123 22:14:17280 :: importing from lib _heapq
+1123 22:14:17280 :: importing from lib thread
+1123 22:14:17281 :: importing from pack uiPlayerGauge
+1123 22:14:17282 :: importing from pack uiCharacter
+1123 22:14:17293 :: importing from pack emotion
+1123 22:14:17295 :: importing from pack uiQuest
+1123 22:14:17299 :: importing from pack uiSkillColor
+1123 22:14:17301 :: importing from pack uiPrivateShopBuilder
+1123 22:14:17305 :: importing from pack consoleModule
+1123 22:14:17309 :: importing from pack interfaceModule
+1123 22:14:17319 :: importing from pack uiTaskBar
+1123 22:14:17324 :: importing from pack uiInventory
+1123 22:14:17333 :: importing from pack uiRefine
+1123 22:14:17336 :: importing from pack uiAttachMetin
+1123 22:14:17337 :: importing from pack uiChat
+1123 22:14:17343 :: importing from pack colorInfo
+1123 22:14:17344 :: importing from pack uiEmoticons
+1123 22:14:17362 :: importing from pack uiMessenger
+1123 22:14:17366 :: importing from pack uiGameOption
+1123 22:14:17371 :: importing from pack uiSelectMusic
+1123 22:14:17373 :: importing from pack uiWhisper
+1123 22:14:17375 :: importing from pack uiPointReset
+1123 22:14:17376 :: importing from pack uiShop
+1123 22:14:17380 :: importing from pack uiExchange
+1123 22:14:17382 :: importing from pack uiSystem
+1123 22:14:17384 :: importing from pack uiOption
+1123 22:14:17386 :: importing from pack uiRestart
+1123 22:14:17387 :: importing from pack uiMiniMap
+1123 22:14:17390 :: importing from pack uiParty
+1123 22:14:17393 :: importing from pack uiSafebox
+1123 22:14:17399 :: importing from pack uiEquipmentDialog
+1123 22:14:17400 :: importing from pack uiGameButton
+1123 22:14:17401 :: importing from pack uiTip
+1123 22:14:17404 :: importing from pack uiCube
+1123 22:14:17407 :: importing from pack uiselectitem
+1123 22:14:17408 :: importing from pack uiGuildRanking
+1123 22:14:17410 :: importing from pack uiSwitchbot
+1123 22:14:17416 :: importing from lib cPickle
+1123 22:14:17417 :: importing from lib cStringIO
+1123 22:14:17417 :: importing from pack uiAcce
+1123 22:14:17420 :: importing from pack uiBiologManager
+1123 22:14:17422 :: importing from pack uiChestDrop
+1123 22:14:17423 :: importing from pack uiSpecialInventory
+1123 22:14:17429 :: importing from pack uiEvent
+1123 22:14:17432 :: importing from lib calendar
+1123 22:14:17432 :: importing from lib datetime
+1123 22:14:17433 :: importing from pack uiCards
+1123 22:14:17435 :: importing from pack uiBattlePass
+1123 22:14:17442 :: importing from pack uiRenderTarget
+1123 22:14:17445 :: importing from pack playersettingmodule
+1123 22:14:17446 :: importing from pack uiOfflineShopBuilder
+1123 22:14:17450 :: importing from pack uiOfflineShop
+1123 22:14:17455 :: importing from pack uisystem
+1123 22:14:17456 :: importing from pack uiPrivateShopSearch
+1123 22:14:17461 :: importing from pack uiWiki
+1123 22:14:17471 :: importing from pack WikiUI
+1123 22:14:17479 :: importing from pack uiSkillSelect
+1123 22:14:17481 :: importing from pack uiDungeonTimer
+1123 22:14:17482 :: importing from pack uiItemShop
+1123 22:14:17493 :: importing from pack uiAura
+1123 22:14:17496 :: importing from pack uiFishGame
+1123 22:14:17497 :: importing from pack uiPetInfo
+1123 22:14:17509 :: importing from pack uiTeleport
+1123 22:14:17511 :: importing from pack uiTrack
+1123 22:14:17515 :: importing from pack uiSpecialChat
+1123 22:14:17516 :: importing from pack uiChangeLook
+1123 22:14:17518 :: importing from pack uiHunting
+1123 22:14:17523 :: importing from pack uiHuntingMapNames
+1123 22:14:17524 :: importing from pack uiMountUpGrade
+1123 22:14:17526 :: importing from pack uiAutoHunt
+1123 22:14:17529 :: importing from pack uiMaintenance
+1123 22:14:17530 :: importing from pack uiShipMastHP
+1123 22:14:17531 :: importing from pack uibkoku
+1123 22:14:17532 :: importing from pack uiruhtasi
+1123 22:14:17610 :: ===== Load Script File : UIScript/CharacterWindow.py1123 22:14:17610 :: 
+1123 22:14:17750 :: ===== Load Script File : UIScript/InventoryWindow.py1123 22:14:17750 :: 
+1123 22:14:17762 :: ===== Load Script File : uiscript/questiondialog.py1123 22:14:17762 :: 
+1123 22:14:17765 :: ===== Load Script File : uiscript/questiondialog.py1123 22:14:17765 :: 
+1123 22:14:17767 :: ===== Load Script File : uiscript/questiondialog2.py1123 22:14:17767 :: 
+1123 22:14:17769 :: ===== Load Script File : uiscript/questiondialog.py1123 22:14:17769 :: 
+1123 22:14:17770 :: ===== Load Script File : uiscript/questiondialog2.py1123 22:14:17771 :: 
+1123 22:14:17773 :: ===== Load Script File : UIScript/PickMoneyDialog.py1123 22:14:17773 :: 
+1123 22:14:17776 :: ===== Load Script File : uiscript/questiondialog2.py1123 22:14:17776 :: 
+1123 22:14:17778 :: ===== Load Script File : uiscript/refinedialog.py1123 22:14:17778 :: 
+1123 22:14:17787 :: ===== Load Script File : uiscript/attachstonedialog.py1123 22:14:17787 :: 
+1123 22:14:17811 :: ===== Load Script File : UIScript/AtlasWindow.py1123 22:14:17811 :: 
+1123 22:14:17822 :: ===== Load Script File : UIScript/MountUpGradeSystemWindow.py1123 22:14:17822 :: 
+1123 22:14:17835 :: ===== Load Script File : UIScript/GuildRanking.py1123 22:14:17835 :: 
+1123 22:14:17910 :: ===== Load Script File : uiscript/BiologManagerWindow.py1123 22:14:17910 :: 
+1123 22:14:17930 :: ===== Load Script File : uiscript/BiologManagerAlert.py1123 22:14:17930 :: 
+1123 22:14:17933 :: ===== Load Script File : UIScript/chestdropwindow.py1123 22:14:17933 :: 
+1123 22:14:17941 :: ===== Load Script File : UiScript/SpecialInventoryWindow.py1123 22:14:17941 :: 
+1123 22:14:17957 :: ===== Load Script File : uiscript/questiondialog.py1123 22:14:17957 :: 
+1123 22:14:17959 :: ===== Load Script File : uiscript/questiondialog2.py1123 22:14:17959 :: 
+1123 22:14:17961 :: ===== Load Script File : uiscript/questiondialog.py1123 22:14:17961 :: 
+1123 22:14:17963 :: ===== Load Script File : uiscript/questiondialog2.py1123 22:14:17963 :: 
+1123 22:14:17965 :: ===== Load Script File : UIScript/PickMoneyDialog.py1123 22:14:17965 :: 
+1123 22:14:17967 :: ===== Load Script File : uiscript/attachstonedialog.py1123 22:14:17968 :: 
+1123 22:14:17979 :: ===== Load Script File : UIScript/EventOverviewWindow.py1123 22:14:17980 :: 
+1123 22:14:18005 :: ===== Load Script File : UIScript/petInformationWindow.py1123 22:14:18005 :: 
+1123 22:14:18047 :: ===== Load Script File : uiscript/questiondialog.py1123 22:14:18047 :: 
+1123 22:14:18049 :: ===== Load Script File : uiscript/questiondialog2.py1123 22:14:18049 :: 
+1123 22:14:18051 :: ===== Load Script File : uiscript/questiondialog.py1123 22:14:18051 :: 
+1123 22:14:18053 :: ===== Load Script File : uiscript/questiondialog.py1123 22:14:18053 :: 
+1123 22:14:18054 :: ===== Load Script File : uiscript/questiondialog2.py1123 22:14:18054 :: 
+1123 22:14:18057 :: ===== Load Script File : uiscript/questiondialog.py1123 22:14:18057 :: 
+1123 22:14:18059 :: ===== Load Script File : UIScript/petHatchingWindow.py1123 22:14:18059 :: 
+1123 22:14:18065 :: ===== Load Script File : uiscript/questiondialog.py1123 22:14:18065 :: 
+1123 22:14:18066 :: ===== Load Script File : UIScript/PopupDialog.py1123 22:14:18066 :: 
+1123 22:14:18068 :: ===== Load Script File : UIScript/petNameChangeWindow.py1123 22:14:18068 :: 
+1123 22:14:18074 :: ===== Load Script File : uiscript/questiondialog.py1123 22:14:18074 :: 
+1123 22:14:18076 :: ===== Load Script File : UIScript/PopupDialog.py1123 22:14:18076 :: 
+1123 22:14:18078 :: ===== Load Script File : UIScript/petMiniInformationWindow.py1123 22:14:18078 :: 
+1123 22:14:18083 :: ===== Load Script File : UIScript/petFeedWindow.py1123 22:14:18083 :: 
+1123 22:14:18087 :: ===== Load Script File : uiscript/questiondialog.py1123 22:14:18087 :: 
+1123 22:14:18088 :: ===== Load Script File : uiscript/questiondialog2.py1123 22:14:18088 :: 
+1123 22:14:18090 :: ===== Load Script File : UIScript/TeleportWindow.py1123 22:14:18091 :: 
+1123 22:14:18109 :: ===== Load Script File : UIScript/exchangedialog.py1123 22:14:18109 :: 
+1123 22:14:18116 :: ===== Load Script File : UIScript/PickMoneyDialog.py1123 22:14:18116 :: 
+1123 22:14:18124 :: ===== Load Script File : uiscript/questiondialog2.py1123 22:14:18124 :: 
+1123 22:14:18126 :: ===== Load Script File : uiscript/questiondialog2.py1123 22:14:18126 :: 
+1123 22:14:18130 :: ===== Load Script File : UIScript/shopdialog.py1123 22:14:18130 :: 
+1123 22:14:18137 :: ===== Load Script File : uiscript/restartdialog.py1123 22:14:18137 :: 
+1123 22:14:18141 :: ===== Load Script File : uiscript/systemdialog.py1123 22:14:18141 :: 
+1123 22:14:18144 :: ===== Load Script File : uiscript/passworddialog.py1123 22:14:18145 :: 
+1123 22:14:18150 :: ===== Load Script File : UIScript/PrivateShopBuilder.py1123 22:14:18150 :: 
+1123 22:14:18153 :: ===== Load Script File : UIScript/battlepasswindow.py1123 22:14:18153 :: 
+1123 22:14:18197 :: ===== Load Script File : uiscript/hunting.py1123 22:14:18197 :: 
+1123 22:14:18211 :: Failed to find data key1123 22:14:18211 ::  1123 22:14:18211 :: [face_icon/image]1123 22:14:18211 :: 
+1123 22:14:18213 :: Failed to find data key1123 22:14:18213 ::  1123 22:14:18213 :: [item_icon/image]1123 22:14:18213 :: 
+1123 22:14:18227 :: ===== Load Script File : uiscript/huntingselect.py1123 22:14:18227 :: 
+1123 22:14:18233 :: Failed to find data key1123 22:14:18233 ::  1123 22:14:18233 :: [face_icon_0/image]1123 22:14:18233 :: 
+1123 22:14:18234 :: Failed to find data key1123 22:14:18234 ::  1123 22:14:18234 :: [item_icon_0/image]1123 22:14:18234 :: 
+1123 22:14:18238 :: Failed to find data key1123 22:14:18238 ::  1123 22:14:18238 :: [face_icon_1/image]1123 22:14:18238 :: 
+1123 22:14:18239 :: Failed to find data key1123 22:14:18239 ::  1123 22:14:18239 :: [item_icon_1/image]1123 22:14:18239 :: 
+1123 22:14:18243 :: ===== Load Script File : uiscript/huntingreward.py1123 22:14:18243 :: 
+1123 22:14:18248 :: Failed to find data key1123 22:14:18248 ::  1123 22:14:18248 :: [item_icon/image]1123 22:14:18248 :: 
+1123 22:14:18251 :: Failed to find data key1123 22:14:18251 ::  1123 22:14:18251 :: [item_icon_random/image]1123 22:14:18251 :: 
+1123 22:14:18255 :: ===== Load Script File : UIScript/TaskBar.py1123 22:14:18255 :: 
+1123 22:14:18277 :: ===== Load Script File : UIScript/MouseButtonWindow.py1123 22:14:18277 :: 
+1123 22:14:18282 :: ===== Load Script File : UIScript/RightMouseButtonWindow.py1123 22:14:18282 :: 
+1123 22:14:18286 :: [DEBUG]: constInfo.IN_GAME_SHOP_ENABLE / self.rampageGauge11123 22:14:18286 ::  1123 22:14:18286 :: 11123 22:14:18286 ::  1123 22:14:18286 :: <ui.AniImageBox object at 0x36A3E0B0>1123 22:14:18286 :: 
+1123 22:14:18287 :: ===== Load Script File : uiscript/giftbox.py1123 22:14:18287 :: 
+1123 22:14:18289 :: ===== Load Script File : UIScript/ExpandedTaskBar.py1123 22:14:18289 :: 
+1123 22:14:18306 :: ===== Load Script File : UIScript/ExpandedMoneyTaskbar.py1123 22:14:18306 :: 
+1123 22:14:18309 :: ===== Load Script File : UIScript/gamewindow.py1123 22:14:18309 :: 
+1123 22:14:18322 :: importing from pack uiWeb
+1123 22:14:18323 :: ===== Load Script File : UIScript/WebWindow.py1123 22:14:18324 :: 
+1123 22:14:18326 :: ===== Load Script File : UIScript/CubeWindow.py1123 22:14:18326 :: 
+1123 22:14:18337 :: ===== Load Script File : UIScript/CubeResultWindow.py1123 22:14:18337 :: 
+1123 22:14:18340 :: ===== Load Script File : UIScript/selectitemwindow.py1123 22:14:18340 :: 
+1123 22:14:18342 :: importing from pack uicuberenewal
+1123 22:14:18346 :: ===== Load Script File : uiscript/cuberenewalwindow.py1123 22:14:18347 :: 
+1123 22:14:18356 :: ===== Load Script File : uiscript/acce_combinewindow.py1123 22:14:18356 :: 
+1123 22:14:18361 :: ===== Load Script File : uiscript/acce_absorbwindow.py1123 22:14:18361 :: 
+1123 22:14:18366 :: ===== Load Script File : UIScript/minigamerumiwaitingpage.py1123 22:14:18366 :: 
+1123 22:14:18370 :: ===== Load Script File : UIScript/minigamerumiwaitingpage.py1123 22:14:18370 :: 
+1123 22:14:18374 :: ===== Load Script File : UIScript/minigamerumigamepage.py1123 22:14:18374 :: 
+1123 22:14:18385 :: ===== Load Script File : UIScript/minigamewindow.py1123 22:14:18385 :: 
+1123 22:14:18387 :: ===== Load Script File : UIScript/SkillSelectWindow.py1123 22:14:18387 :: 
+1123 22:14:18393 :: SYSERR: CResourceManager::GetResourcePointer: File not exist d:/ymir work/ui/game/events/slot.sub
+1123 22:14:18393 :: CResource::Load file not exist d:\ymir work\ui\game\events\slot.sub
+1123 22:14:18408 :: ===== Load Script File : UIScript/MiniMap.py1123 22:14:18408 :: 
+1123 22:14:18434 :: ===== Load Script File : uiscript/RuhTasi.py1123 22:14:18434 :: 
+1123 22:14:18452 :: ===== Load Script File : uiscript/BKOku.py1123 22:14:18452 :: 
+1123 22:14:18523 :: Add affect 7051123 22:14:18523 :: 
+1123 22:14:18562 :: ===== Load Script File : UIScript/PrivateShopSearchDialog.py1123 22:14:18562 :: 
+1123 22:14:18590 :: SYSERR: CResourceManager::GetResourcePointer: File not exist d:/ymir work/ui/game/privatesearch/clear_button_1.tga
+1123 22:14:18591 :: CResource::Load file not exist d:\ymir work\ui\game\privatesearch\clear_button_1.tga
+1123 22:14:18591 :: SYSERR: CResourceManager::GetResourcePointer: File not exist d:/ymir work/ui/game/privatesearch/clear_button_2.tga
+1123 22:14:18591 :: CResource::Load file not exist d:\ymir work\ui\game\privatesearch\clear_button_2.tga
+1123 22:14:18596 :: SYSERR: CResourceManager::GetResourcePointer: File not exist d:/ymir work/ui/game/privatesearch/back_page_2.tga
+1123 22:14:18596 :: CResource::Load file not exist d:\ymir work\ui\game\privatesearch\back_page_2.tga
+1123 22:14:18607 :: ===== Load Script File : uiscript/questiondialog.py1123 22:14:18608 :: 
+1123 22:14:18609 :: ===== Load Script File : uiscript/questiondialog2.py1123 22:14:18609 :: 
+1123 22:14:18612 :: PointWindow: PhaseCurtain
+1123 22:14:18794 :: 
+1123 22:14:18796 :: ## Network - Game Phase ##
+1123 22:14:18797 :: 
+1123 22:14:18798 :: ===== Load Script File : uiscript/dungeontrackwindow.py1123 22:14:18798 :: 
+1123 22:14:18817 :: ===== Load Script File : uiscript/dungeontrackitem.py1123 22:14:18817 :: 
+1123 22:14:18827 :: ===== Load Script File : uiscript/dungeontrackitem.py1123 22:14:18827 :: 
+1123 22:14:18832 :: ===== Load Script File : uiscript/dungeontrackitem.py1123 22:14:18832 :: 
+1123 22:14:18837 :: ===== Load Script File : uiscript/dungeontrackitem.py1123 22:14:18837 :: 
+1123 22:14:18842 :: ===== Load Script File : uiscript/dungeontrackitem.py1123 22:14:18842 :: 
+1123 22:14:18846 :: ===== Load Script File : uiscript/dungeontrackitem.py1123 22:14:18846 :: 
+1123 22:14:18851 :: ===== Load Script File : uiscript/dungeontrackitem.py1123 22:14:18851 :: 
+1123 22:14:18909 ::  CItemManager::SelectItemData - FIND ERROR [0]
+1123 22:14:18910 ::  CItemManager::SelectItemData - FIND ERROR [0]
+1123 22:14:18911 ::  CItemManager::SelectItemData - FIND ERROR [0]
+1123 22:14:18912 :: Add affect 5001123 22:14:18912 :: 
+1123 22:14:18914 :: Add affect 5011123 22:14:18914 :: 
+1123 22:14:18916 :: Add affect 5021123 22:14:18916 :: 
+1123 22:14:18918 :: Add affect 5031123 22:14:18918 :: 
+1123 22:14:18920 :: Add affect 5041123 22:14:18920 :: 
+1123 22:14:18922 :: Add affect 5051123 22:14:18922 :: 
+1123 22:14:18924 :: Add affect 5061123 22:14:18924 :: 
+1123 22:14:19536 :: SYSERR: CResourceManager::GetResourcePointer: File not exist d:/ymir work/zone/공용/hay_01.gr2
+1123 22:14:19537 :: CResource::Load file not exist d:\ymir work\zone\공용\hay_01.gr2
+1123 22:14:19537 :: SYSERR: CArea::SetBuilding: There is no data: d:/ymir work/zone/공용/hay_01.gr2
+1123 22:14:19538 :: SYSERR: CArea::SetBuilding: There is no data: d:/ymir work/zone/공용/hay_01.gr2
+1123 22:14:19544 :: SYSERR: CArea::SetBuilding: There is no data: d:/ymir work/zone/공용/hay_01.gr2
+1123 22:14:19544 :: SYSERR: CArea::SetBuilding: There is no data: d:/ymir work/zone/공용/hay_01.gr2
+1123 22:14:19885 :: NEW EVENT CURTAIN  ----------------------------------------------------------------------------1123 22:14:19885 :: 
+1123 22:14:19896 :: NEW EVENT CURTAIN  ----------------------------------------------------------------------------1123 22:14:19896 :: 
+1123 22:14:19897 :: ---------------------------------------------------------------------------- DELETE EVENT CURTAIN1123 22:14:19897 :: 
+1123 22:14:19906 :: NEW EVENT CURTAIN  ----------------------------------------------------------------------------1123 22:14:19906 :: 
+1123 22:14:19908 :: ---------------------------------------------------------------------------- DELETE EVENT CURTAIN1123 22:14:19908 :: 
+1123 22:14:19919 :: Add affect 5341123 22:14:19919 :: 
+1123 22:14:19922 :: ---------------------------------------------------------------------------- DELETE EVENT CURTAIN1123 22:14:19922 :: 
+1123 22:14:19929 :: Add affect 5351123 22:14:19929 :: 
+1123 22:14:19940 :: Add affect 7051123 22:14:19940 :: 
+1123 22:14:19941 :: Add affect 7061123 22:14:19941 :: 
+1123 22:14:19943 :: PointWindow: game
+1123 22:14:19951 :: Add affect 8301123 22:14:19951 :: 
+1123 22:14:24219 :: PointWindow: TaskBar
+1123 22:14:24295 :: PointWindow: CharacterButton
+1123 22:14:24339 :: PointWindow: InventoryButton
+1123 22:14:24724 :: PointWindow: CharacterButton
+1123 22:14:24735 :: PointWindow: Money_Slot
+1123 22:14:24747 :: PointWindow: ExpanedMoneyTaskBar_Board
+1123 22:14:24757 :: PointWindow: ItemSlot
+1123 22:14:24770 :: PointWindow: game
+1123 22:14:25681 :: PointWindow: board
+1123 22:14:25725 :: PointWindow: ItemSlot
+1123 22:14:26067 :: PointWindow: board
+1123 22:14:26078 :: PointWindow: game
+1123 22:14:26243 :: Update::Load spent 0 ms
+
+1123 22:14:26562 :: PointWindow: LeftMouseButton
+1123 22:14:26632 :: PointWindow: !!debug
+1123 22:14:26903 :: PointWindow: !!debug
+1123 22:14:27354 :: PointWindow: quickslot_board
+1123 22:14:27365 :: PointWindow: game
+1123 22:14:27398 :: PointWindow: ChatWindow
+1123 22:14:27409 :: PointWindow: game
+1123 22:14:29191 :: SYSERR: CNetworkActorManager::RemoveActor(dwVID=2866) - NOT EXIST VID
+1123 22:15:00062 :: PointWindow: game
+1123 22:15:01239 :: PointWindow: NONAME_Window
+1123 22:15:01990 :: PointWindow: game
+1123 22:15:02302 :: PointWindow: OpenWindow
+1123 22:15:02314 :: PointWindow: OpenWindowBGI
+1123 22:15:02327 :: PointWindow: PortableBiologButton
+1123 22:15:02408 :: PointWindow: PortableDungeonInfoButton
+1123 22:15:02422 :: PointWindow: OpenWindowBGI
+1123 22:15:02447 :: PointWindow: game
+1123 22:15:04903 :: PointWindow: MiniMapWindow
+1123 22:15:04948 :: PointWindow: PortableSearchButton
+1123 22:15:04978 :: PointWindow: game
+1123 22:15:13422 :: PointWindow: NONAME_Window
+1123 22:15:13446 :: PointWindow: game
+1123 22:15:43638 :: CActorInstance::InterceptMotion(iLoopType=1, wMotionMode=1, wMotion=11, fBlendTime=0.100000) - GetMotionKey(m_wcurMotionMode=1, wMotion=11, &MotionKey) ERROR
+1123 22:16:05121 :: SYSERR: CResourceManager::GetResourcePointer: File not exist d:/ymir work/ui/public/slotfinishcooltimeeffect/11.sub
+1123 22:16:05122 :: CResource::Load file not exist d:\ymir work\ui\public\slotfinishcooltimeeffect\11.sub
+1123 22:16:43944 :: CResource::Load file not exist d:\ymir work\ui\public\slotfinishcooltimeeffect\11.sub
+1123 22:17:04903 :: PointWindow: Base_Board_01
+1123 22:17:04991 :: PointWindow: Base_Board_01
+1123 22:17:06762 :: PointWindow: EXP_Gauge_Board
+1123 22:17:06773 :: PointWindow: game
+1123 22:17:13131 :: PointWindow: Base_Board_01
+1123 22:17:13141 :: PointWindow: AntiExpButton
+1123 22:17:13505 :: PointWindow: Base_Board_01
+1123 22:17:14572 :: PointWindow: !!debug
+1123 22:17:14585 :: PointWindow: game
+1123 22:17:15132 :: recv ping packet. (securitymode 1)
+1123 22:17:15133 :: HANDSHAKE RECV 2428462 0
+1123 22:17:15133 :: HANDSHAKE SEND 2428462
+1123 22:17:15221 :: HANDSHAKE OK RECV 2428462 88
+1123 22:17:16793 :: PointWindow: Base_Board_01
+1123 22:17:16859 :: PointWindow: AntiExpButton
+1123 22:17:17256 :: PointWindow: Base_Board_01
+1123 22:17:17354 :: PointWindow: TaskBar
+1123 22:17:17366 :: PointWindow: game
+1123 22:17:19214 :: PointWindow: !!debug
+1123 22:17:20094 :: PointWindow: ExpandButton
+1123 22:17:20104 :: PointWindow: game
+1123 22:17:26968 :: PointWindow: quickslot_board
+1123 22:17:26979 :: PointWindow: !!debug
+1123 22:17:26992 :: PointWindow: NONAME_Window
+1123 22:17:35006 :: 
+1123 22:17:35007 :: ## Network - OffLine Phase ##
+1123 22:17:35007 :: 
+1123 22:17:35008 :: FadeOutMusic: BGM/M2BG.mp3 - ERROR NOT EXIST
+1123 22:17:35023 :: ===================================================== DESTROYED TARGET BOARD1123 22:17:35023 :: 
+1123 22:17:35024 ::  -------------------------------------- DESTROY GAME OPTION DIALOG1123 22:17:35024 :: 
+1123 22:17:35024 ::  -------------------------------------- DELETE GAME OPTION DIALOG1123 22:17:35024 :: 
+1123 22:17:35025 ::  -------------------------------------- DESTROY GAME OPTION DIALOG1123 22:17:35025 :: 
+1123 22:17:35025 ::  -------------------------------------- DELETE GAME OPTION DIALOG1123 22:17:35025 :: 
+1123 22:17:35040 :: ===== Load Script File : uiscript/BiologManagerWindow.py1123 22:17:35040 :: 
+1123 22:17:35056 ::  =============================== DESTROIED PartyWindow1123 22:17:35057 :: 
+1123 22:17:35062 :: ---------------------------------------------------------------------------- CLOSE GAME WINDOW1123 22:17:35063 :: 
+1123 22:17:35063 :: ===== Load Script File : UIScript/loginwindow.py1123 22:17:35063 :: 
+1123 22:17:38695 :: Failed to connect.
+1123 22:17:40741 :: PointWindow: LoginWindow
+1123 22:18:46295 :: PointWindow: LoginWindow
+1123 22:18:46614 :: PointWindow: Background
+1123 22:18:47450 :: PointWindow: Language_3_Button
+1123 22:18:47582 :: PointWindow: LanguageBoard
+1123 22:18:47648 :: PointWindow: Language_2_Button
+1123 22:18:47670 :: PointWindow: LanguageBoard
+1123 22:18:47704 :: PointWindow: Background
+1123 22:18:47748 :: PointWindow: LoginBoard
+1123 22:18:47781 :: PointWindow: ChannelBoard
+1123 22:18:47990 :: PointWindow: LoginBoard
+1123 22:18:48220 :: PointWindow: LoginButton
+1123 22:18:50674 :: PointWindow: LoginBoard
+1123 22:18:56240 :: PointWindow: LoginButton
+1123 22:18:56350 :: PointWindow: Background
+1123 22:18:56371 :: PointWindow: LanguageBoard
+1123 22:18:56394 :: PointWindow: Language_5_Button
+1123 22:18:56636 :: PointWindow: Language_3_Button
+1123 22:18:56658 :: PointWindow: Background
+1123 22:18:04237 :: PointWindow: LoginWindow
+1123 22:18:11144 :: PointWindow: LoginWindow
+1123 22:18:12651 :: PointWindow: LoginWindow
+1123 22:18:14950 :: PointWindow: LoginWindow
+1123 22:18:15006 :: PointWindow: Background
+1123 22:18:15082 :: PointWindow: LoginWindow
+1123 22:18:15193 :: PointWindow: Background
+1123 22:18:15446 :: PointWindow: AccountBoard
+1123 22:18:15468 :: PointWindow: Load_1_Button
+1123 22:18:15478 :: PointWindow: Delete_1_Button
+1123 22:18:15490 :: PointWindow: Load_1_Button
+1123 22:18:15555 :: PointWindow: AccountBoard
+1123 22:18:15610 :: PointWindow: Load_0_Button
+1123 22:18:15754 :: PointWindow: AccountBoard
+1123 22:18:16051 :: PointWindow: Account_0_Flag
+1123 22:18:16095 :: PointWindow: Load_0_Button
+1123 22:18:16117 :: PointWindow: AccountBoard
+1123 22:18:16139 :: PointWindow: Account_1_Flag
+1123 22:18:16282 :: PointWindow: Load_1_Button
+1123 22:18:16303 :: PointWindow: AccountBoard
+1123 22:18:16370 :: PointWindow: LoginBoard
+1123 22:18:16589 :: PointWindow: ID_EditLine
+1123 22:18:16908 :: PointWindow: AccountBoard
+1123 22:18:16930 :: PointWindow: Load_0_Button
+1123 22:18:16942 :: PointWindow: Account_0_Flag
+1123 22:18:16963 :: PointWindow: AccountBoard
+1123 22:18:17063 :: PointWindow: Background
+1123 22:18:17172 :: PointWindow: ConnectBoard
+1123 22:18:18943 :: PointWindow: Background
+1123 22:18:18965 :: PointWindow: LoginBoard
+1123 22:18:18998 :: PointWindow: ID_EditLine_Input
+1123 22:18:19009 :: PointWindow: AccountBoard
+1123 22:18:19031 :: PointWindow: Load_1_Button
+1123 22:18:19042 :: PointWindow: Load_2_Button
+1123 22:18:19054 :: PointWindow: Load_3_Button
+1123 22:18:19064 :: PointWindow: Background
+1123 22:18:19108 :: PointWindow: LoginWindow
+1123 22:18:22376 :: PointWindow: LoginWindow
+1123 22:18:22431 :: PointWindow: Background
+1123 22:18:22518 :: PointWindow: AccountBoard
+1123 22:18:22533 :: PointWindow: Load_3_Button
+1123 22:18:22541 :: PointWindow: AccountBoard
+1123 22:18:22552 :: PointWindow: Load_2_Button
+1123 22:18:22585 :: PointWindow: AccountBoard
+1123 22:18:22618 :: PointWindow: Load_1_Button
+1123 22:18:22629 :: PointWindow: AccountBoard
+1123 22:18:22640 :: PointWindow: Load_0_Button
+1123 22:18:22650 :: PointWindow: AccountBoard
+1123 22:18:22662 :: PointWindow: Background

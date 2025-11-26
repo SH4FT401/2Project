@@ -32,7 +32,7 @@
 *.exe
 *.out
 *.app
-/Client
+# Client folder is now tracked (large files use Git LFS)
 
 # Visual Studio cache files
 .vs/
