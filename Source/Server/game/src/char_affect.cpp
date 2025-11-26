@@ -770,7 +770,7 @@ void CHARACTER::ComputeAffect(CAffect * pkAff, bool bAdd, bool bTemp)
 	}
 }
 
-bool CHARACTER::RemoveAffect(CAffect * pkAff)
+bool CHARACTER::RemoveAffect(CAffect* pkAff, bool single)	//@fixme433
 {
 	if (!pkAff)
 		return false;
@@ -781,17 +781,23 @@ bool CHARACTER::RemoveAffect(CAffect * pkAff)
 
 	ComputeAffect(pkAff, false);
 
-#ifdef ENABLE_INVISIBILITY_BUG_FIX
-	if (AFFECT_REVIVE_INVISIBLE != pkAff->dwType && AFFECT_MOUNT != pkAff->dwType && SKILL_TANHWAN != pkAff->dwType)
-		ComputePoints();
-	else
-		UpdatePacket();
-#else
-	if (AFFECT_REVIVE_INVISIBLE != pkAff->dwType)
-	{
-		ComputePoints();
+	/*
+	* Fix white flag bug.
+	* The white flag bug occurs when attacking immediately after casting buff skill -> transforming -> using white flag (AFFECT_REVIVE_INVISIBLE).
+	* The reason is that at the time of casting the disguise, only the disguise effect is applied, ignoring the buff skill effect,
+	* If you attack immediately after using the white flag, RemoveAffect is called, and it becomes a disguise effect + buff skill effect while doing ComputePoints.
+	* If you are disguised in ComputePoints, you can make the buff skill effect not work,
+	* ComputePoints are widely used, so I'm reluctant to make big changes (it's hard to know what side effects will happen).
+	* Therefore, it is modified only when AFFECT_REVIVE_INVISIBLE is deleted with RemoveAffect.
+	* If the time runs out and the white flag is released, no bug occurs, so do the same.
+	* (If you look at ProcessAffect, if the time runs out and the Affect is deleted, ComputePoints is not called.)
+	*/
+	if (single) {	//@fixme433
+		if (AFFECT_REVIVE_INVISIBLE != pkAff->dwType)
+			ComputePoints();
+		else  // @fixme110
+			UpdatePacket();
 	}
-#endif
 
 	CheckMaximumPoints();
 

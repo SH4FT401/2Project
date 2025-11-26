@@ -1082,7 +1082,7 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider
 
 		CAffect * FindAffect(DWORD dwType, BYTE bApply=APPLY_NONE) const;
 		const std::list<CAffect *> & GetAffectContainer() const	{ return m_list_pkAffect; }
-		bool RemoveAffect(CAffect * pkAff);
+		bool RemoveAffect(CAffect* pkAff, bool single = true); //@fixme433
 
 	protected:
 		bool m_bIsLoadedAffect;

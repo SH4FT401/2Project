@@ -162,7 +162,6 @@
 #define ENABLE_WEDDING_COSTUME_EQUIP_FIX			// Gelinlik/smokýn giyiliyken kostüm giyememe veya çakýþma sorununu giderir
 #define ENABLE_EQUIPPED_ITEM_STORAGE_FIX			// Takýlý (equipli) itemlerin depoya konabilmesiyle oluþan bug’ý engeller
 #define ENABLE_QUEST_PC_SELECT_FIX					// Quest komutu pc.select ile ilgili seçim / hedefleme sorunlarýný düzeltir
-#define ENABLE_INVISIBILITY_BUG_FIX					// Görünmezlik ile ilgili genel görünürlük / hedeflenebilirlik hatalarýný düzeltir
 #define ENABLE_PARTY_DUNGEON_CORE_FIX				// Grup halinde zindanda oluþan core crash / senkron sorunlarýný giderir
 #define ENABLE_PARTY_FLAG_CHANGE_FIX				// Gruptayken bayrak (empire) deðiþtirme hatasýný / kýsýtýný düzeltir
 #define ENABLE_HORSE_SPAWN_EXPLOIT_FIX				// At çaðýrma / horse spawn ile yapýlan exploit ve kötüye kullanýmlarý engeller
@@ -207,4 +206,8 @@
 	#endif
 /*** TAMAMLANMAMIÞ SÝSTEMLER (YAKINDA) ***/
 
+/*
+#@GENEL
+@fixme433: char_affect.cpp dosyasýnda, Bedensel Savaþçý'nýn Hamle becerisi kullandýðýnda HP düþmesi, Büyülü Silah Sura’nýn Çözme ve Ýyileþtirici Þaman’ýn þifa gecikmesi hatasý düzeltildi.
+*/
 #endif
