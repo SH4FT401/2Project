@@ -62,6 +62,38 @@
 
 ---
 
+### 4. Item Sil/Sat/Düþür ve Battle Pass Pencerelerinde Tooltip Kalma Sorunu Düzeltme
+
+**Sorun:** 
+- Item yere atýldýðýnda açýlan diyalog penceresinde (ItemQuestionDialog) item'in tooltip'i gösteriliyordu
+- ESC ile kapatýldýðýnda tooltip ekranda kalýyordu
+- Battle Pass penceresi ESC ile kapatýldýðýnda tooltip'ler ekranda kalýyordu
+- Mission list item'larýndaki tooltip'ler de ekranda kalýyordu
+
+**Yapýlan Deðiþiklikler:**
+
+#### 4.1 ItemQuestionDialog Tooltip Temizleme
+- `Tools/binary_unpack/root/uicommon.py` (satýr 701-710):
+  - `Close()` metoduna tooltip temizleme eklendi
+  - `tooltipItem` için `HideToolTip()` ve `ClearToolTip()` çaðrýlýyor
+  - ESC ile kapatýldýðýnda tooltip ekranda kalmýyor
+
+#### 4.2 BattlePassWindow Tooltip Temizleme
+- `Tools/binary_unpack/root/uibattlepass.py` (satýr 82-120):
+  - `Close()` metoduna kapsamlý tooltip temizleme eklendi
+  - Merkezi tooltip sistemi (`ToolTip._allToolTips`) kullanýlarak tüm tooltip'ler temizleniyor
+  - Kendi tooltip'leri (`tooltipItem`, `tooltip`) temizleniyor
+  - Mission list içindeki tüm item'larýn tooltip'leri temizleniyor (normal ve premium listeler)
+  - ESC ile kapatýldýðýnda tüm tooltip'ler ekranda kalmýyor
+
+**Etkilenen Dosyalar:**
+- `Tools/binary_unpack/root/uicommon.py` (ItemQuestionDialog.Close fonksiyonu)
+- `Tools/binary_unpack/root/uibattlepass.py` (BattlePassWindow.Close fonksiyonu)
+
+**Sonuç:** ? Item sil/sat/düþür diyalog penceresi ve Battle Pass penceresi ESC ile kapatýldýðýnda tooltip'ler ekranda kalmýyor. Tüm tooltip'ler düzgün þekilde temizleniyor.
+
+---
+
 ## Özet
 
 | # | Deðiþiklik | Dosya Sayýsý | Durum |
@@ -69,8 +101,9 @@
 | 1 | NPC/Binek/Pet'lere Skill Damage ve Boss Saldýrý Hatasý Düzeltme | 1 | ? Tamamlandý |
 | 2 | Zindan Haritalarýnda Kat Atlatma Nesnelerinin + Basma Hatasý Düzeltme | 1 | ? Tamamlandý |
 | 3 | Dil Deðiþtirme Esnasýnda HORSE_LEVEL4 Hatasý Düzeltme | 1 | ? Tamamlandý |
+| 4 | Item Sil/Sat/Düþür ve Battle Pass Pencerelerinde Tooltip Kalma Sorunu Düzeltme | 2 | ? Tamamlandý |
 
-**Toplam:** 3 dosya deðiþtirildi (bug fix'ler ile)
+**Toplam:** 5 dosya deðiþtirildi (bug fix'ler ile)
 
 ---
 
@@ -82,3 +115,5 @@
 - Bosslar birbirine skill ile saldýramýyor (`ComputeSkill` fonksiyonunda kontrol eklendi)
 - Zindan haritalarýnda kat atlatma nesnelerinin + basma iþlemi sorunsuz çalýþýyor
 - Dil deðiþtirme esnasýnda `HORSE_LEVEL4` hatasý oluþmuyor
+- Item sil/sat/düþür diyalog penceresi ESC ile kapatýldýðýnda tooltip'ler temizleniyor
+- Battle Pass penceresi ESC ile kapatýldýðýnda tüm tooltip'ler (merkezi sistem, mission item'larý dahil) temizleniyor

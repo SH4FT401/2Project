@@ -699,6 +699,11 @@ class ItemQuestionDialog(ui.ScriptWindow):
 			self.tooltipItem.ClearToolTip()
 
 	def Close(self):
+		# Tooltip'i temizle - ESC ile kapatýldýðýnda tooltip ekranda kalmasýn
+		if self.tooltipItem and self.tooltipItem != 0:
+			self.tooltipItem.HideToolTip()
+			self.tooltipItem.ClearToolTip()
+		
 		self.ClearDictionary()
 		self.slotList = []
 		self.titleBar = None

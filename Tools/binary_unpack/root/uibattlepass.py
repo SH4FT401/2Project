@@ -80,6 +80,49 @@ class BattlePassWindow(ui.ScriptWindow):
 		ui.ScriptWindow.Show(self)
 
 	def Close(self):
+		# Tooltip'leri temizle - ESC ile kapatýldýðýnda tooltip ekranda kalmasýn
+		# Merkezi tooltip sistemini kullanarak tüm tooltip'leri gizle
+		if hasattr(uiToolTip.ToolTip, '_allToolTips'):
+			for tooltip in uiToolTip.ToolTip._allToolTips:
+				if tooltip:
+					try:
+						if hasattr(tooltip, 'IsShow'):
+							if tooltip.IsShow():
+								tooltip.HideToolTip()
+						else:
+							# IsShow metodu yoksa direkt HideToolTip çaðýr
+							if hasattr(tooltip, 'HideToolTip'):
+								tooltip.HideToolTip()
+							if hasattr(tooltip, 'Hide'):
+								tooltip.Hide()
+					except:
+						pass
+		
+		# Kendi tooltip'lerini de temizle
+		if self.tooltipItem and self.tooltipItem != 0:
+			self.tooltipItem.HideToolTip()
+			self.tooltipItem.ClearToolTip()
+		
+		if self.tooltip and self.tooltip != 0:
+			self.tooltip.Hide()
+			self.tooltip.ClearToolTip()
+		
+		# Mission list içindeki tüm item'larýn tooltip'lerini temizle
+		if self.missionList:
+			# Normal mission list
+			if hasattr(self.missionList, 'missionlist_type_normal'):
+				for item in self.missionList.missionlist_type_normal:
+					if item and hasattr(item, 'tooltipItem') and item.tooltipItem:
+						item.tooltipItem.HideToolTip()
+						item.tooltipItem.ClearToolTip()
+			
+			# Premium mission list
+			if hasattr(self.missionList, 'missionlist_type_premium'):
+				for item in self.missionList.missionlist_type_premium:
+					if item and hasattr(item, 'tooltipItem') and item.tooltipItem:
+						item.tooltipItem.HideToolTip()
+						item.tooltipItem.ClearToolTip()
+		
 		self.Hide()
 
 	def Destroy(self):
