@@ -1,0 +1,21 @@
+﻿  StdAfx.cpp
+  CPostIt.cpp
+  CRC32.cpp
+  Debug.cpp
+  FileBase.cpp
+  FileDir.cpp
+  FileLoader.cpp
+  MappedFile.cpp
+  Base.cpp
+  Poly.cpp
+  SymTable.cpp
+  Symbol.cpp
+  Random.cpp
+  Stl.cpp
+  TempFile.cpp
+  Timer.cpp
+  Utils.cpp
+  error.cpp
+  lzo.cpp
+  tea.cpp
+  EterBase.vcxproj -> C:\M2Project_1.2\Source\Binary\vs_files\EterBase\Release\EterBase.lib

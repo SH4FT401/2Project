@@ -1,0 +1,19 @@
+﻿  StdAfx.cpp
+  LODController.cpp
+  Material.cpp
+  Mesh.cpp
+  Model.cpp
+  ModelInstance.cpp
+  ModelInstanceCollisionDetection.cpp
+  ModelInstanceModel.cpp
+  ModelInstanceMotion.cpp
+  ModelInstanceRender.cpp
+  ModelInstanceUpdate.cpp
+  Motion.cpp
+  Thing.cpp
+  ThingInstance.cpp
+  Util.cpp
+C:\M2Project_1.2\Source\Binary\source\EterGrnLib\LODController.cpp(433,129): warning C5055: '+' işleci: numaralandırmalar ile kayan nokta türleri arasında kullanım dışı
+  ('/source/EterGrnLib/LODController.cpp' kaynak dosyası derleniyor)
+  
+  EterGrnLib.vcxproj -> C:\M2Project_1.2\Source\Binary\vs_files\EterGrnLib\Release\EterGrnLib.lib
