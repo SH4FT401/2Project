@@ -25,6 +25,8 @@
 *.la
 *.a
 *.lib
+# Exception: FoxFS_Src library files (tracked with Git LFS)
+!FoxFS_Src/**/*.lib
 
 # Executables
 *.exe
