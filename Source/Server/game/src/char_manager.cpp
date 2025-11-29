@@ -121,14 +121,14 @@ void CHARACTER_MANAGER::DestroyCharacter(LPCHARACTER ch)
 		return; // prevent duplicated destrunction
 	}
 
-	if (ch->IsNPC() && !ch->IsPet()
+	// Monsters belonging to the dungeon should also be deleted from the dungeon.
+	if (ch->IsNPC() && !ch->IsPet() && ch->GetRider() == NULL
 #ifdef ENABLE_GROWTH_PET_SYSTEM
 		&& !ch->IsGrowthPet()
-        #ifdef ENABLE_BOT_PLAYER
-		&& !ch->IsBotCharacter()
-        #endif
 #endif
-		&& ch->GetRider() == NULL
+#ifdef ENABLE_BOT_PLAYER
+		&& !ch->IsBotCharacter()
+#endif
 		)
 	{
 		if (ch->GetDungeon())
@@ -144,6 +144,22 @@ void CHARACTER_MANAGER::DestroyCharacter(LPCHARACTER ch)
 	}
 
 	m_map_pkChrByVID.erase(it);
+
+#ifdef __AUTO_HUNT__
+	// AUTO_HUNT rezervasyon temizliði - karakter silinmeden önce
+	// Eðer bu karakter bir hedef olarak rezerve edilmiþse (metin taþý veya mob), rezervasyonu temizle
+	DWORD dwTargetVID = ch->GetVID();
+	if (dwTargetVID != 0)
+	{
+		ReleaseTarget(dwTargetVID);
+	}
+	
+	// Eðer bu karakter bir PC ise ve AUTO_HUNT aktifse, onun rezerve ettiði tüm hedefleri temizle
+	if (ch->IsPC() && ch->GetPlayerID() != 0)
+	{
+		ReleaseAllTargetsByPlayer(ch->GetPlayerID());
+	}
+#endif
 
 	if (true == ch->IsPC())
 	{
@@ -179,6 +195,7 @@ LPCHARACTER CHARACTER_MANAGER::Find(DWORD dwVID)
 	if (m_map_pkChrByVID.end() == it)
 		return NULL;
 
+	// <Factor> Added sanity check
 	LPCHARACTER found = it->second;
 	if (found != NULL && dwVID != (DWORD)found->GetVID())
 	{
@@ -205,6 +222,7 @@ LPCHARACTER CHARACTER_MANAGER::FindByPID(DWORD dwPID)
 	if (m_map_pkChrByPID.end() == it)
 		return NULL;
 
+	// <Factor> Added sanity check
 	LPCHARACTER found = it->second;
 	if (found != NULL && dwPID != found->GetPlayerID())
 	{
@@ -234,6 +252,7 @@ LPCHARACTER CHARACTER_MANAGER::FindPC(const char * name)
 
 LPCHARACTER CHARACTER_MANAGER::SpawnMobRandomPosition(DWORD dwVnum, long lMapIndex)
 {
+	// Allows you to decide why or not to spawn
 	{
 		if (dwVnum == 5001 && !quest::CQuestManager::instance().GetEventFlag("japan_regen"))
 		{
@@ -242,6 +261,7 @@ LPCHARACTER CHARACTER_MANAGER::SpawnMobRandomPosition(DWORD dwVnum, long lMapInd
 		}
 	}
 
+	// Allows you to decide whether or not to spawn a hatchet
 	{
 		if (dwVnum == 5002 && !quest::CQuestManager::instance().GetEventFlag("newyear_mob"))
 		{
@@ -250,6 +270,7 @@ LPCHARACTER CHARACTER_MANAGER::SpawnMobRandomPosition(DWORD dwVnum, long lMapInd
 		}
 	}
 
+	// Liberation Day event
 	{
 		if (dwVnum == 5004 && !quest::CQuestManager::instance().GetEventFlag("independence_day"))
 		{

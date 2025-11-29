@@ -1,5 +1,5 @@
 #include "StdAfx.h"
-#include "../eterlib/Camera.h"
+#include "../EterLib/Camera.h"
 #include "../PRTerrainLib/StdAfx.h"
 
 #include "MapOutdoor.h"
@@ -189,14 +189,17 @@ void CMapOutdoor::UpdateAroundAmbience(float fX, float fY, float fZ)
 
 void CMapOutdoor::__UpdateArea(D3DXVECTOR3& v3Player)
 {
+#ifdef WORLD_EDITOR
+	__NEW_WorldEditor_UpdateArea();
+#else
 	__Game_UpdateArea(v3Player);
+#endif
 }
 
 void CMapOutdoor::__Game_UpdateArea(D3DXVECTOR3& v3Player)
 {
 	m_PCBlockerVector.clear();
 	m_ShadowReceiverVector.clear();
-
 	CCameraManager& rCmrMgr=CCameraManager::Instance();
 	CCamera * pCamera = rCmrMgr.GetCurrentCamera();
 	if (!pCamera)
@@ -211,13 +214,31 @@ void CMapOutdoor::__Game_UpdateArea(D3DXVECTOR3& v3Player)
 	D3DXVECTOR3 v3Light = D3DXVECTOR3(1.732f, 1.0f, -3.464f);
 	v3Light *= 50.0f / D3DXVec3Length(&v3Light);
 
+#ifdef ENABLE_RENDERING_ONLY_IN_AREA_V2
 	__UpdateAroundAreaList(v3Player);
+#endif
 	__CollectShadowReceiver(v3Player, v3Light);
 	__CollectCollisionPCBlocker(v3Eye, v3Player, fDistance);
 	__CollectCollisionShadowReceiver(v3Player, v3Light);
+#ifndef ENABLE_RENDERING_ONLY_IN_AREA_V2
+	__UpdateAroundAreaList();
+#endif
 }
 
+#ifdef WORLD_EDITOR
+void CMapOutdoor::__NEW_WorldEditor_UpdateArea()
+{
+	m_PCBlockerVector.clear();
+	m_ShadowReceiverVector.clear();
+	__UpdateAroundAreaList();
+}
+#endif
+
+#ifdef ENABLE_RENDERING_ONLY_IN_AREA_V2
 void CMapOutdoor::__UpdateAroundAreaList(D3DXVECTOR3& v3Player)
+#else
+void CMapOutdoor::__UpdateAroundAreaList()
+#endif
 {
 	DWORD at[AROUND_AREA_NUM];
 	for (int i = 0; i < AROUND_AREA_NUM; ++i)
@@ -225,7 +246,11 @@ void CMapOutdoor::__UpdateAroundAreaList(D3DXVECTOR3& v3Player)
 		DWORD t1=timeGetTime();
 		CArea * pArea;
 		if (GetAreaPointer(i, &pArea))
+#ifdef ENABLE_RENDERING_ONLY_IN_AREA_V2
 			pArea->Update(v3Player);
+#else
+			pArea->Update();
+#endif
 		DWORD t2=timeGetTime();
 
 		at[i]=t2-t1;
@@ -269,7 +294,7 @@ struct FGetShadowReceiverFromHeightData
 		return m_dwCollectCount;
 	}
 
-	void operator () (CGraphicObjectInstance * pInstance)
+	void operator()(CGraphicObjectInstance * pInstance)
 	{
 		m_dwCheckCount++;
 
@@ -283,8 +308,8 @@ struct FGetShadowReceiverFromHeightData
 		if (pInstance->GetObjectHeight(m_fFromX, m_fFromY, &m_fReturnHeight) ||
 			pInstance->GetObjectHeight(m_fToX, m_fToY, &m_fReturnHeight))
 		{
-			if (m_dwCollectCount<COLLECT_MAX)
-				m_apkShadowReceiver[m_dwCollectCount++]=pInstance;
+			if (m_dwCollectCount < COLLECT_MAX)
+				m_apkShadowReceiver[m_dwCollectCount++] = pInstance;
 			else
 				m_dwCollectOverCount++;
 
@@ -294,7 +319,7 @@ struct FGetShadowReceiverFromHeightData
 };
 
 
-void CMapOutdoor::__CollectShadowReceiver(D3DXVECTOR3& v3Target, D3DXVECTOR3& v3Light)
+void CMapOutdoor::__CollectShadowReceiver(D3DXVECTOR3 & v3Target, D3DXVECTOR3 & v3Light)
 {
 	CDynamicSphereInstance s;
 	s.v3LastPosition = v3Target + v3Light;
@@ -335,15 +360,15 @@ struct PCBlocker_SInstanceList
 	DWORD m_dwBlockerOverCount;
 
 	Item m_apkPCBlocker[CAPACITY];
-	
-	PCBlocker_CDynamicSphereInstanceVector* m_pkDSIVector;
-	
+
+	PCBlocker_CDynamicSphereInstanceVector * m_pkDSIVector;
+
 	CCamera * m_pCamera;
 	D3DXVECTOR2 m_v2View;
 	D3DXVECTOR2 m_v2Target;
-	
-	PCBlocker_SInstanceList(PCBlocker_CDynamicSphereInstanceVector* pkDSIVector)
-	{		
+
+	PCBlocker_SInstanceList(PCBlocker_CDynamicSphereInstanceVector * pkDSIVector)
+	{
 		m_pCamera = CCameraManager::Instance().GetCurrentCamera();
 		if (!m_pCamera)
 			return;
@@ -357,10 +382,10 @@ struct PCBlocker_SInstanceList
 		m_v2Target.x = m_v3Target.x;
 		m_v2Target.y = m_v3Target.y;
 
-		m_pkDSIVector=pkDSIVector;
-		m_dwBlockerCount=0;
-		m_dwBlockerOverCount=0;
-		m_dwInstCount=0;
+		m_pkDSIVector = pkDSIVector;
+		m_dwBlockerCount = 0;
+		m_dwBlockerOverCount = 0;
+		m_dwInstCount = 0;
 	}
 	~PCBlocker_SInstanceList()
 	{
@@ -393,7 +418,7 @@ struct PCBlocker_SInstanceList
 
 	bool IsEmpty()
 	{
-		if (m_dwBlockerCount>0)
+		if (m_dwBlockerCount > 0)
 			return false;
 
 		return true;
@@ -401,8 +426,8 @@ struct PCBlocker_SInstanceList
 
 	void __AppendPCBlocker(CGraphicObjectInstance * pInstance)
 	{
-		if (m_dwBlockerCount<CAPACITY)
-			m_apkPCBlocker[m_dwBlockerCount++]=pInstance;
+		if (m_dwBlockerCount < CAPACITY)
+			m_apkPCBlocker[m_dwBlockerCount++] = pInstance;
 		else
 			m_dwBlockerOverCount++;
 	}
@@ -501,7 +526,7 @@ void CMapOutdoor::__CollectCollisionPCBlocker(D3DXVECTOR3& v3Eye, D3DXVECTOR3& v
 	{
 		PCBlocker_SInstanceList::Iterator i;
 
-		for (i=kPCBlockerList.Begin(); i!=kPCBlockerList.End(); ++i)
+		for (i = kPCBlockerList.Begin(); i != kPCBlockerList.End(); ++i)
 		{
 			CGraphicObjectInstance * pObjInstEach = *i;
 
@@ -563,6 +588,7 @@ bool CMapOutdoor::__IsInPCBlockerList(CGraphicObjectInstance* pkObjInstTest)
 	return true;
 }
 
+// Updates the position of the terrain
 void CMapOutdoor::UpdateTerrain(float fX, float fY)
 {
 	if (fY < 0)
@@ -576,12 +602,12 @@ void CMapOutdoor::UpdateTerrain(float fX, float fY)
 
 	m_lCenterX = (sx - m_lCurCoordStartX) / lDivider;
 	m_lCenterY = (sy - m_lCurCoordStartY) / lDivider;
-	
+
 	if ((m_lCenterX != m_lOldReadX) || (m_lCenterY != m_lOldReadY))
 	{
 		long lRealCenterX = m_lCenterX * TERRAIN_PATCHSIZE;
 		long lRealCenterY = m_lCenterY * TERRAIN_PATCHSIZE;
-		m_lOldReadX = m_lCenterX; 
+		m_lOldReadX = m_lCenterX;
 		m_lOldReadY = m_lCenterY;
 
 		ConvertTerrainToTnL(lRealCenterX, lRealCenterY);
@@ -748,15 +774,15 @@ void CMapOutdoor::UpdateAreaList(long lCenterX, long lCenterY)
 
 		for (DWORD dwIndex = 0; dwIndex < rPushTerrainToDeleteVector.m_ReturnTerrainVector.size(); ++dwIndex)
 		{
-			bool isDel=false;
+			bool isDel = false;
 			TTerrainPtrVectorIterator aTerrainPtrItertor = m_TerrainVector.begin();
-			while(aTerrainPtrItertor != m_TerrainVector.end())
+			while (aTerrainPtrItertor != m_TerrainVector.end())
 			{
 				CTerrain * pTerrain = *aTerrainPtrItertor;
 				if (pTerrain == rPushTerrainToDeleteVector.m_ReturnTerrainVector[dwIndex])
 				{
 					aTerrainPtrItertor = m_TerrainVector.erase(aTerrainPtrItertor);
-					isDel=true;
+					isDel = true;
 				}
 				else
 					++aTerrainPtrItertor;
@@ -766,12 +792,13 @@ void CMapOutdoor::UpdateAreaList(long lCenterX, long lCenterY)
 	if (!rPushAreaToDeleteVector.m_ReturnAreaVector.empty())
 	{
 		m_AreaDeleteVector.resize(rPushAreaToDeleteVector.m_ReturnAreaVector.size());
-		std::copy(rPushAreaToDeleteVector.m_ReturnAreaVector.begin(), rPushAreaToDeleteVector.m_ReturnAreaVector.end(), m_AreaDeleteVector.begin());
+		std::copy(rPushAreaToDeleteVector.m_ReturnAreaVector.begin(), rPushAreaToDeleteVector.m_ReturnAreaVector.end(),
+				  m_AreaDeleteVector.begin());
 
 		for (DWORD dwIndex = 0; dwIndex < rPushAreaToDeleteVector.m_ReturnAreaVector.size(); ++dwIndex)
 		{
 			TAreaPtrVectorIterator aAreaPtrItertor = m_AreaVector.begin();
-			while(aAreaPtrItertor != m_AreaVector.end())
+			while (aAreaPtrItertor != m_AreaVector.end())
 			{
 				CArea * pArea = *aAreaPtrItertor;
 				if (pArea == rPushAreaToDeleteVector.m_ReturnAreaVector[dwIndex])
@@ -791,8 +818,8 @@ void CMapOutdoor::ConvertTerrainToTnL(long lx, long ly)
 	for (long i = 0; i < m_wPatchCount * m_wPatchCount; i++)
 		m_pTerrainPatchProxyList[i].SetUsed(false);
 
-	lx -= m_lViewRadius;
-	ly -= m_lViewRadius;
+	lx -= m_lViewRadius; /* Move to the top left corner of the */
+	ly -= m_lViewRadius; /* input rectangle */
 
 	long diameter = m_lViewRadius * 2;
 
@@ -801,7 +828,7 @@ void CMapOutdoor::ConvertTerrainToTnL(long lx, long ly)
 	long x1 = ( lx + diameter - 1 ) / TERRAIN_PATCHSIZE;
 	long y1 = ( ly + diameter - 1 ) / TERRAIN_PATCHSIZE;
 
-	long xw = x1 - x0 + 1;
+	long xw = x1 - x0 + 1; /* Figure out how many patches are needed */
 	long yw = y1 - y0 + 1;
 
 	long ex = lx + diameter;
@@ -910,6 +937,7 @@ void CMapOutdoor::AssignPatch(long lPatchNum, long x0, long y0, long x1, long y1
 
 void CMapOutdoor::UpdateQuadTreeHeights(CTerrainQuadtreeNode *Node)
 {
+	// Inserted by levites
 	assert(NULL!=m_pTerrainPatchProxyList && "CMapOutdoor::UpdateQuadTreeHeights");
 	if (!m_pTerrainPatchProxyList)
 		return;
@@ -935,17 +963,17 @@ void CMapOutdoor::UpdateQuadTreeHeights(CTerrainQuadtreeNode *Node)
 
 			if (!m_pTerrainPatchProxyList[patch].isUsed())
 				continue;
-			
+
 			if (m_pTerrainPatchProxyList[patch].GetMinX() < minx)
 				minx = m_pTerrainPatchProxyList[patch].GetMinX();
 			if (m_pTerrainPatchProxyList[patch].GetMaxX() > maxx)
 				maxx = m_pTerrainPatchProxyList[patch].GetMaxX();
-			
+
 			if (m_pTerrainPatchProxyList[patch].GetMinY() < miny)
 				miny = m_pTerrainPatchProxyList[patch].GetMinY();
 			if (m_pTerrainPatchProxyList[patch].GetMaxY() > maxy)
 				maxy = m_pTerrainPatchProxyList[patch].GetMaxY();
-			
+
 			if (m_pTerrainPatchProxyList[patch].GetMinZ() < minz)
 				minz = m_pTerrainPatchProxyList[patch].GetMinZ();
 			if (m_pTerrainPatchProxyList[patch].GetMaxZ() > maxz)

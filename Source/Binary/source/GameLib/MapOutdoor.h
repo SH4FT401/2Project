@@ -266,7 +266,11 @@ class CMapOutdoor : public CMapBase
 		void __CollectShadowReceiver(D3DXVECTOR3& v3Target, D3DXVECTOR3& v3Light);
 		void __CollectCollisionPCBlocker(D3DXVECTOR3& v3Eye, D3DXVECTOR3& v3Target, float fDistance);
 		void __CollectCollisionShadowReceiver(D3DXVECTOR3& v3Target, D3DXVECTOR3& v3Light);
+#ifdef ENABLE_RENDERING_ONLY_IN_AREA_V2
 		void __UpdateAroundAreaList(D3DXVECTOR3& v3Player);
+#else
+		void __UpdateAroundAreaList();
+#endif
 		bool __IsInShadowReceiverList(CGraphicObjectInstance* pkObjInstTest);
 		bool __IsInPCBlockerList(CGraphicObjectInstance* pkObjInstTest);
 

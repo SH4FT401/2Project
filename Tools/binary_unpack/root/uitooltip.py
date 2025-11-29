@@ -149,7 +149,6 @@ class ToolTip(ui.ThinBoard):
 		self.ResizeToolTip()
 
 	def AppendHorizontalLine(self):
-
 		for i in xrange(2):
 			horizontalLine = ui.Line()
 			horizontalLine.SetParent(self)
@@ -1638,6 +1637,7 @@ class ItemToolTip(ToolTip):
 
 			self.__AppendMetinSlotInfo(metinSlot)
 
+		### Armor ###
 		elif item.ITEM_TYPE_ARMOR == itemType:
 			self.__AppendLimitInformation()
 
@@ -1674,6 +1674,7 @@ class ItemToolTip(ToolTip):
 			else:
 				self.__AppendMetinSlotInfo(metinSlot)
 
+		### Ring Slot Item (Not UNIQUE) ###
 		elif item.ITEM_TYPE_RING == itemType:
 			self.__AppendLimitInformation()
 			self.__AppendAffectInformation()
@@ -2148,8 +2149,13 @@ class ItemToolTip(ToolTip):
 								self.AppendTextLine(localeInfo.NumberToMoneyString(itemPrice), self.SPECIAL_TITLE_COLOR)
 
 		if chr.IsGameMaster(player.GetMainCharacterIndex()):
+			self.AppendSpace(5)
+			self.AppendTextLine("VNUM: {}".format(itemVnum), 0xFFf863ff)
 			self.AppendSpace(3)
-			self.AppendTextLine(localeInfo.TOOLTIP_ITEM_VNUM % (int(itemVnum)), self.ITEM_VNUM_COLOR)
+			self.AppendTextLine("TYPE: {} SUBTYPE {}".format(itemType, itemSubType), 0xFF00cfb6)
+			if metinSlot:
+				self.AppendSpace(3)
+				self.AppendTextLine("SOCKET: {}".format(','.join([str(i) for i in metinSlot])), 0xFF00b6d6)
 
 		self.ShowToolTip()
 
@@ -2271,6 +2277,7 @@ class ItemToolTip(ToolTip):
 				if 0 == growhPetVNum:
 					return
 
+				## Setting width according to desc
 				item.SelectItem(growhPetVNum)
 				pet_bag_desc = localeInfo.PET_BAG_DESC % item.GetItemName()
 				self.__AdjustMaxWidth(0, pet_bag_desc)
@@ -2278,6 +2285,7 @@ class ItemToolTip(ToolTip):
 				(pet_level, evol_level, birthday, pet_nick, pet_hp, pet_def, pet_sp) = player.GetPetItem(pet_id)
 				self.AppendTextLine( pet_nick + "(" + localeInfo.PET_TOOLTIP_TRADABLE + ")", self.TITLE_COLOR )
 
+				## DESC
 				self.AppendDescription(pet_bag_desc, DESC_DEFAULT_MAX_COLS)
 
 				item.SelectItem(self.itemVnum)
@@ -2291,17 +2299,20 @@ class ItemToolTip(ToolTip):
 
 				self.AppendTextLine(localeInfo.PET_TOOLTIP_LEVEL + " " + str(pet_level) + " (" + localeInfo.SecondToDay(birthSec) + ")")
 
+				## General evolution, special evolution, number of skills
 				self.AppendSpace(5)
 				if skill_count:
 					self.AppendTextLine(self.GetEvolName(evol_level) + "(" + str(skill_count) + ")")
 				else:
 					self.AppendTextLine(self.GetEvolName(evol_level))
 
+				## Stats
 				self.AppendSpace(5)
 				self.AppendTextLine(localeInfo.PET_TOOLTIP_HP + " +" + str("%0.1f" % pet_hp) + "%", self.SPECIAL_POSITIVE_COLOR)
 				self.AppendTextLine(localeInfo.PET_TOOLTIP_DEF + " +" + str("%0.1f" % pet_def) + "%", self.SPECIAL_POSITIVE_COLOR)
 				self.AppendTextLine(localeInfo.PET_TOOLTIP_SP + " +" + str("%0.1f" % pet_sp) + "%", self.SPECIAL_POSITIVE_COLOR)
 
+				## skill
 				if pet_skill1:
 					self.AppendSpace(5)
 					(pet_skill_name, pet_skill_desc, pet_skill_use_type, pet_skill_cool_time) = skill.GetPetSkillInfo(pet_skill1)
@@ -2315,6 +2326,7 @@ class ItemToolTip(ToolTip):
 					(pet_skill_name, pet_skill_desc, pet_skill_use_type, pet_skill_cool_time) = skill.GetPetSkillInfo(pet_skill3)
 					self.AppendTextLine( localeInfo.PET_TOOLTUP_SKILL % (pet_skill_name, pet_skill_level3) , self.SPECIAL_POSITIVE_COLOR)
 
+				## term
 				for i in xrange(item.LIMIT_MAX_NUM):
 					(limitType, limitValue) = item.GetLimit(i)
 					if item.LIMIT_REAL_TIME_START_FIRST_USE == limitType:
@@ -2329,8 +2341,10 @@ class ItemToolTip(ToolTip):
 		def __AppendUpBringingPetItemInfomation(self, metinSlot):
 			pet_id = metinSlot[2]
 			if pet_id:
+				## skill information
 				(skill_count, pet_skill1, pet_skill_level1, pet_skill_cool1, pet_skill2, pet_skill_level2, pet_skill_cool2, pet_skill3, pet_skill_level3, pet_skill_cool3) = player.GetPetSkill(pet_id)
 
+				## Lv XXX ( DDDD days)
 				(pet_level, evol_level, birthday, pet_nick, pet_hp, pet_def, pet_sp) = player.GetPetItem(pet_id)
 				self.AppendSpace(5)
 
@@ -2349,11 +2363,13 @@ class ItemToolTip(ToolTip):
 				else:
 					self.AppendTextLine(self.GetEvolName(evol_level))
 
+				## Stats
 				self.AppendSpace(5)
 				self.AppendTextLine(localeInfo.PET_TOOLTIP_HP + " +" + str("%0.1f" % pet_hp) + "%", self.SPECIAL_POSITIVE_COLOR)
 				self.AppendTextLine(localeInfo.PET_TOOLTIP_DEF + " +" + str("%0.1f" % pet_def) + "%", self.SPECIAL_POSITIVE_COLOR)
 				self.AppendTextLine(localeInfo.PET_TOOLTIP_SP + " +" + str("%0.1f" % pet_sp) + "%", self.SPECIAL_POSITIVE_COLOR)
 
+				## skill
 				if pet_skill1:
 					self.AppendSpace(5)
 					(pet_skill_name, pet_skill_desc, pet_skill_use_type, pet_skill_cool_time) = skill.GetPetSkillInfo(pet_skill1)
@@ -2367,6 +2383,7 @@ class ItemToolTip(ToolTip):
 					(pet_skill_name, pet_skill_desc, pet_skill_use_type, pet_skill_cool_time) = skill.GetPetSkillInfo(pet_skill3)
 					self.AppendTextLine( localeInfo.PET_TOOLTUP_SKILL % (pet_skill_name, pet_skill_level3) , self.SPECIAL_POSITIVE_COLOR)
 
+				## life span
 				for i in xrange(item.LIMIT_MAX_NUM):
 					(limitType, limitValue) = item.GetLimit(i)
 					if item.LIMIT_REAL_TIME == limitType:
@@ -2376,6 +2393,7 @@ class ItemToolTip(ToolTip):
 			self.AppendSpace(5)
 
 			leftSec = endTime - app.GetGlobalTimeStamp()
+
 			if leftSec >= 0:
 				self.AppendTextLine(localeInfo.LEFT_TIME + " : " + localeInfo.SecondToDHM(leftSec), self.NORMAL_COLOR)
 			else:
@@ -2390,13 +2408,20 @@ class ItemToolTip(ToolTip):
 
 			return FALSE
 
+	## Saç Önizleme
 	def __IsHair(self, itemVnum):
-		return (self.__IsOldHair(itemVnum) or 
+		item.SelectItem(itemVnum)
+		itemType = item.GetItemType()
+		if itemType != item.ITEM_TYPE_COSTUME:
+			return 0 # hot fix
+
+		return (
+			self.__IsOldHair(itemVnum) or 
 			self.__IsNewHair(itemVnum) or
 			self.__IsNewHair2(itemVnum) or
 			self.__IsNewHair3(itemVnum) or
 			self.__IsCostumeHair(itemVnum)
-			)
+		)
 
 	def __IsOldHair(self, itemVnum):
 		return itemVnum > 73000 and itemVnum < 74000
@@ -2420,16 +2445,21 @@ class ItemToolTip(ToolTip):
 	def __AppendHairIcon(self, itemVnum):
 		itemImage = ui.ImageBox()
 		itemImage.SetParent(self)
-		itemImage.Show()			
+		itemImage.Show()
 
 		if self.__IsOldHair(itemVnum):
-			itemImage.LoadImage("d:/ymir work/item/quest/"+str(itemVnum)+".tga")
+			itemImage.LoadImage("d:/ymir work/item/quest/" + str(itemVnum) + ".tga")
 		elif self.__IsNewHair3(itemVnum):
 			itemImage.LoadImage("icon/hair/%d.sub" % (itemVnum))
 		elif self.__IsNewHair(itemVnum):
-			itemImage.LoadImage("d:/ymir work/item/quest/"+str(itemVnum-1000)+".tga")
+			if itemVnum > 74520 and itemVnum < 74751:
+				itemImage.LoadImage("icon/hair/%d.sub" % (itemVnum))
+			else:
+				itemImage.LoadImage("d:/ymir work/item/quest/" + str(itemVnum-1000) + ".tga")
 		elif self.__IsNewHair2(itemVnum):
 			itemImage.LoadImage("icon/hair/%d.sub" % (itemVnum))
+		elif self.__IsCostumeHair(itemVnum):
+			itemImage.LoadImage("icon/hair/%d.sub" % (itemVnum - 100000))
 
 		itemImage.SetPosition(itemImage.GetWidth()/2, self.toolTipHeight)
 
@@ -2547,7 +2577,6 @@ class ItemToolTip(ToolTip):
 
 	def __AppendAffectInformation(self):
 		for i in xrange(item.ITEM_APPLY_MAX_NUM):
-
 			(affectType, affectValue) = item.GetAffect(i)
 			if app.ENABLE_ACCE_COSTUME_SYSTEM and affectType == item.APPLY_ACCEDRAIN_RATE:
 				continue
@@ -2605,7 +2634,6 @@ class ItemToolTip(ToolTip):
 			textLine2.SetFeather()
 
 	def AppendWearableInformation(self):
-
 		self.AppendSpace(5)
 		self.AppendTextLine(localeInfo.TOOLTIP_ITEM_WEARABLE_JOB, self.NORMAL_COLOR)
 
@@ -2617,7 +2645,6 @@ class ItemToolTip(ToolTip):
 
 		characterNames = ""
 		for i in xrange(self.CHARACTER_COUNT):
-
 			name = self.CHARACTER_NAMES[i]
 			flag = flagList[i]
 
@@ -2681,9 +2708,9 @@ class ItemToolTip(ToolTip):
 			self.AppendTextLine(timeString)
 
 	def GetPriceColor(self, price):
-		if price>=constInfo.HIGH_PRICE:
+		if price >= constInfo.HIGH_PRICE:
 			return self.HIGH_PRICE_COLOR
-		if price>=constInfo.MIDDLE_PRICE:
+		if price >= constInfo.MIDDLE_PRICE:
 			return self.MIDDLE_PRICE_COLOR
 		else:
 			return self.LOW_PRICE_COLOR
@@ -2701,7 +2728,6 @@ class ItemToolTip(ToolTip):
 
 	def AppendMetinInformation(self):
 		affectType, affectValue = item.GetAffect(0)
-
 		affectString = self.__GetAffectString(affectType, affectValue)
 
 		if affectString:
@@ -2709,7 +2735,6 @@ class ItemToolTip(ToolTip):
 			self.AppendTextLine(affectString, self.GetChangeTextLineColor(affectValue))
 
 	def AppendMetinWearInformation(self):
-
 		self.AppendSpace(5)
 		self.AppendTextLine(localeInfo.TOOLTIP_SOCKET_REFINABLE_ITEM, self.NORMAL_COLOR)
 
@@ -2778,29 +2803,29 @@ class ItemToolTip(ToolTip):
 		return number
 
 	def __AppendAccessoryMetinSlotInfo(self, metinSlot, mtrlVnum):
-		ACCESSORY_SOCKET_MAX_SIZE = 3		
+		ACCESSORY_SOCKET_MAX_SIZE = 3
 
-		cur=min(metinSlot[0], ACCESSORY_SOCKET_MAX_SIZE)
-		end=min(metinSlot[1], ACCESSORY_SOCKET_MAX_SIZE)
+		cur = min(metinSlot[0], ACCESSORY_SOCKET_MAX_SIZE)
+		end = min(metinSlot[1], ACCESSORY_SOCKET_MAX_SIZE)
 
 		affectType1, affectValue1 = item.GetAffect(0)
-		affectList1=[0, max(1, affectValue1*10/100), max(2, affectValue1*20/100), max(3, affectValue1*40/100)]
+		affectList1 = [0, max(1, affectValue1 * 10 / 100), max(2, affectValue1 * 20 / 100), max(3, affectValue1 * 40 / 100)]
 
 		affectType2, affectValue2 = item.GetAffect(1)
-		affectList2=[0, max(1, affectValue2*10/100), max(2, affectValue2*20/100), max(3, affectValue2*40/100)]
+		affectList2 = [0, max(1, affectValue2 * 10 / 100), max(2, affectValue2 * 20 / 100), max(3, affectValue2 * 40 / 100)]
 
-		mtrlPos=0
-		mtrlList=[mtrlVnum]*cur+[player.METIN_SOCKET_TYPE_SILVER]*(end-cur)
+		mtrlPos = 0
+		mtrlList = [mtrlVnum] * cur + [player.METIN_SOCKET_TYPE_SILVER] * (end - cur)
 		for mtrl in mtrlList:
-			affectString1 = self.__GetAffectString(affectType1, affectList1[mtrlPos+1]-affectList1[mtrlPos])			
-			affectString2 = self.__GetAffectString(affectType2, affectList2[mtrlPos+1]-affectList2[mtrlPos])
+			affectString1 = self.__GetAffectString(affectType1, affectList1[mtrlPos + 1] - affectList1[mtrlPos])
+			affectString2 = self.__GetAffectString(affectType2, affectList2[mtrlPos + 1] - affectList2[mtrlPos])
 
 			leftTime = 0
-			if cur == mtrlPos+1:
-				leftTime=metinSlot[2]
+			if cur == mtrlPos + 1:
+				leftTime = metinSlot[2]
 
 			self.__AppendMetinSlotInfo_AppendMetinSocketData(mtrlPos, mtrl, affectString1, affectString2, leftTime)
-			mtrlPos+=1
+			mtrlPos += 1
 
 	def __AppendMetinSlotInfo(self, metinSlot):
 		if self.__AppendMetinSlotInfo_IsEmptySlotList(metinSlot):
@@ -2814,7 +2839,7 @@ class ItemToolTip(ToolTip):
 			return 1
 
 		for i in xrange(player.METIN_SOCKET_MAX_NUM):
-			metinSlotData=metinSlot[i]
+			metinSlotData = metinSlot[i]
 			if 0 != self.GetMetinSocketType(metinSlotData):
 				if 0 != self.GetMetinItemIndex(metinSlotData):
 					return 0
@@ -2835,6 +2860,7 @@ class ItemToolTip(ToolTip):
 		slotImage.SetParent(self)
 		slotImage.Show()
 
+		## Name
 		nameTextLine = ui.TextLine()
 		nameTextLine.SetParent(self)
 		nameTextLine.SetFontName(self.defFontName)
@@ -2851,7 +2877,8 @@ class ItemToolTip(ToolTip):
 			slotImage.LoadImage("d:/ymir work/ui/game/windows/metin_slot_gold.sub")
 
 		self.childrenList.append(slotImage)
-		slotImage.SetPosition(9, self.toolTipHeight-1)
+
+		slotImage.SetPosition(9, self.toolTipHeight - 1)
 		nameTextLine.SetPosition(50, self.toolTipHeight + 2)
 
 		metinImage = ui.ImageBox()
@@ -2860,9 +2887,9 @@ class ItemToolTip(ToolTip):
 		self.childrenList.append(metinImage)
 
 		if itemIndex:
-
 			item.SelectItem(itemIndex)
 
+			## Image
 			try:
 				metinImage.LoadImage(item.GetIconImageFileName())
 			except:
@@ -2872,6 +2899,7 @@ class ItemToolTip(ToolTip):
 
 			nameTextLine.SetText(item.GetItemName())
 
+			## Affect
 			affectTextLine = ui.TextLine()
 			affectTextLine.SetParent(self)
 			affectTextLine.SetFontName(self.defFontName)
@@ -2885,14 +2913,14 @@ class ItemToolTip(ToolTip):
 
 			if custumAffectString:
 				affectTextLine.SetText(custumAffectString)
-			elif itemIndex!=constInfo.ERROR_METIN_STONE:
+			elif itemIndex != constInfo.ERROR_METIN_STONE:
 				affectType, affectValue = item.GetAffect(0)
 				affectString = self.__GetAffectString(affectType, affectValue)
 				if affectString:
 					affectTextLine.SetText(affectString)
 			else:
 				affectTextLine.SetText(localeInfo.TOOLTIP_APPLY_NOAFFECT)
-			
+
 			self.childrenList.append(affectTextLine)
 
 			if custumAffectString2:
@@ -2910,7 +2938,6 @@ class ItemToolTip(ToolTip):
 
 			if 0 != leftTime:
 				timeText = (localeInfo.LEFT_TIME + " : " + localeInfo.RTSecondToDHMS(leftTime))
-
 				timeTextLine = ui.TextLine()
 				timeTextLine.SetParent(self)
 				timeTextLine.SetFontName(self.defFontName)
@@ -3019,13 +3046,16 @@ class ItemToolTip(ToolTip):
 			self.AppendDescription(item.GetItemSummary(), DESC_DEFAULT_MAX_COLS, self.CONDITION_COLOR)
 			self.__AppendLimitInformation()
 
+			## ABSORPTION RATE
 			if MinAbs == MaxAbs:
 				self.AppendTextLine(localeInfo.ACCE_ABSORB_CHANCE % (MinAbs), self.CONDITION_COLOR)
 			else:
 				self.AppendTextLine(localeInfo.ACCE_ABSORB_CHANCE2 % (MinAbs, MaxAbs), self.CONDITION_COLOR)
+			## END ABSOPRTION RATE
 
 			itemAbsorbedVnum = int(metinSlot[acce.ABSORBED_SOCKET])
 			if itemAbsorbedVnum:
+				## ATTACK / DEFENCE
 				item.SelectItem(itemAbsorbedVnum)
 				if item.GetItemType() == item.ITEM_TYPE_WEAPON:
 					if item.GetItemSubType() == item.WEAPON_FAN:
@@ -3048,7 +3078,9 @@ class ItemToolTip(ToolTip):
 
 					item.SelectItem(itemAbsorbedVnum)
 					self.__AppendMagicDefenceInfo(absChance)
+				## END ATTACK / DEFENCE
 
+				## EFFECT
 				item.SelectItem(itemAbsorbedVnum)
 				for i in xrange(item.ITEM_APPLY_MAX_NUM):
 					(affectType, affectValue) = item.GetAffect(i)
@@ -3059,9 +3091,12 @@ class ItemToolTip(ToolTip):
 						self.AppendTextLine(affectString, self.GetChangeTextLineColor(affectValue))
 
 					item.SelectItem(itemAbsorbedVnum)
+				# END EFFECT
 
 			item.SelectItem(itemVnum)
+			## ATTR
 			self.__AppendAttributeInformation(attrSlot, MaxAbs)
+			# END ATTR
 
 			self.AppendWearableInformation()
 			self.ShowToolTip()
@@ -3091,8 +3126,11 @@ class ItemToolTip(ToolTip):
 			item.SelectItem(itemVnumAcce)
 			self.__AppendLimitInformation()
 
+			## ABSORPTION RATE
 			self.AppendTextLine(localeInfo.ACCE_ABSORB_CHANCE % (metinSlot[acce.ABSORPTION_SOCKET]), self.CONDITION_COLOR)
+			## END ABSOPRTION RATE
 
+			## ATTACK / DEFENCE
 			itemAbsorbedVnum = itemVnumTarget
 			item.SelectItem(itemAbsorbedVnum)
 			if item.GetItemType() == item.ITEM_TYPE_WEAPON:
@@ -3574,7 +3612,6 @@ class SkillToolTip(ToolTip):
 					self.AppendTextLine(localeInfo.TOOLTIP_NEED_GSP % (needGSP), self.DISABLE_COLOR)
 
 	def AppendSkillDataNew(self, slotIndex, skillIndex, skillGrade, skillLevel, skillCurrentPercentage, skillNextPercentage):
-
 		self.skillMaxLevelStartDict = { 0 : 17, 1 : 7, 2 : 10, }
 		self.skillMaxLevelEndDict = { 0 : 20, 1 : 10, 2 : 10, }
 
@@ -3600,7 +3637,7 @@ class SkillToolTip(ToolTip):
 			if skillLevel < skillMaxLevelEnd:
 				if self.HasSkillLevelDescription(skillIndex, skillLevel+skillLevelUpPoint):
 					self.AppendSpace(5)
-
+					## HP
 					if skillIndex == 141 or skillIndex == 142:
 						self.AppendTextLine(localeInfo.TOOLTIP_NEXT_SKILL_LEVEL_3 % (skillLevel+1), self.DISABLE_COLOR)
 					else:
@@ -3608,7 +3645,6 @@ class SkillToolTip(ToolTip):
 					self.AppendSkillLevelDescriptionNew(skillIndex, skillNextPercentage, self.DISABLE_COLOR)
 
 	def AppendSkillLevelDescriptionNew(self, skillIndex, skillPercentage, color):
-
 		affectDataCount = skill.GetNewAffectDataCount(skillIndex)
 		if affectDataCount > 0:
 			for i in xrange(affectDataCount):
@@ -3685,7 +3721,6 @@ class SkillToolTip(ToolTip):
 		## Require Stat
 		requireStatCount = skill.GetSkillRequireStatCount(skillIndex)
 		if requireStatCount > 0:
-
 			for i in xrange(requireStatCount):
 				type, level = skill.GetSkillRequireStatData(skillIndex, i)
 				if self.POINT_NAME_DICT.has_key(type):

@@ -1,65 +1,138 @@
 ACCE_ABSORB_CHANCE	Absorption rate: %d%%
-ACCE_REFINE_COST	Absorption price: %d
+ACCE_ABSORB_COST	Cena kombinování: %d
 ACCE_ABSORB_CHANCE2	Absorption rate: %d%% ~ %d%%
 ACCE_DO_YOU_CLEAN	Do you want to remove all available bonuses?
 ACCE_FAILURE_CLEAN	No bonuses can be taken away.
-ACCE_DEL_ABSORDITEM	Absorb item, destroying it in the process?
-ACCE_DEL_SERVEITEM	Sash 2 will be destroyed should the combination fail.
+ACCE_DEL_ABSORDITEM	Absorbovat pøedmìt a tím jej znièit?
+ACCE_DEL_SERVEITEM	Šerpa 2 bude znièena, pokud jejich kombinace sele.
+ACCE_DEL_SERVEITEM2	Šerpa 2 bude znièena, pokud jejich kombinace sele.
 ACCEPT_WARP_FROM_YOUR_FRIEND_REQUEST	Do you accept %s to teleport to you?
-AFF_LOVE_POINT	Love points: %d%%
-ALIGNMENT_NAME	Rank points:
-ATTACK_ERROR_UNKNOWN	Unknown attack error: %s
+ACCE_INITEM	Pøetáhni pøedmìty do okna.
+ACCE_MAXGRADE	Toto ji bylo pøizpùsobeno.
+ACCE_MAX_DRAINRATE	Maximální absorpèní pomìr
+ACCE_NOTABSORBITEM	Nemùeš pouít brnìní èi zbraò, pokud ji byly absorbovány.
+ACCE_NOT_SEALITEM	Nelze pouít pøedmìty s duševním poutem.
+ACCE_NOT_USINGITEM	Nemùeš kombinovat pøedmìt, kterı se pouívá.
+ACCE_NOT_WINDOWOPEN	Nemùeš pouít pøedmìt, pokud je otevøeno okno pro kombinování.
+ACCE_POSSIBLE_ACCE	Mùeš pouít pouze šerpy.
+ACCE_POSSIBLE_ACCEITEM	Bonusy lze získat pouze ze zbranì nebo brnìní.
+AFF_LOVE_POINT	Body za lásku: %d%%
+ALIGNMENT_NAME	Hodnost:
+alsoExportToCharset	windows-1250
+ATTACK_ERROR_UNKNOWN	Neznámá chyba v útoku: %s
+ATTENDANCE_REWARD_QUESTION	Pøeješ si vybrat odmìnu?
+ATTR_6TH_7TH_ADD_QUESTION1	Tento pøedmìt nemùeš bìhem pøidávání bonusu pouít.
+ATTR_6TH_7TH_ADD_QUESTION2	Opravdu chceš pøidat bonus?
+ATTR_6TH_7TH_CHANGE_FAIL	Bonus nemùeš zmìnit.
+ATTR_6TH_7TH_DESC1	a. Musíš dodat materiály, potøebné pro pøidání 6. a 7. bonusu na pøedmìt.
+ATTR_6TH_7TH_DESC2	b. Kadı Støep síly zvyšuje šanci na úspìch o 2 %.
+ATTR_6TH_7TH_DESC3	c. Pouij pøísadu pro další vylepšení šance na úspìch.
+ATTR_6TH_7TH_DESC4	d. Pøidání bonusu trvá 24 hodin. Bìhem této doby bude pøedmìt, na kterı se pøidává bonus, v drení NPC. Jakmile bude proces dokonèen, mùeš si jej vyzvednout.
+ATTR_6TH_7TH_POSSIBILITY	Mùeš pøidat další bonus.
+ATTR_6TH_7TH_TOTAL_SUCCESS_PERCENT	Šance na úspìch: %.1f%%
+AURA_CLEAR_CANNOT_USE_SEALED_ITEM	Nemùeš mìnit vlastnosti pøedmìtu s duševním poutem.
+AURA_CLEAR_QUESTION_WHEN_USE	Chceš odebrat absorbované bonusy? Nelze je obnovit.
 AURA_BOOST_DRAIN_PER	Extra Absorption +%d%%
-AURA_DRAIN_PER	Absorption rate %.1f%%
+AURA_DRAIN_PER	Absorpèní pomìr: %.1f%%
 AURA_DRAIN_BOOST_PER	Absorption rate %.1f%% (+%d%%)
-AURA_EVOLUTION_GOLD	Insufficient Yang to evolve.
-AURA_IMPOSSIBLE_ABSORBITEM	No further bonuses can be applied.
-AURA_IMPOSSIBLE_EQUIPITEM	Equipped items cannot be transmitted.
-AURA_IMPOSSIBLE_EVOLUTION_ITEM	Cannot be evolved.
-AURA_IMPOSSIBLE_EVOLUTION_ITEMCOUNT	Current number of items is not sufficient to evolve.
-AURA_IMPOSSIBLE_GROWTHITEM	Cannot be improved.
+AURA_EVOLUTION_GOLD	[Aura] Nedostatek Yangù pro vıvoj.
+AURA_IMPOSSIBLE_ABSORBITEM	[Aura] Pøenesenı pøedmìt nelze pouít.
+AURA_IMPOSSIBLE_EQUIPITEM	[Aura] Pouívané pøedmìty nemohou bıt pøeneseny.
+AURA_IMPOSSIBLE_EVOLUTION_ITEM	[Aura] Nelze vyvinout.
+AURA_IMPOSSIBLE_EVOLUTION_ITEMCOUNT	[Aura] Aktuální poèet pøedmìtù není pro vıvoj dostaèující.
+AURA_IMPOSSIBLE_GROWTHITEM	[Aura] Nelze vylepšit.
 AURA_IMPOSSIBLE_GROWTHITEM2	You need to attach the materials.
-AURA_IMPOSSIBLE_REFINEITEM	Only Shield, Necklace, Earring and Armband can be used.
+AURA_IMPOSSIBLE_REFINEITEM	[Aura] Lze pouít Kostım, štít, náhrdelník, náušnice a náramek s aurou.
 AURA_IMPOSSIBLE_REFINEITEM2	Only Aura Outfit, Shield, Necklace, Earring and Armband can be used.
-AURA_ITEM_NEED_REGISTER	Items must be inserted.
-AURA_LEVEL_STEP	Lvl %d (Stage %d)
-AURA_MAX_LEVEL	Aura Outfit has attained maximum level.
-AURA_NOTICE_DEL_ABSORDITEM	Transmitted item will be destroyed.
-AURA_OPEN_OTHER_WINDOW	You cannot do this while the window for improvement, evolution or transferring stats is open.
-AURA_POSSIBLE_AURAITEM	Only Aura Outfit can be used.
+AURA_IMPOSSIBLE_SEALITEM	[Aura] Pøedmìty s duševním poutem nelze pøenést.
+AURA_ITEM_NEED_REGISTER	[Aura] Pøedmìty musí bıt vloeny.
+AURA_LEVEL_STEP	Úroveò %d (stupeò %d)
+AURA_MAX_LEVEL	[Aura] Kostım s aurou získal maximální úroveò.
+AURA_NOTICE_DEL_ABSORDITEM	[Aura] Pøenesenı pøedmìt bude znièen.
+AURA_OPEN_OTHER_WINDOW	Toto nemùeš udìlat, pokud je otevøené okno vylepšování, evoluce anebo pøenosu vlastností.
+AURA_POSSIBLE_AURAITEM	[Aura] Lze pouít pouze Kostım s aurou.
 AURA_POSSIBLE_AURARESOURCE	Only Aura Ice Rune and Aura Fire Rune can be used.
-AURA_POSSIBLE_REGISTER_AURAITEM	Aura Outfit must be inserted first.
-AURA_TITLE_ABSORB	Absorption Aura Outfit
-AURA_TITLE_EVOLUTION	Evolve Aura Outfit
-AURA_TITLE_GROWTH	Improve Aura Outfit
+AURA_POSSIBLE_REGISTER_AURAITEM	[Aura] Kostım s aurou musí bıt vloen první.
+AURA_TITLE_ABSORB	Pøenést hodnoty do Kostımu s aurou
+AURA_TITLE_EVOLUTION	Vyvinout Kostım s aurou
+AURA_TITLE_GROWTH	Vylepšit Kostım s aurou
 AURA_TOOLTIP_EVOLUTION_PER	Chance: %d%%
-AURA_TOOLTIP_EXP	EXP (%d%% / 100%%)
-AURA_TOOLTIP_LEVEL	Lvl %d (Stage %d) (Absorption rate %.1f%%)
-AURA_TOOLTIP_NEED_YANG	%s Yang
-AURA_TOOLTIP_NEXT	New
-AURA_TOOLTIP_NOW	Current
-AURA_TOOLTIP_RESOURCE	Consumables
+AURA_TOOLTIP_EXP	BZK (%d%% / 100%%)
+AURA_TOOLTIP_LEVEL	Úroveò %d (stupeò %d) (Absorpèní pomìr: %.1f%%)
+AURA_TOOLTIP_NEED_YANG	%s Yangù
+AURA_TOOLTIP_NEXT	Nové
+AURA_TOOLTIP_NOW	Aktuální
+AURA_TOOLTIP_RESOURCE	Spotøební pøedmìty
 AURA_TOOLTIP_RESOURCE_ITEM	%s * %d
-BIOLOG_MANAGER_REQUIRED_LEVEL	The biologist's current mission:
-BIOLOG_MANAGER_REWARD	Reward
-BIOLOG_MANAGER_TIME_TEXT	You can deliver the next item!
-BIOLOG_MANAGER_TIME_WAIT	Wait: 
-BIOLOG_MANAGER_TITLE	Biolog
-BONUS_BOARD_CATEGORY_1	Damage/Defence
-BONUS_BOARD_CATEGORY_2	Elemental bonus
-BONUS_BOARD_CATEGORY_3	Class bonus
-BONUS_BOARD_CATEGORY_4	Weapon bonus
-BONUS_BOARD_CATEGORY_5	Other bonus
-CANNOT_ATTACK_DEST_IN_SAFE	The combatant is too far away.
-CANNOT_ATTACK_SELF_IN_SAFE	I cannot attack my opponent from here.
-CANNOT_EQUIP_IN_EXCHANGE	You cannot change your equipment whilst trading.
-CANNOT_EQUIP_IN_SHOP	You cannot change your equipment whilst trading.
-CANNOT_OPEN_PRIVATE_SHOP_IN_SAFE_AREA	You cannot open a private shop in a public area.
-CANNOT_SHOOT_DEST_IN_SAFE	The enemy is too far away.
-CANNOT_SHOOT_EMPTY_ARROW	I need an arrow.
-CANNOT_SHOOT_SELF_IN_SAFE	I cannot attack my opponent from here.
-CANNOT_SKILL_APPROACH	I am sure that I cannot get any closer.
-CANNOT_SKILL_ATTACK	I cannot attack that.
+AUTO_HUNTING_MSG_CANNOT_CHANGE_NON_WEAPON	Toto nemùeš pouít, pokud je aktivní Automatickı lov.
+AUTO_HUNTING_MSG_CANNOT_START_WITHOUT_WEAPON	Pøi pouívání pøedmìtu nelze aktivovat Automatickı lov.
+AUTO_HUNTING_OPTION_BOSS	Boss
+AUTO_HUNTING_OPTION_KING	Úroveò 5
+AUTO_HUNTING_OPTION_KNIGHT	Úroveò 3
+AUTO_HUNTING_OPTION_PAWN	Úroveò 1
+AUTO_HUNTING_OPTION_STONE	Kámen Metin
+AUTO_HUNTING_OPTION_S_KNIGHT	Úroveò 4
+AUTO_HUNTING_OPTION_S_PAWN	Úroveò 2
+AUTO_TOOLTIP_CLEAR	Reset
+AUTO_TOOLTIP_LINE1	Schopnosti: zvol si schopnosti pro boj a pøetáhni je na pozice. (Prémium)
+AUTO_TOOLTIP_LINE2	Tip: pod kadou schopností mùeš zmìnit její aktivaèní dobu (v sekundách).
+AUTO_TOOLTIP_LINE3	Lektvary: zvol si lektvary pro boj a pøetáhni je na pozice. (Prémium)
+AUTO_TOOLTIP_LINE4	Tip: ZB a MB lektvary budou aktivovány jakmile úroveò spadne pod % hodnotu zobrazenou pod kadım lektvarem.
+AUTO_TOOLTIP_LINE5	Poznámka: automatické pouívání schopností, lektvarù a oivení lze aktivovat v ItemShopu.
+AUTO_TOOLTIP_LINE6	5. Lektvary a pøedmìty, které jsou vybrány, budou automaticky zkonzumovány po vypršení buffu bez zobrazení zbıvajícího èasu trvání.
+AUTO_TOOLTIP_LINE7	6. Pouívám šipek vedle Útoku ti umoní zvolit sílu pøíšery, na kterou útoèíš (+/- úrovnì od té tvé).
+AUTO_TOOLTIP_LINE8	7. Pouívání šipek vedle Zamìøení ti umoní nastavit vzdálenost pro útok na pøíšery.
+AUTO_TOOLTIP_TITLE	Pomoc pøi automatickém lovu
+BATTLE_MAP_NAME_AREA_1	Zóna 1
+BATTLE_MAP_NAME_AREA_2	Zóna 2
+BATTLE_MAP_NAME_AREA_3	Zóna 3
+BATTLE_MAP_NAME_AREA_4	Zóna 4
+BATTLE_MAP_NAME_AREA_5	Zóna 5
+BATTLE_MAP_NAME_AREA_6	Zóna 6
+BATTLE_MAP_NAME_AREA_7	Zóna 7
+BATTLE_MAP_NAME_AREA_8	Zóna 8
+BATTLE_MAP_NAME_AREA_9	Zóna 9
+BATTLE_POINT	Bitevní body
+BATTLE_ROYALE_ALIVE_COUNT	Pøeivší: %d
+BATTLE_ROYALE_APPLICATION_TITLE	Královská bitva
+BATTLE_ROYALE_CANNOT_OPEN_MALL	Toto zde nemùeš pouít.
+BATTLE_ROYALE_KILL_COUNT	Poraení protivníci: %d
+BATTLE_ROYALE_MAINBUTTON_APPLICATION	Zúèastnit se
+BATTLE_ROYALE_MAINBUTTON_CANCEL	Storno
+BATTLE_ROYALE_MAINBUTTON_EXIT	Opustit
+BATTLE_ROYALE_MAINBUTTON_STARTABLE	Start
+BATTLE_ROYALE_NOTIFY_APPLICATED	Zaregistroval ses do Královské bitvy. Budeš se moci pøipojit jakmile bude dostatek úèastníkù.
+BATTLE_ROYALE_NOTIFY_ENTRY_CLOSED	Registrace do Královské bitvy byly ukonèeny.
+BATTLE_ROYALE_NOTIFY_STARTABLE	Nyní mùeš vstoupit do Královské bitvy. Staèí kliknout na tlaèítko události.
+BATTLE_ROYALE_NOTIFY_WINNER	Vyhrál jsi.
+BATTLE_ROYALE_PERSONAL_RANK	Osobní hodnocení: %d
+BATTLE_ROYALE_QUESTION_USE_INFINITE_STAMINA	Chceš pouít Nekoneènou vytrvalost?
+BATTLE_ROYALE_WHO_KILLED	Hráè, kterı tì zabil: %s
+BATTLE_ROYALE_WINNER_1	Vyhrál jsi Královskou bitvu!
+BATTLE_ROYALE_WINNER_2	Brzy budeš teleportován do vesnice.
+BEAD	Animasphere
+BEAD_TIME_REMAINING_TO_GET	Animasphere nabita za: %d min.
+BELT_RENEWAL_BANN_SIGN	Nelze pokraèovat.
+BELT_RENEWAL_INVENTORY_FULL	Nemáš dostatek místa v inventáøi.
+BNW_COIN	Vìštecká mince
+BUY_LIMIT_LEVEL	Nákupní limit: %s
+CANNOT_ATTACK_DEST_IN_SAFE	Soupeø je pøíliš daleko.
+CANNOT_ATTACK_SELF_IN_SAFE	Odtud nemùu zaútoèit na nepøítele.
+CANNOT_DOING_PRIVATE_SHOP_OPEN	Dokud máš otevøen privátní stánek, nemùeš dìlat nic jiného.
+CANNOT_EQUIP_IN_EXCHANGE	Kdy obchoduješ, nemùeš mìnit vızbroj.
+CANNOT_EQUIP_IN_SHOP	Kdy obchoduješ, nemùeš mìnit vızbroj.
+CANNOT_FISHING_RIDE_MOUNT	Nemùeš rybaøit, pokud jedeš na zvíøeti.
+CANNOT_FISHING_WHILE_POLY	Pøi transformaci nemùeš rybaøit.
+CANNOT_ILLUSTRATIONPAGE_WARP	Zde nemùeš pouít teleport Karty pøíšery.
+CANNOT_MOVE_DRAGON_SOUL_WHILE_ATTACK	Bìhem pohybu to nemùeš udìlat.
+CANNOT_OPEN_PRIVATE_SHOP_IN_SAFE_AREA	Nemùeš soukromı stánek otevøít na veøejném místì.
+CANNOT_POLY_STATUS	Momentálnì se nemùeš promìnit.
+CANNOT_PVP_MAP_MESSAGE	V této oblasti to nemùeš udìlat.
+CANNOT_SHOOT_DEST_IN_SAFE	Nepøítel je pøíliš daleko.
+CANNOT_SHOOT_EMPTY_ARROW	Potøebuji šíp.
+CANNOT_SHOOT_SELF_IN_SAFE	Odtud nemùu zaútoèit na nepøítele.
+CANNOT_SKILL_APPROACH	Jsem si jistı, e se u blí nedostanu.
+CANNOT_SKILL_ATTACK	Nemùu na to zaútoèit.
 CANNOT_SKILL_DEST_IN_SAFE	The opponent is too far away.
 CANNOT_SKILL_EQUIP_FISHING_ROD	You cannot fish without a fishing rod equipped.
 CANNOT_SKILL_HAVE_TO_RIDE	I need a Horse to be able to use this.
@@ -276,70 +349,392 @@ GAME_INIT_ERROR_MAIN_WINDOW	Mainframe could not be established
 GAME_INIT_ERROR_MOB_PROTO	No Monster Data there.\nInstall the game again.
 GAME_INIT_ERROR_NETWORK	Network devices could not be established.\nCheck your internet connection.
 GAME_PICK_MONEY	You have received %d Yang.
-GUILDMARK_UPLOADER_ERROR_128_HEIGHT	Height is not 128 Pixel
-GUILDMARK_UPLOADER_ERROR_12_HEIGHT	Height is not 12 Pixel
-GUILDMARK_UPLOADER_ERROR_16_WIDTH	Width is not 16 Pixel
-GUILDMARK_UPLOADER_ERROR_64_WIDTH	Width is not 64 Pixel
-GUILDMARK_UPLOADER_ERROR_FILE_FORMAT	The game does not support this picture.
-GUILDMARK_UPLOADER_ERROR_PATH	Move the data into the folder Metin2/upload.
-GUILDMARK_UPLOADER_ERROR_SELECT	No picture file chosen.
-GUILDWAR_CTF_TITLE	Capture the flag
-GUILDWAR_NORMAL_TITLE	Field Battle
-GUILDWAR_QUESTION_LINE_1	The Guild %s  declared war on your guild.
-GUILDWAR_QUESTION_LINE_2	Do you accept? (%s)
+GUILDBANK_CLEARBANK	Upozornìní: cechovní skladištì musí bıt prázdné!
+GUILDBANK_DONT_MONEY_OUT	V cechovní pokladnì nemáš ádné Yangy!
+GUILDBANK_GOLD_IN	Uloení
+GUILDBANK_GOLD_OUT	Vıbìr
+GUILDBANK_ITEM_IN	Obchod
+GUILDBANK_ITEM_OUT	Odebrat
+GUILDBANK_MONEYIN	Uloit Yangy
+GUILDBANK_MONEYOUT	Vybrat Yangy
+GUILDBANK_NOTUSE	Nemáš dostateèná oprávnìní.
+GUILDBANK_NOT_ENOUGH_MONEY	Nemáš dostatek Yangù pro uloení.
+GUILDBANK_OVER_INCOME	Dosaen limit úètu.
+GUILDBANK_OVER_MONEY	Cechovní úèet je plnı.
+GUILDLAND_ABANDON	Opustit území cechu
+GUILDLAND_ABANDON_TEXT1	Chceš opustit území cechu?
+GUILDLAND_ABANDON_TEXT2	Opravdu chceš opustit území cechu?
+GUILDLAND_ABANDON_TEXT3	Cechovní skladištì a všechny ostatní budovy budou odebrány.
+GUILDLAND_ACCEPT	Ano
+GUILDLAND_DONTHAVE_LAND	Nevlastníš ádné cechovní území.
+GUILDLAND_NOT	Ne
+GUILDLIST_APPLICANT	Chceš se pøidat?
+GUILDMARK_UPLOADER_ERROR_12_HEIGHT	Vıška není 12 pixelù.
+GUILDMARK_UPLOADER_ERROR_16_WIDTH	Šíøka není 16 pixelù.
+GUILDMARK_UPLOADER_ERROR_64_WIDTH	Šíøka není 64 pixelù.
+GUILDMARK_UPLOADER_ERROR_128_HEIGHT	Vıška není 128 pixelù.
+GUILDMARK_UPLOADER_ERROR_FILE_FORMAT	Hra nepodporuje tento obrázek.
+GUILDMARK_UPLOADER_ERROR_PATH	Pøesuò soubory do sloky metin2/upload.
+GUILDMARK_UPLOADER_ERROR_SELECT	Nebyl zvolen ádnı obrazovı soubor.
+GUILDWAR_ALL	Bitvy (B)
+GUILDWAR_CTF_TITLE	Zajmout vlajku
+GUILDWAR_DRAW	Remízy (R)
+GUILDWAR_GAINSCORE_FIFTY	50 bodù
+GUILDWAR_GAINSCORE_HUNDRED	100 bodù
+GUILDWAR_GAINSCORE_THIRTY	30 bodù
+GUILDWAR_GAMETIME_SIXTY	60 minut
+GUILDWAR_GAMETIME_TEN	10 minut
+GUILDWAR_GAMETIME_THIRTY	30 minut
+GUILDWAR_INPUT_OTHERGUILD	Prosím, zadej cech protivníka.
+GUILDWAR_LADDER	Body umístìní
+GUILDWAR_LIMIT_MEMBER_FIVE	Minimálnì 5 úèastníkù.
+GUILDWAR_LOSE	Prohry (P)
+GUILDWAR_NORMAL_TITLE	Polní bitva
+GUILDWAR_OVER_MEMBERCOUNT	Dosáhl jsi limitu èlenù.
+GUILDWAR_QUESTION_LINE_1	Cech %s vyhlásil tvému cechu válku.
+GUILDWAR_QUESTION_LINE_2	Pøijímáš? (%s)
+GUILDWAR_RANKING	Hodnost
+GUILDWAR_RECODE_ALL	%d B, %d V, %d P, %d R
+GUILDWAR_SELECT_MEMBER_COUNT	Zvol poèet úèastníkù.
+GUILDWAR_TYPE_DEFENSE	Štítová bitva
+GUILDWAR_TYPE_TIGER	Rozdrcení
+GUILDWAR_TYPE_TIME	Èasovı útok
 GUILDWAR_UNKNOWN_TITLE	...
-GUILDWAR_WARP_TITLE	Arena battle
-GUILD_BUILDING_GRADE	Rank
-GUILD_BUILDING_NAME	Name of building
-GUILD_CANNOT_HEAL_GSP_ANYMORE	The Dragon Ghost Energy is already fully restored.
-GUILD_COMMENT	Write
-GUILD_DEFAULT_GRADE	Guild members
-GUILD_DELETE	Delete
-GUILD_DEPOSIT	Deposit
-GUILD_DO_YOU_HEAL_GSP	Do you want to use %d Yang to restore %d units of Dragon Ghost?
-GUILD_DO_YOU_JOIN	has invited you. Do you want to join the guild?
-GUILD_EMPTY_AREA	Empty land
-GUILD_ENEMY_GUILD_NAME	Guild name of the enemy
-GUILD_FACILITY	Outbuilding
-GUILD_GEM	Gem
-GUILD_HEADQUARTER	Main Building
-GUILD_HEAL_GSP	Restore Dragon ghost
-GUILD_INFO_ENEMY_GUILD_EMPTY	None
-GUILD_MARK_NOT_ENOUGH_LEVEL	Minimum level of 3 required
-GUILD_NAME	Guild name
-GUILD_NOT_ENOUGH_MATERIAL	Not enough building material for this building.
-GUILD_NOT_ENOUGH_MONEY	Not enough Yang for this building.
-GUILD_NO_NOTICE_PERMISSION	You do not have the rights to make an announcement.
-GUILD_OBJECT	Objects
-GUILD_OFFER_EXP	Invest experience
-GUILD_SHORT_EXP	Not enough experience points.
-GUILD_TILE_BASEINFO	Territory information
-GUILD_TILE_BOARD	Guild messages
-GUILD_TILE_GRADE	Rights administration
-GUILD_TILE_INFO	Guild information
-GUILD_TILE_MEMBER	Member
-GUILD_TILE_SKILL	Guild skills
+GUILDWAR_WARP_TITLE	Dìjištì války cechù
+GUILDWAR_WIN	Vítezství (V)
+GUILDWAR_WIN_FIVE	5 kol
+GUILDWAR_WIN_ONE	1 kolo
+GUILDWAR_WIN_THREE	3 kola
+GUILDWINDOW_BUTTON_BANKGOLDINFO	Záznamy cechovního skladištì
+GUILDWINDOW_BUTTON_BASEABANDON	Opustit území cechu
+GUILDWINDOW_BUTTON_BASEDEAL	Prodat území cechu
+GUILDWINDOW_BUTTON_BOARD	Zprávy cechu
+GUILDWINDOW_BUTTON_CHANGEMASTER	Zmìnit velitele cechu
+GUILDWINDOW_BUTTON_DECLARE	Vyhlásit válku
+GUILDWINDOW_BUTTON_DONATE	Darovat
+GUILDWINDOW_BUTTON_GOLDIN	Uloení
+GUILDWINDOW_BUTTON_GOLDOUT	Vıbìr
+GUILDWINDOW_BUTTON_GRADE	Správa oprávnìní
+GUILDWINDOW_BUTTON_GUILDLIST	Seznam cechù
+GUILDWINDOW_BUTTON_GUILD_BATTLE	Cechovní bitva
+GUILDWINDOW_BUTTON_GUILD_CONTENTS_LIST	Zpìt do okna cechovní bitvy
+GUILDWINDOW_BUTTON_HEALGSP	Obnovit Sílu draèího boha
+GUILDWINDOW_BUTTON_INFO	Informace o cechu
+GUILDWINDOW_BUTTON_LANDINFO	Informace o území
+GUILDWINDOW_BUTTON_MARK	Nahrát symbol cechu
+GUILDWINDOW_BUTTON_MEMBER	Èlen
+GUILDWINDOW_BUTTON_OFFER	Darovat BZK
+GUILDWINDOW_BUTTON_OUTMEMBER	Odebrat èlena
+GUILDWINDOW_BUTTON_SKILL	Schopnosti cechu
+GUILDWINDOW_BUTTON_SYMBOL	Nahrát vlajku cechu
+GUILDWINDOW_BUY_GUILD_LAND	Koupit území
+GUILDWINDOW_CHANGE_BLACKSMITH	Zmìnit povolání
+GUILDWINDOW_CHANGE_OBJECT	Rekonstrukce
+GUILDWINDOW_CHANGE_SMELTER	Zmìnit pec
+GUILDWINDOW_CREATE_OBJECT	Konstrukce
+GUILDWINDOW_DEAL_GUILD_LAND	Prodat území
+GUILDWINDOW_GRADE_BANK	Mùe pouívat cechovní pokladnu a skladištì
+GUILDWINDOW_GRADE_DRIVEOUTAUTHORITY	Mùe odebírat èleny cechu
+GUILDWINDOW_GRADE_GRADENAME	Název hodnosti
+GUILDWINDOW_GRADE_GRADENUMBER	Èíslo hodnosti
+GUILDWINDOW_GRADE_GUILDWAR	Mùe vybírat èleny jako bojovníky
+GUILDWINDOW_GRADE_INVITEAUTHORITY	Mùe pøijímat hráèe do cechu
+GUILDWINDOW_GRADE_NOTICEAUTHORITY	Mùe posílat cechovní zprávy
+GUILDWINDOW_GRADE_SKILLAUTHORITY	Mùe pouívat schopnosti cechu
+GUILDWINDOW_INFO_LEVEL5	+5% BZK darovat cechu
+GUILDWINDOW_INFO_LEVEL10	Zvıšit max. poèet èlenù
+GUILDWINDOW_INFO_LEVEL15	Náklady: Síla draèího boha
+GUILDWINDOW_INFO_LEVEL20	Pokladna: Daòová svoboda
+GUILDWINDOW_LAND_TAX	Pronájem
+GUILDWINDOW_LIST_ALL	Všechna království
+GUILDWINDOW_LIST_ALREADY_REGISTER	[Cech] Ji jsi poslal ádost.
+GUILDWINDOW_LIST_APPLICANT_LIST	Seznam ádostí
+GUILDWINDOW_LIST_CHRACTER_JOB	Typ
+GUILDWINDOW_LIST_CHRACTER_LV	Úroveò
+GUILDWINDOW_LIST_CHRACTER_NAME	Jméno postavy
+GUILDWINDOW_LIST_CHRACTER_SUB_JOB	Podtøída
+GUILDWINDOW_LIST_EMPIRE_A	Shinsoo
+GUILDWINDOW_LIST_EMPIRE_B	Chunjo
+GUILDWINDOW_LIST_EMPIRE_C	Jinno
+GUILDWINDOW_LIST_GUILDMEMBER	Èlen
+GUILDWINDOW_LIST_GUILD_LIST	Seznam cechù
+GUILDWINDOW_LIST_GUILD_LV	Úroveò
+GUILDWINDOW_LIST_GUILD_NAME	Cech
+GUILDWINDOW_LIST_INPUT_GUILDNAME	[Cech] Prosím, zadej název cechu.
+GUILDWINDOW_LIST_LADDER	Body umístìní
+GUILDWINDOW_LIST_NOTPROMOTEGUILD	[Cech] Tento cech neinzeruje.
+GUILDWINDOW_LIST_PROMOTE_GUILD	ádost
+GUILDWINDOW_LIST_PROMOTE_GUILD_LIST	Seznam cechù
+GUILDWINDOW_LIST_RANKING	Pozice
+GUILDWINDOW_LIST_RANKING_COUNT	Pozice
+GUILDWINDOW_LIST_REGISTER	ádosti
+GUILDWINDOW_LIST_REGISTER_GUILD	Poádat o vstup
+GUILDWINDOW_LIST_SEARCH	Hledat
+GUILDWINDOW_LIST_SELECT_GUILD	[Cech] Prosím, zvol si cech kam chceš vstoupit.
+GUILDWINDOW_PROMOTE_REFRESH	Propagovat
+GUILDWINDOW_PROMOTE_REGISTER	Propagovat
+GUILDWINDOW_SP_RECOVER	Síla Draèího boha
+GUILDWINDOW_UPGRADE_ALTEROFPOWER	Vylepšit Oltáø
+GUILDWINDOW_UPGRADE_GUILDBANK	Vylepšit banku
+GUILD_ATTENDANCE_FAIL_ALREADY	Ji jsi se dnes zúèastnil.
+GUILD_ATTENDANCE_FAIL_JOIN_TIME	Nyní se nemùeš zúèastnit. Úèast se resetuje kadı den v 05:00.
+GUILD_BANKINFO_CLOSE	Zavøít
+GUILD_BANKINFO_NAME	Èlen
+GUILD_BANKINFO_TYPE	Pøedmìt/mìna
+GUILD_BANKINFO_USETYPE	Akce
+GUILD_BANK_CLOSE	Zavøít
+GUILD_BANK_INFO	Záznamy cechovního skladištì
+GUILD_BATTLE_APPLY_SUCCESS_MESSAGE	Úspìšnì jsi se zaregistroval do cechovní bitvy.
+GUILD_BATTLE_AREA_INFO_TEXT	Zbıvající èas: %s\nZbıvá pøíšer (%d/61)\nModrá: (%s) lutá: (%s) Zelená: (%s) Èervená: (%s)
+GUILD_BATTLE_AREA_INFO_TEXT_FONT	Tahoma:14b
+GUILD_BATTLE_AREA_UNDER_ATTCK_MESSAGE	Pøíšery zaútoèí za %s.
+GUILD_BATTLE_CANNOT_APPLY_TIME_MESSAGE	Tentokrát se cechovní bitvy nemùeš zúèastnit, protoe jsou pozice plné. Zkus to pøíštì!
+GUILD_BATTLE_CANNOT_ENTER_JOIN_TIME	Ještì se nemùeš zúèastnit. Zbıvající èas: %d minut
+GUILD_BATTLE_CANNOT_ENTER_MAP_MESSAGE	Mùeš vstoupit jenom z první vesnice nebo Planin Dong Gwang.
+GUILD_BATTLE_CANNOT_ENTER_NOT_MATCHING_MESSAGE	Pro tvùj cech nebylo moné najít vhodného protivníka. Zkus to pøíštì.
+GUILD_BATTLE_CANNOT_GET_REWARD_NOT_ENOUGH_INEVENTORY	Nemáš dostatek místa v inventáøi.
+GUILD_BATTLE_CANNOT_GUILD_ACTION_MESSAGE	
+GUILD_BATTLE_CANNOT_PARTICIPATION_MESSAGE	Nesplòuješ všechny poadavky potøebné pro cechovní bitvu.
+GUILD_BATTLE_CANNOT_USE_MOVE_TICKET_NOT_OCCUPY_MESSAGE	Do této zóny nemùeš vstoupit, protoe ji ovládl jinı cech.
+GUILD_BATTLE_CANNOT_USE_PORTAL_NOT_OCCUPY	Mùeš to pouít pouze pokud bude zóna ovládnuta tvım cechem.
+GUILD_BATTLE_CANNOT_USE_TICKET_NOT_MASTER	Tento pøedmìt mùe pouívat pouze vùdce cechu.
+GUILD_BATTLE_CANNOT_USE_TICKET_NOT_OPEN	Nemùeš pouít Lístek cechovní bitvy.
+GUILD_BATTLE_CAN_NOT_USE_TICKET_MESSAGE	Toto ji bylo pouito a nelze to pouít znovu.
+GUILD_BATTLE_CMD_FAIL_IMMEDIATELY_START	Musíš poèkat, a se budou úèastnit alespoò 2 další cechy.
+GUILD_BATTLE_DEAD_TO_PLAYER	Zabil tì èlen cechu %s.
+GUILD_BATTLE_DROP_ITEM_BY_REWARD_BOX_MESSAGE	Od %s jsi obdrel %s.
+GUILD_BATTLE_ENCOURAGE_MESSAGE	Cechovní bitva zaèíná za %d minut. Jsi zaregistrován k úèasti. Pøiprav se a dej do toho všechno!
+GUILD_BATTLE_END_MESSAGE	Cechovní bitva skonèila.
+GUILD_BATTLE_END_REMAIN_TIME_MESSAGE	Cechovní bitva konèí za %d minut.
+GUILD_BATTLE_ENTER_AREA_MESSAGE	Vstoupil jsi do %s. Poraz všechny pøíšery!
+GUILD_BATTLE_ENTER_BUTTON_TOOLTIP	Vstoupit
+GUILD_BATTLE_ENTER_MESSAGE	Brzy budeš zaregistrován do cechovní bitvy.
+GUILD_BATTLE_ENTER_OCCUPY_AREA_MESSAGE	Vstoupil jsi do %s.
+GUILD_BATTLE_ENTER_OUTPOST_BLUE	Jsi pøíslušník modrého tımu. Pouij portál pro vstup do Zóny bitvy cechu.
+GUILD_BATTLE_ENTER_OUTPOST_GREEN	Jsi pøíslušník zeleného tımu. Pouij portál pro vstup do Zóny bitvy cechu.
+GUILD_BATTLE_ENTER_OUTPOST_RED	Jsi pøíslušník èerveného tımu. Pouij portál pro vstup do Zóny bitvy cechu.
+GUILD_BATTLE_ENTER_OUTPOST_YELLOW	Jsi pøíslušník lutého tımu. Pouij portál pro vstup do Zóny bitvy cechu.
+GUILD_BATTLE_GET_GUILD_REWARD_MESSAGE	Obdrel jsi cechovní odmìnu. Najdeš ji v inventáøi.
+GUILD_BATTLE_GET_PERSONAL_REWARD_BUFF_MESSAGE	Obdrel jsi za odmìnu posílení. Pro více informací se podívej na ikonu posílení.
+GUILD_BATTLE_GUILD_REWARD_BUTTON_TOOLTIP	Sebrat cechovní odmìnu
+GUILD_BATTLE_LIST_REMAIN_TIME	Zbıvající èas: %s
+GUILD_BATTLE_MONSTER_KILL_GUILD_MESSAGE	%s zabil %d pøíšer.
+GUILD_BATTLE_NEED_REWARD_OPEN_KEY_MESSAGE	Nemáš Vítìznı klíè pro otevøení truhly. Zabíjej pøíšery, abys získal klíè.
+GUILD_BATTLE_NOT_ENOUGH_INEVENTORY_MESSAGE	Udìlej nìjaké místo v inventáøi a zkus to ještì jednou.
+GUILD_BATTLE_NOT_ENOUGH_MOVE_TICKET_MESSAGE	Nemáš Lístek cechovní bitvy.
+GUILD_BATTLE_NOT_ENOUGH_TIME_OF_CREATE_TO_APPLY	Ještì se nemùeš zúèastnit, protoe tvùj cech byl zaloen v posledních 24 hodinách.
+GUILD_BATTLE_OCCUPY_AREA_MESSAGE	Zóna byla ovládnuta. Brzy se objeví portál a pøíšery zaènou bránit zónu.
+GUILD_BATTLE_OCCUPY_AREA_MESSAGE_IN_OUTPOST	%s byla ovládnuta. Brzy se objeví portál a pøíšery zaènou bránit zónu.
+GUILD_BATTLE_OCCUPY_AREA_OTHERS_GUILD_MESSAGE	Tato zóa ji byla ovládnuta jinım cechem. Budeš teleportován zpìt na základnu cechu.
+GUILD_BATTLE_ONGOING	Probíhá bitva
+GUILD_BATTLE_OPEN_REWARD_BOX	Chceš otevøít %s?
+GUILD_BATTLE_OTHER_GUILD_ONGOING	Ostatní cechy ji bojují.
+GUILD_BATTLE_OUTPOST_REMAIN_TIME	Zbıvající èas: %s
+GUILD_BATTLE_OUTPOST_REMAIN_TIME_FONT	Tahoma:14b
+GUILD_BATTLE_PAGE_ENTER_REQUIRMENTS	Podmínky splnìny?
+GUILD_BATTLE_PAGE_START_REMAIN_TIME	Bitva zaèíná za: %s
+GUILD_BATTLE_PERSONAL_BUFF	Posílení jako odmìna
+GUILD_BATTLE_PERSONAL_REWARD_BUTTON_TOOLTIP	Získal jsi posílení za odmìnu
+GUILD_BATTLE_PK_GUILD_MESSAGE	%s zabil %d hráèù z jinıch cechù.
+GUILD_BATTLE_PLAYER_KILL	Zabil jsi èlena cechu %s.
+GUILD_BATTLE_QUALIFICATION	Poraz Draèího krále nebo pouij\nLístek Cechovní bitvy pro úèast.
+GUILD_BATTLE_RELOAD_BUTTON_COOLTIME_MESSAGE	Prosím zkus to znovu.
+GUILD_BATTLE_RESULT_BOARD_REMAIN_TIME_MESSAGE	Budeš teleportován za %s.
+GUILD_BATTLE_REVIVE_USE_SCROLL_MESSAGE	Byl jsi oiven pomocí Cechovního oivení.
+GUILD_BATTLE_START_MESSAGE	Cechovní bitva zaèala! Pøidej se k vızvì kliknutím na tlaèítko Vstoupit v menu Cechovní bitvy!
+GUILD_BATTLE_STATUS_BOARD_PK	PK: %d
+GUILD_BATTLE_STATUS_BOARD_REMAIN_MONSTER_COUNT	%s: %d/%d
+GUILD_BATTLE_TEAM_NAME_BLUE	Modrá
+GUILD_BATTLE_TEAM_NAME_GREEN	Zelená
+GUILD_BATTLE_TEAM_NAME_RED	Èervená
+GUILD_BATTLE_TEAM_NAME_YELLOW	lutá
+GUILD_BATTLE_USE_MOVE_TICKET_MESSAGE	Pouil jsi Cechovní lístek portálu a budeš brzy teleportován do %s.
+GUILD_BATTLE_USE_SCROLL	Chceš se zúèastnit cechovní bitvy?
+GUILD_BATTLE_USE_TICKET_CANCEL_MESSAGE	Tvá registrace do cechovní bitvy byla zrušena.
+GUILD_BOARD_ID	Èlen
+GUILD_BOARD_TEXT	Zpráva
+GUILD_BUILDING_FIX_CHANGE	Chceš opravdu zmìnit pozici?
+GUILD_BUILDING_FIX_CHANGE_GOLD	Cena: 1.000.000 Yangù
+GUILD_BUILDING_FIX_DELETE	Opravdu chceš smazat objekt?
+GUILD_BUILDING_FIX_NEED_BUILDING	Není ádná budova.
+GUILD_BUILDING_GRADE	Hodnost
+GUILD_BUILDING_LOG_PLUS	Kmen+
+GUILD_BUILDING_NAME	Název budovy
+GUILD_BUILDING_PLY_PLUS	Pøeklika+
+GUILD_BUILDING_SMELT_STONE	Runovı kámen
+GUILD_BUILDING_STONE_PLUS	Základovı kámen+
+GUILD_CANNOT_HEAL_GSP_ANYMORE	Energie draèího ducha je plnì obnovena.
+GUILD_CHANGEMASTER_TEXT1	Novı vùdce bude: %s
+GUILD_CHANGEMASTER_TEXT2	Chceš bıt jmenován novım vùdcem cechu?
+GUILD_CHANGEMASTER_TEXT3	Jsi si jistı, e chceš pøedat
+GUILD_CHANGEMASTER_TEXT4	funkci velitele cechu?
+GUILD_COMMENT	Psát
+GUILD_CONTENTS_ONGOING	Probíhá bitva
+GUILD_CREATE_ERROR_INSULT_NAME	Název cechu je nepøípustnı.
+GUILD_DEFAULT_GRADE	Èlenové cechu
+GUILD_DELETE	Smazat
+GUILD_DEPOSIT	Deponovat
+GUILD_DISBAND_OR_LEAVE_OR_OUT_FAIL_MESSAGE	Cech nyní nemùeš opustit, protoe jsi v bitvì.
+GUILD_DISBAND_SUCCESS_MESSAGE	Cech byl rozpuštìn.
+GUILD_DONATE_FAIL_NOT_ENOUGH_HIGH_ITEM	Nemáš dostatek Velkıch darovacích lístkù.
+GUILD_DONATE_FAIL_NOT_ENOUGH_INVENTORY	Tvùj inventáø je plnı. Nemùeš darovat.
+GUILD_DONATE_FAIL_NOT_ENOUGH_LEVEL	Musíš nejdøív dosáhnout úrovnì 30, abys mohl darovat.
+GUILD_DONATE_FAIL_NOT_ENOUGH_MIDDLE_ITEM	Nemáš dostatek Støedních darovacích lístkù.
+GUILD_DONATE_FAIL_NOT_ENOUGH_YANG	Nedostatek Yangù.
+GUILD_DONATE_FAIL_TIME	Nemùeš darovat 24 hodin po vstupu do cechu.
+GUILD_DONATE_QUESTION_HIGH	Chceš provést Velkı dar?
+GUILD_DONATE_QUESTION_MIDDLE	Chceš provést Støední dar?
+GUILD_DONATE_QUESTION_NORMAL	Chceš provést Malı dar?
+GUILD_DO_YOU_HEAL_GSP	Chceš pouít %d Yangù na obnovu %d jednotek Draèího ducha?
+GUILD_DO_YOU_JOIN	 tì pozval. Pøeješ si vstoupit do cechu?
+GUILD_DRAGONLAIR_MIN	min.
+GUILD_DRAGONLAIR_PARTY_ALL	Celkové hodnocení
+GUILD_DRAGONLAIR_PARTY_LINE_FOUR	11. místo a níe: 100 Gaya
+GUILD_DRAGONLAIR_PARTY_LINE_HELP	Nápovìda
+GUILD_DRAGONLAIR_PARTY_LINE_ONE	1. místo: 400 Gaya
+GUILD_DRAGONLAIR_PARTY_LINE_THREE	4. - 10. místo: 200 Gaya
+GUILD_DRAGONLAIR_PARTY_LINE_TWO	2. - 3. místo: 300 Gaya
+GUILD_DRAGONLAIR_PARTY_MEMBER	Èlenové
+GUILD_DRAGONLAIR_PARTY_NOW	Tıdenní hodnocení
+GUILD_DRAGONLAIR_PARTY_PAST	Pøedchozí hodnocení
+GUILD_DRAGONLAIR_PARTY_TIME	Èas
+GUILD_DRAGONLAIR_PARTY_TOOLTIP_TITLE	Odmìna
+GUILD_DRAGONLAIR_RANKING_FAIL	SELHALO
+GUILD_DRAGONLAIR_RANKING_NONE	NOVÉ
+GUILD_DRAGONLAIR_RANKING_SUCCESS	ÚSPÌŠNÌ
+GUILD_DRAGONLAIR_SECOND	sek.
+GUILD_DRAGON_LAIR_DUNGEON_APPLY_SUCCESS	Zaregistroval jsi se do Balathorovy krypty. Promluv si s Draèím hlídaèem Dolnarrem pro vstup. Poté máš 10 minut na zahájení boje.
+GUILD_DRAGON_LAIR_DUNGEON_START	Bitva v Balathorovì kryptì zaèala. Èasovı limit pobytu v bludišti je jedna hodina.
+GUILD_EMPTY_AREA	Planá zemì
+GUILD_ENEMY_GUILD_NAME	Název nepøátelského cechu
+GUILD_FACILITY	Vedlejší budova
+GUILD_GEM	Drahokam
+GUILD_HEADQUARTER	Hlavní budova
+GUILD_HEAL_GSP	Obnovit draèího ducha
+GUILD_INFO_ENEMY_GUILD_EMPTY	ádná
+GUILD_MARK_NOT_ENOUGH_LEVEL	Je zapotøebí minimálnì úrovnì 3.
+GUILD_MARK_UPLOAD_NOTICE	Poèkej chvilku abys mohl pøidat cechovní loga.
+GUILD_MEMBEROUT_AUTH	Nemùeš odebrat ádné èleny.
+GUILD_MEMBEROUT_NOMAL	Chceš odebrat tohoto èlena?
+GUILD_MEMBER_JOB	Typ
+GUILD_MEMBER_KNIGHT	Bojovník
+GUILD_MEMBER_LEVEL	Úroveò
+GUILD_MEMBER_NAME	Èlen
+GUILD_MEMBER_RANK	Hodnost
+GUILD_MEMBER_SPECIFIC_GRAVITY	Darované BZK
+GUILD_NAME	Název cechu
+GUILD_NOT_ENOUGH_MATERIAL	Nemáš dostatek stavebního materiálu pro tuto budovu.
+GUILD_NOT_ENOUGH_MONEY	Nemáš dostatek Yangù pro tuto budovu.
+GUILD_NO_NOTICE_PERMISSION	Nejsi oprávnìn, zveøejòovat oznámení.
+GUILD_OBJECT	Objekty
+GUILD_OBJECT_POSSIBLE_NEWWORLD	Tato budova je dostupná pouze na kontinentu Yohara.
+GUILD_OFFER_EXP	Zkušenost k investování
+GUILD_SELECT_ONE	Vyber èlena cechu.
+GUILD_SHORT_EXP	Nedostatek zkušeností.
+GUILD_SITE_AUCTION_END_TIME	Aukce území: %02d/%02d (mìsíc/den) v %02d:%02d
+GUILD_SITE_AUCTION_END_TIME_DEFAULT	Aukce cechovního území: není dostupná
+GUILD_SITE_AUCTION_INFO	Nabízené území: %s / %d,%d
+GUILD_SITE_AUCTION_INFO_DEFAULT	Nabízené území: není dostupné
+GUILD_SITE_AUCTION_MAP_INFO	Datum (mìsíc/den): %02d/%02d; èas: %02d:%02d
+GUILD_SITE_AUCTION_STATE_NONE	Všechny nabídky byly odeslány.
+GUILD_SITE_AUCTION_STATE_REGIST	Za %s bude území %s,%s draeno. Pouze vùdce cechu mùe provést registraci do aukce.
+GUILD_SITE_AUCTION_STATE_RUN	Aukce území konèí %02d/%02d (mìsíc/den) v %02d:%02d
+GUILD_SITE_AUCTION_STATE_WAIT	Aukce území zaèíná %02d/%02d (mìsíc/den) v %02d:%02d pro %s, území %d,%d.
+GUILD_SITE_AUTO_ABNDON_TIME	Automatické opuštìní území: %s
+GUILD_SITE_TAX_INFO	Cechovní území bude opuštìno za : %s. Všechny pøedmìty v cechovním skladišti budou smazány.
+GUILD_TILE_BASEINFO	Informace o území
+GUILD_TILE_BOARD	Zprávy cechu
+GUILD_TILE_GRADE	Administrace práv
+GUILD_TILE_GUILD_BATTLE	Cechovní bitva
+GUILD_TILE_GUILD_CONTENTS_LIST	Cechovní bitva
+GUILD_TILE_INFO	Informace o cechu
+GUILD_TILE_MEMBER	Èlen
+GUILD_TILE_SKILL	Schopnosti  cechu
+GUILD_USE_MASTER_ONLY	Toto smí pouívat pouze vùdce cechu.
 GUILD_VILLAGE_01	Miryang
 GUILD_VILLAGE_02	Songpa
 GUILD_VILLAGE_03	Daeyami
-GUILD_WAR_LIMIT_30MIN	Time: 30 minutes
-GUILD_WAR_REWARD_POTION	Reward: The winner receives a potion
-GUILD_WAR_USE_BATTLE_MAP	Location: Guild war arena
-GUILD_WAR_USE_NORMAL_MAP	Location: Normal map
-GUILD_WAR_WIN_CHECK_SCORE	The highest result wins the war.
-GUILD_WAR_WIN_TAKE_AWAY_FLAG1	Capture the flag of your enemy
-GUILD_WAR_WIN_TAKE_AWAY_FLAG2	and carry it to your base.
-GUILD_WAR_WIN_WIPE_OUT_GUILD	Defeat all enemies to win.
-GUILD_WITHDRAW	Fallback
-GUILD_YOU_DO_NOT_JOIN	You are not a member of any guild.
-HORSE_HEALTH0	Dead
-HORSE_HEALTH1	Starving
-HORSE_HEALTH2	Hungry
-HORSE_HEALTH3	Full
-HORSE_LEVEL1	Normal horse
-HORSE_LEVEL2	Battle horse
-HORSE_LEVEL3	Military horse
-HOUR	Hours
+GUILD_WAR1	Oblast cechovních válek
+GUILD_WAR2	Oblast cechovních válek
+GUILD_WAR3	Oblast cechovních válek
+GUILD_WAR4	Oblast cechovních válek
+GUILD_WAR_GAINSCORE_FIFTY	50 bodù
+GUILD_WAR_GAINSCORE_HUNDRED	100 bodù
+GUILD_WAR_GAINSCORE_THIRTY	30 bodù
+GUILD_WAR_GAMETIME_SIXTY	60 minut
+GUILD_WAR_GAMETIME_TEN	10 minut
+GUILD_WAR_GAMETIME_THIRTY	30 minut
+GUILD_WAR_LIMIT_30MIN	Èas: 30 minut
+GUILD_WAR_REWARD_POTION	Odmìna: Vítìz obdrí elixíry
+GUILD_WAR_SELECT_WAR	Zvol typ
+GUILD_WAR_TYPE_DEFENSE	Štítová bitva
+GUILD_WAR_TYPE_DIE	Bitva v arénì
+GUILD_WAR_TYPE_FLAG	Zajmout vlajku
+GUILD_WAR_TYPE_NORMAL	Polní bitva
+GUILD_WAR_TYPE_TIGER	Rozdrcení
+GUILD_WAR_TYPE_TIME	Èasovı útok
+GUILD_WAR_USE_BATTLE_MAP	Lokalita: dìjištì cechovní války
+GUILD_WAR_USE_NORMAL_MAP	Lokalita: normální mapa
+GUILD_WAR_WIN_CHECK_SCORE	Nejvyšší vısledek vyhraje válku.
+GUILD_WAR_WIN_FIVE	5 kol
+GUILD_WAR_WIN_ONE	1 kolo
+GUILD_WAR_WIN_TAKE_AWAY_FLAG1	Zmocni se praporu protivníka
+GUILD_WAR_WIN_TAKE_AWAY_FLAG2	a doprav jej na vlastní základnu.
+GUILD_WAR_WIN_THREE	3 kola
+GUILD_WAR_WIN_WIPE_OUT_GUILD	Pøemo všechny soupeøi, abys vyhrál.
+GUILD_WHITE_DRAGON_LAIR_ALREADY_USED_BUFF_POTION	Efekty jsou ji aktivní.
+GUILD_WHITE_DRAGON_LAIR_BUFF_POTION_CANNOT_USE_IN_MAP	Mùeš pouít pouze v Balathorovì kryptì.
+GUILD_WHITE_DRAGON_LAIR_CANNOT_ATTACK_EGG	Musíš posunout Vejce ohnivého draka jinım smìrem.
+GUILD_WHITE_DRAGON_LAIR_CAN_USE_SINGIJEON	Hwacha je pøipravena ke støelbì!
+GUILD_WHITE_DRAGON_LAIR_CONCENTRATED_STRIKE_REMAIN_TIME	Zamìø se na Vejce ledového draka, ne za %d vteøin zmizí.
+GUILD_WHITE_DRAGON_LAIR_CONCENTRATED_STRIKE_SUCCESS	Úspìšnì jsi zaehnal ledovou zimu.
+GUILD_WHITE_DRAGON_LAIR_DRAGON_CRY_SOUNDS_LOUDER	Balathorùv øev se rozléhá kryptou.
+GUILD_WHITE_DRAGON_LAIR_DRAGON_STARTS_GOING_CRAZY	Balathor ztratil pøehled o svıch draèích vejcích. Nyní se naštve!
+GUILD_WHITE_DRAGON_LAIR_DRAGON_STARTS_GOING_MILD	Balathor má opìt své draèí vejce. Nebude se snait pouít všechnu svou sílu.
+GUILD_WHITE_DRAGON_LAIR_FAIL_1	Selhal jsi pøi dokonèení Balathorovy krypty. Budeš teleportován pryè do 5 minut.
+GUILD_WHITE_DRAGON_LAIR_FAIL_2	Budeš teleportován pryè do 3 minut. Promluv si s Draèím hlídaèem Dolnarrem pro okamitı odchod z bludištì.
+GUILD_WHITE_DRAGON_LAIR_FIRE_ARROW_COUNT_FULL	Ji nemùeš nabít další ohnivé šípy.
+GUILD_WHITE_DRAGON_LAIR_GAUGE_INCREASED_BY_DESTROYED_EGG	Balathorova peèe byla velmi oslabena, protoe bylo znièeno draèí vejce.
+GUILD_WHITE_DRAGON_LAIR_GAUGE_INCREASED_BY_DYING	Smrt hrdiny oslabila Balathorovu peèe.
+GUILD_WHITE_DRAGON_LAIR_GAUGE_INCREASED_BY_FREEZING_DEBUFF	Balathorova peèe byla oslabena, protoe nìkdo zmrzl.
+GUILD_WHITE_DRAGON_LAIR_GET_FIRE_ARROW	Zniè Starovìké ledové køišály pro zisk Ohnivıch šípù.
+GUILD_WHITE_DRAGON_LAIR_HIDDEN_CONCENTRATED_STRIKE_START	Rychle zniè Vejce ledového draka!
+GUILD_WHITE_DRAGON_LAIR_HIDDEN_CONCENTRATED_STRIKE_WAIT	Za 10 vteøin se objeví Balathorovo draèí vejce a ty mùeš zahájit cílenı útok.
+GUILD_WHITE_DRAGON_LAIR_HIDDEN_FAIL_REWARD	Balathor odlétá a nechává svùj poklad na pospas.
+GUILD_WHITE_DRAGON_LAIR_NEXT_CONCENTRATED_STRIKE_NEED_MORE_DAMAGE	Pro další útok je potøeba vìtší poškození.
+GUILD_WHITE_DRAGON_LAIR_NOTICE_CONCENTRATED_STRIKE_START	Jedno z Balathorovıch draèích vajec vyvolává ledovou zimu! Zamìø se na nìj, abys tomu zabránil.
+GUILD_WHITE_DRAGON_LAIR_NOTICE_GIVE_UP	Pøerušil jsi pokus o ovládnutí Balathorovy krypty. Budeš teleportován pryè do 1 minuty.
+GUILD_WHITE_DRAGON_LAIR_NOTICE_INCREASE_ARROW_COUNT	Hwacha má momentálnì %d Ohnivıch šípù.
+GUILD_WHITE_DRAGON_LAIR_NOTICE_LIMIT_TIME	Zbıvající èas: %d
+GUILD_WHITE_DRAGON_LAIR_NOTICE_REWARD_STAGE_REMAIN_TIME	Budeš teleportován pryè za %d minut. Promluv si s Draèím hlídaèem Dolnarrem pro okamitı odchod z bludištì.
+GUILD_WHITE_DRAGON_LAIR_NOTICE_REWARD_STATGE	Vezmi si odmìnu z Balathorova pokladu. Budeš teleportován pryè do 5 minut.
+GUILD_WHITE_DRAGON_LAIR_NOTICE_SPAWNEED_BROKEN_EGG	Objevilo se Vejce ohnivého draka.
+GUILD_WHITE_DRAGON_LAIR_NOT_ENOUGH_GUILD_SP	Nemáš dostatek Síly draèího boha.
+GUILD_WHITE_DRAGON_LAIR_PROTECTED_EGGS	Zniè vejce, abys zpùsobil více poškození!
+GUILD_WHITE_DRAGON_LAIR_PUT_EGGS_BACK_IN_ORIGINAL_PLACE	Balathorovo draèí vejce se objeví na své pùvodní pozici.
+GUILD_WHITE_DRAGON_LAIR_REPAIR_SINGIJEON	Hwacha nemùe nabíjet, dokud není opraven.
+GUILD_WHITE_DRAGON_LAIR_REPAIR_SINGIJEON_SUCCESS	Hwacha je nyní zcela opravena.
+GUILD_WHITE_DRAGON_LAIR_RUN_AWAY_TO_BREATH	Balathor vidìl znièení draèího vejce. Chraò se pøed jeho ledovım dechem!
+GUILD_WHITE_DRAGON_LAIR_UI_BOSS_NAME_TOOLTIP	Balathor
+GUILD_WHITE_DRAGON_LAIR_UI_BROKEN_EGG_INFO_1	Zbıvá
+GUILD_WHITE_DRAGON_LAIR_UI_BROKEN_EGG_INFO_2	Šance: %d
+GUILD_WHITE_DRAGON_LAIR_UI_BROKEN_EGG_TOOLTIP	Pokud je znièeno %d Vajec ohnivého draka, pokus o ovládnutí bludištì sele.
+GUILD_WHITE_DRAGON_LAIR_UI_FLYING_FLMAE_BREATH_TOOLTIP	Pokud peèe bude dole na 100%%, pak se na tebe Balathor zamìøí. (Aktuální stav peèetì: %d%%)
+GUILD_WHITE_DRAGON_LAIR_UI_HIDDEN_BOSS_NAME_TOOLTIP	Balathor
+GUILD_WHITE_DRAGON_LAIR_UI_SINGIJEON_NAME_TOOLTIP	Hwacha
+GUILD_WHITE_DRAGON_LAIR_UI_SINGIJEON_TOOLTIP	Jakmile je nabito 8 ohnivıch šípù, lze znièit Balathorovo šupinové brnìní. Ohnivé šípy lze získat ze Starovìkıch ledovıch køišálù. Aktuálnì nabito: %d
+GUILD_WITHDRAW	Ústup
+GUILD_YOU_DO_NOT_JOIN	Nepatøíš k ádnému cechu.
+HACK_USER_MESSAGE	Tato funkce není dostupná, protoe byl detekován ilegální software.
+HORSE_HEALTH0	Mrtvı
+HORSE_HEALTH1	Hladovìjící
+HORSE_HEALTH2	Hladovı
+HORSE_HEALTH3	Plnı
+HORSE_LEVEL1	Normální kùò
+HORSE_LEVEL2	Opancéøovanı kùò
+HORSE_LEVEL3	Vojenskı kùò
+HORSE_LEVEL4	Mocnı váleènı kùò
+HOUR	h
 HOW_MANY_ITEM_DO_YOU_DROP1	Do you want to drop %s?
 HOW_MANY_ITEM_DO_YOU_DROP2	Do you want to drop %s %d?
 INPUT_PRIVATE_CODE_DIALOG_DESCRIPTION	Enter deletion-code from your account settings here.
@@ -1388,19 +1783,91 @@ UI_DEF_FONT_LARGE	Tahoma:14
 UI_DEF_FONT_XLARGE	Tahoma:20
 UI_DEF_FONT_XXLARGE	Tahoma:34
 UI_DEF_FONT_SMALL	Tahoma:9
-UI_DENY	Decline
-UI_ITEM	Item
-UI_LEFT_TIME	Remaining time: %d sec.
-UI_NEXT	Continue
-UI_NEXTPAGE	Next
-UI_NOCONTENTS	No content
-UI_NONAME	No name
+UI_DENY	Odmítnout
+UI_ITEM	Pøedmìt
+UI_LEFT_TIME	Zbıvající èas: %d sek.
+UI_NEXT	Dále
+UI_NEXTPAGE	Další
+UI_NOCONTENTS	Bez obsahu
+UI_NONAME	Chybí jméno
 UI_OK	OK
-UI_POS_UNKNOWN	Unknown Place
-UI_PREVPAGE	Back
-UI_UNKNOWN	Unknown
-UPLOAD_MARK_UPLOAD_NEED_RECONNECT	The upload has to be started again.
-USE_ITEM_FAILURE_PRIVATE_SHOP	You cannot use items while you have a private shop open.
+UI_POS_UNKNOWN	Neznámé místo
+UI_PREVPAGE	zpìt
+UI_UNKNOWN	Neznámı
+UNLIMIT_ENTER_CZ_QUESTION	Mùeš vstoupit do Chrámu Zvìrokruhu na %d minut. Chceš je vyuít?
+UN_SEAL_SCROLL_CLOSE_UI	Tento pøedmìt nemùeš pouít. Zavøi okno a zkus to znovu.
+UN_SEAL_SCROLL_PLUS_PASSWORD_DESC1	Prosím, zadej heslo
+UN_SEAL_SCROLL_PLUS_PASSWORD_DESC2	po pouití Svitku odpoutání+.
+UN_SEAL_SCROLL_PLUS_PASSWORD_TITLE	Heslo
+UN_SEAL_SCROLL_PLUS_USE_SUCCESS	Duševní pouto bylo odebráno z %s.
+UN_SEAL_SCROLL_USE_SUCCESS	Odebírám duševní pouto z %s. Tento proces zabere 3 dny.
+UPDATE_TIME	Datum
+UPLOAD_MARK_CHECK_NEED_RECONNECT	Upload musí bıt proveden ještì jednou
+UPLOAD_MARK_UPLOAD_NEED_RECONNECT	Upload musí bıt proveden ještì jednou
+USER_REPORT_SYSTEM_DIALOG_BUTTON_NO	Storno
+USER_REPORT_SYSTEM_DIALOG_BUTTON_YES	Odeslat
+USER_REPORT_SYSTEM_DIALOG_REPORT_SURE	Jsi si jistı, e chceš nahlásit tuto postavu?
+USER_REPORT_SYSTEM_DIALOG_TITLE	Vybraná postava
+USER_REPORT_SYSTEM_DIALOG_WARN_SANCTIONS	Neoprávnìné nahlášení postavy mùe mít následky.
+USER_REPORT_SYSTEM_FAIL_MESSAGE_ALREADY_REPORTED	Tuto postavu jsi ji nahlásil.
+USER_REPORT_SYSTEM_FAIL_MESSAGE_DEAD	Tuto funkcionalitu nemùeš pouít, pokud jsi mrtvı.
+USER_REPORT_SYSTEM_FAIL_MESSAGE_GM	GM postava nemùe tuto funkcionalitu pouít.
+USER_REPORT_SYSTEM_FAIL_MESSAGE_NOT_SELECTED	Pøed odesláním reportu musíš zvolit dùvod.
+USER_REPORT_SYSTEM_FAIL_MESSAGE_OFFLINE	Postava je momentálnì offline.
+USER_REPORT_SYSTEM_FAIL_MESSAGE_UNDER_30	Abys mohl pouít tuto funkcionalitu, musíš nejprve dokonèit Biologùv úkol (úroveò 30).
+USER_REPORT_SYSTEM_MESSAGE_REPORT_SUCCESS	Report byl úspìšnì odeslán.
+USER_REPORT_SYSTEM_MESSAGE_USE_LATER	Zkus to prosím znovu pozdìji.
+USER_REPORT_SYSTEM_TOOLTIP_BOT_USING	Bot Shop
+USER_REPORT_SYSTEM_TOOLTIP_CHEATING	Pouívání botù & podvody
+USER_REPORT_SYSTEM_TOOLTIP_ILLEGAL_SELLER	Prodej zlata
+USER_REPORT_SYSTEM_TOOLTIP_USER_REPORT	Nahlásit hráèe
+USE_ITEM_BUTTON_01	Storno
+USE_ITEM_BUTTON_02	Vstoupit
+USE_ITEM_FAILURE_PRIVATE_SHOP	Pokud jsi otevøel soukromı stánek, nemùeš pouít tento pøedmìt.
+USE_ITEM_POPUP_01	Bitva pìti oltáøù skonèila. \n Další bitva:
+USE_ITEM_QUESTION_01	Pøeješ si pøidat se k Bitvì pìti oltáøù?.
+USE_ITEM_QUESTION_02	Pøeješ si vrátit se na místo, kde jsi zemøel?\nStojí to %s Yangù.
+USE_ITEM_QUESTION_03	Nyní budeš teleportován na náhodné místo. Pøeješ si vstoupit?
+USE_ITEM_QUESTION_04	Všechna posílení budou deaktivována jakmile se pøidáš k Bitvì pìti oltáøù.\nBudeš pøenesen na náhodné místo.\nPøeješ si vstoupit?
+USE_ITEM_QUESTION_05	Všechna posílení budou deaktivována jakmile se pøidáš k Bitvì pìti oltáøù.\nPøeješ si pøenést na místo, kde jsi naposledy zemøel?\nCena: %s Yangù
+USE_SKILL_ERROR_UNKNOWN	Neznámá chyba v schopnostech: %s
+VALENTINE_DAY_EVENT_MESSAGE_ADD_CHOCOLATE	Získal jsi 1 Èokoládu.
+VALENTINE_DAY_EVENT_MESSAGE_ADD_ROSE	Získal jsi 1 Rùi.
+VALENTINE_DAY_EVENT_MESSAGE_CANNOT_CLICK_USE_OR_WRAP_BUTTON	Nelze pouít/zabalit.
+VALENTINE_DAY_EVENT_MESSAGE_CANNOT_CLICK_WRAP_BUTTON	Nelze zabalit.
+VALENTINE_DAY_EVENT_MESSAGE_CANNOT_GET_CHOCOLATE	Další Èokolády ji nemùeš získat.
+VALENTINE_DAY_EVENT_MESSAGE_CANNOT_GET_ROSE	Další Rùe ji nemùeš získat.
+VALENTINE_DAY_EVENT_MESSAGE_CANNOT_UNPACK_CHOCOLATE	Více Èokolád ji nemùeš vlastnit.
+VALENTINE_DAY_EVENT_MESSAGE_CANNOT_UNPACK_ROSE	Více Rùí ji nemùeš vlastnit.
+VALENTINE_DAY_EVENT_MESSAGE_CANNOT_USE_EVENT_ITEM_DIFFERENT_GENDER	Tento pøedmìt mùe pouít pouze opaèné pohlaví. Zabal ho a pouij jako dárek!
+VALENTINE_DAY_EVENT_MESSAGE_CANNOT_USE_EVENT_ITEM_EVENT_ENDED	Událost je u konce. Toto ji nemùeš pouít.
+VALENTINE_DAY_EVENT_MESSAGE_CANNOT_WRAP_EVENT_ITEM_ALREADY_MAX_COUNT	Toto nemùeš pouít, protoe bys pøekroèil limit pro tento pøedmìt.
+VALENTINE_DAY_EVENT_MESSAGE_COOLTIME	Zkus to prosím znovu pozdìji.
+VALENTINE_DAY_EVENT_MESSAGE_EVENT_END	Událost na Den sv. Valentına byla ukonèena.
+VALENTINE_DAY_EVENT_MESSAGE_EVENT_START	Událost na Den sv. Valentına byla zahájena.
+VALENTINE_DAY_EVENT_MESSAGE_NOT_ENOUGH_INVENTORY	Nemáš dostatek místa v inventáøi.
+VALENTINE_DAY_EVENT_MESSAGE_NOT_ENOUGH_ITEM	Nemáš dostatek pøedmìtù.
+VALENTINE_DAY_EVENT_MESSAGE_NOT_ENOUGH_LEVEL	Pro rozbalení musíš nejdøív dosáhnout úrovnì 90.
+VALENTINE_DAY_EVENT_MESSAGE_NOT_ENOUGH_WRAP_ITEM	Musíš zabalit 50 pøedmìtù.
+VALENTINE_DAY_EVENT_MESSAGE_WRAP_SUCCESS_CHOCOLATE	Zabalil jsi Èokolády.
+VALENTINE_DAY_EVENT_MESSAGE_WRAP_SUCCESS_ROSE	Zabalil jsi Rùe.
+WHISPER_QUEST_BLOCK	Chceš zablokovat %s?
+WHISPER_QUEST_FRIEND	Chceš to pøidat %s do tvého seznamu pøátel?
+WHITE_DRAGON_CAVE_COOLING_CURSE	Za nabití {1}% maximálních BZK poškození {0} vteøin. - Aktuální nabití: {2}
+WORLD_BOSS_STATE_BOSS_KILLED	Unikl
+WORLD_BOSS_STATE_BOSS_SPAWNED	Objevil se
+WORLD_BOSS_STATE_BREAK_TIME	Obnovení
+WORLD_BOSS_STATE_WAIT_FOR_SPAWN	Ještì se neobjevil
+WORLD_BOSS_TIER_1_SYMBOL	I
+WORLD_BOSS_TIER_2_SYMBOL	II
+WORLD_BOSS_TIER_3_SYMBOL	III
+WORLD_BOSS_TIER_4_SYMBOL	IV
+YELLOW_FRUIT	Zlatá bobule
+YELLOW_FRUIT_MERCH_TITLE	Zlatá bobule (%d)
+YUTNORI_EVENT_MESSAGE_CARD_GAIN	Získáš desku Yutnori.
+YUTNORI_EVENT_MESSAGE_CARD_PEICE_GAIN	Získal jsi 1 Bøezovou vìtev.
+YUTNORI_EVENT_MESSAGE_NOT_ENOUGHT_ITEM	Pro hru nemáš dostatek pøedmìtù nebo penìz.
+YUTNORI_EVENT_MESSAGE_NO_MORE_GAIN	Další desky Yutnori ji nemùeš získat.
 GUILD_DIAMANT_OVEN	diamond furnace
 GUILD_FOSSIL_OVEN	Fossil wood furnace
 GUILD_COPPER_OVEN	Copper furnace
@@ -1498,6 +1965,16 @@ WIKI_SUBCATEGORY_WEAPONS	Weapons
 WIKI_TITLE	Wikipedia
 WIKI_UNKOWN_ITEM	Unknown item: %d
 WIKI_UNKOWN_MOB	Unknown mob: %d
+BIOLOG_MANAGER_REQUIRED_LEVEL	The biologist's current mission:
+BIOLOG_MANAGER_REWARD	Reward
+BIOLOG_MANAGER_TIME_TEXT	You can deliver the next item!
+BIOLOG_MANAGER_TIME_WAIT	Wait: 
+BIOLOG_MANAGER_TITLE	Biolog
+BONUS_BOARD_CATEGORY_1	Damage/Defence
+BONUS_BOARD_CATEGORY_2	Elemental bonus
+BONUS_BOARD_CATEGORY_3	Class bonus
+BONUS_BOARD_CATEGORY_4	Weapon bonus
+BONUS_BOARD_CATEGORY_5	Other bonus
 NEW_AFFECT_AUTO_HUNT	Auto Hunt	SNA
 OTO_SATIS	|Eemoji/key_ctrl|e + |Eemoji/key_x|e + |Eemoji/key_rclick|e - Otomatik Sat.
 OTOMATIK_SAT_UYARI	<Otomatik Satma> 1 den fazla itemi ekleyemezsin, önce itemi ayır!

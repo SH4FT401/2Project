@@ -5,40 +5,76 @@
 #include "../../common/length.h"
 
 TJobInitialPoints JobInitialPoints[JOB_MAX_NUM] =
+/*
 {
-	{ 6, 4, 3, 3, 600, 200, 40, 20, 44, 44, 22, 22, 800, 5, 3, 3 },
-	{ 4, 3, 6, 3, 650, 200, 40, 20, 44, 44, 22, 22, 800, 5, 3, 3 },
-	{ 5, 3, 3, 5, 650, 200, 40, 20, 44, 44, 22, 22, 800, 5, 3, 3 },
-	{ 3, 4, 3, 6, 700, 200, 40, 20, 44, 44, 22, 22, 800, 5, 3, 3 }
+	int st, ht, dx, iq;
+	int max_hp, max_sp;
+	int hp_per_ht, sp_per_iq;
+	int hp_per_lv_begin, hp_per_lv_end;
+	int sp_per_lv_begin, sp_per_lv_end;
+	int max_stamina;
+	int stamina_per_con;
+	int stamina_per_lv_begin, stamina_per_lv_end;
+}
+*/
+#ifdef ENABLE_RANDOM_STATUS_PER_LEVEL
+{	// Random HP & SP
+	// str con dex int HP SP CON/HP INT/SP HP/lv MP/lv stam stam/con stam/lv
+	{ 6, 4, 3, 3, 600, 200, 40, 20, 36, 44, 18, 22, 800, 5, 1, 3 }, // JOB_WARRIOR 16
+	{ 4, 3, 6, 3, 650, 200, 40, 20, 36, 44, 18, 22, 800, 5, 1, 3 }, // JOB_ASSASSIN 16
+	{ 5, 3, 3, 5, 650, 200, 40, 20, 36, 44, 18, 22, 800, 5, 1, 3 }, // JOB_SURA 16
+	{ 3, 4, 3, 6, 700, 200, 40, 20, 36, 44, 18, 22, 800, 5, 1, 3 }, // JOB_SHAMAN 16
 };
+#else
+{
+	// str con dex int HP SP CON/HP INT/SP HP/lv MP/lv stam stam/con stam/lv
+	{ 6, 4, 3, 3, 600, 200, 40, 20, 0, 0, 0, 0, 800, 5, 1, 3 }, // JOB_WARRIOR 16
+	{ 4, 3, 6, 3, 650, 200, 40, 20, 0, 0, 0, 0, 800, 5, 1, 3 }, // JOB_ASSASSIN 16
+	{ 5, 3, 3, 5, 650, 200, 40, 20, 0, 0, 0, 0, 800, 5, 1, 3 }, // JOB_SURA 16
+	{ 3, 4, 3, 6, 700, 200, 40, 20, 0, 0, 0, 0, 800, 5, 1, 3 }, // JOB_SHAMAN 16
+};
+#endif
 
 const TMobRankStat MobRankStats[MOB_RANK_MAX_NUM] =
+/*
 {
-	{  20,  },
-	{  20,  },
-	{  25,  },
-	{  30,  },
-	{  50,  },
-	{ 100,  }
+	int iGoldPercent;
+}
+*/
+{
+	{ 20, }, // MOB_RANK_PAWN,
+	{ 20, }, // MOB_RANK_S_PAWN,
+	{ 25, }, // MOB_RANK_KNIGHT,
+	{ 30, }, // MOB_RANK_S_KNIGHT,
+	{ 50, }, // MOB_RANK_BOSS,
+	{ 100, } // MOB_RANK_KING,
 };
 
 TBattleTypeStat BattleTypeStats[BATTLE_TYPE_MAX_NUM] =
+/*
 {
-	{	  0,	  0,	  0,	-10	},
-	{	 10,	-20,	-10,	-15	},
-	{	 -5,	 -5,	 10,	 10	},
-	{	  0,	  0,	  0,	  0	},
-	{	 10,	-10,	  0,	-15	},
-	{	-10,	 10,	-10,	  0	},
-	{	 20,	-20,	  0,	-10	},
-	{	-20,	 20,	-10,	  0	},
+	int AttGradeBias;
+	int DefGradeBias;
+	int MagicAttGradeBias;
+	int MagicDefGradeBias;
+}
+*/
+{
+	{ 0, 0, 0, -10 }, // BATTLE_TYPE_MELEE,
+	{ 10, -20, -10, -15 }, // BATTLE_TYPE_RANGE,
+	{ -5, -5, 10, 10 }, // BATTLE_TYPE_MAGIC,
+	{ 0, 0, 0, 0 }, // BATTLE_TYPE_SPECIAL,
+	{ 10, -10, 0, -15 }, // BATTLE_TYPE_POWER,
+	{ -10, 10, -10, 0 }, // BATTLE_TYPE_TANKER,
+	{ 20, -20, 0, -10 }, // BATTLE_TYPE_SUPER_POWER,
+	{ -20, 20, -10, 0 }, // BATTLE_TYPE_SUPER_TANKER,
 };
 
 const DWORD * exp_table = NULL;
 
 const DWORD exp_table_common[PLAYER_EXP_TABLE_MAX + 1] =
 {
-	0,
+	0, // 0
 	300,
 	800,
 	1500,
@@ -48,7 +84,7 @@ const DWORD exp_table_common[PLAYER_EXP_TABLE_MAX + 1] =
 	11000,
 	17000,
 	24000,
-	33000,
+	33000, // 10
 	43000,
 	58000,
 	76000,
@@ -58,7 +94,7 @@ const DWORD exp_table_common[PLAYER_EXP_TABLE_MAX + 1] =
 	219000,
 	283000,
 	365000,
-	472000,
+	472000, // 20
 	610000,
 	705000,
 	813000,
@@ -68,7 +104,7 @@ const DWORD exp_table_common[PLAYER_EXP_TABLE_MAX + 1] =
 	1418000,
 	1624000,
 	1857000,
-	2122000,
+	2122000, // 30
 	2421000,
 	2761000,
 	3145000,
@@ -78,7 +114,7 @@ const DWORD exp_table_common[PLAYER_EXP_TABLE_MAX + 1] =
 	5194000,
 	5717000,
 	6264000,
-	6837000,
+	6837000, // 40
 	7600000,
 	8274000,
 	8990000,
@@ -88,7 +124,7 @@ const DWORD exp_table_common[PLAYER_EXP_TABLE_MAX + 1] =
 	12320000,
 	13270000,
 	14280000,
-	15340000,
+	15340000, // 50
 	16870000,
 	18960000,
 	19980000,
@@ -98,7 +134,7 @@ const DWORD exp_table_common[PLAYER_EXP_TABLE_MAX + 1] =
 	26200000,
 	27960000,
 	29800000,
-	32780000,
+	32780000, // 60
 	36060000,
 	39670000,
 	43640000,
@@ -108,7 +144,7 @@ const DWORD exp_table_common[PLAYER_EXP_TABLE_MAX + 1] =
 	63890000,
 	70280000,
 	77310000,
-	85040000,
+	85040000, // 70
 	93540000,
 	102900000,
 	113200000,
@@ -118,7 +154,7 @@ const DWORD exp_table_common[PLAYER_EXP_TABLE_MAX + 1] =
 	165700000,
 	236990000,
 	260650000,
-	286780000,
+	286780000, // 80
 	315380000,
 	346970000,
 	381680000,
@@ -128,7 +164,7 @@ const DWORD exp_table_common[PLAYER_EXP_TABLE_MAX + 1] =
 	558740000,
 	614640000,
 	676130000,
-	743730000,
+	743730000, // 90
 	1041222000,
 	1145344200,
 	1259878620,
@@ -137,8 +173,8 @@ const DWORD exp_table_common[PLAYER_EXP_TABLE_MAX + 1] =
 	1676898443,
 	1844588288,
 	2029047116,
-	2050000000,
-	2150000000,
+	2050000000, // 99
+	2150000000, // 100
 	2210000000,
 	2250000000,
 	2280000000,
@@ -154,7 +190,7 @@ const DWORD exp_table_common[PLAYER_EXP_TABLE_MAX + 1] =
 	2440000000,
 	2450000000,
 	2460000000,
-	2470000000,
+	2470000000, // 110
 	2480000000,
 	2490000000,
 	2490000000,
@@ -222,75 +258,75 @@ const int *aiPercentByDeltaLevForBoss = NULL;
 
 const int aiPercentByDeltaLevForBoss_euckr[MAX_EXP_DELTA_OF_LEV] =
 {
-	1,
-	3,
-	5,
-	7,
-	15,
-	30,
-	60,
-	90,
-	91,
-	92,
-	93,
-	94,
-	95,
-	97,
-	99,
-	100,
-	105,
-	110,
-	115,
-	120,
-	125,
-	130,
-	135,
-	140,
-	145,
-	150,
-	155,
-	160,
-	165,
-	170,
-	180
+	1,		// -15	0
+	3,		// -14	1
+	5,		// -13	2
+	7,		// -12	3
+	15,		// -11	4
+	30,		// -10	5
+	60,		// -9	6
+	90,		// -8	7
+	91,		// -7	8
+	92,		// -6	9
+	93,		// -5	10
+	94,		// -4	11
+	95,		// -3	12
+	97,		// -2	13
+	99,		// -1	14
+	100,	// 0	15
+	105,	// 1	16
+	110,	// 2	17
+	115,	// 3	18
+	120,	// 4	19
+	125,	// 5	20
+	130,	// 6	21
+	135,	// 7	22
+	140,	// 8	23
+	145,	// 9	24
+	150,	// 10	25
+	155,	// 11	26
+	160,	// 12	27
+	165,	// 13	28
+	170,	// 14	29
+	180,	// 15	30
 };
 
 const int aiPercentByDeltaLev_euckr[MAX_EXP_DELTA_OF_LEV] =
 {
-	1,
-	5,
-	10,
-	20,
-	30,
-	50,
-	70,
-	80,
-	85,
-	90,
-	92,
-	94,
-	96,
-	98,
-	100,
-	100,
-	105,
-	110,
-	115,
-	120,
-	125,
-	130,
-	135,
-	140,
-	145,
-	150,
-	155,
-	160,
-	165,
-	170,
-	180,
+	1,		// -15	0
+	5,		// -14	1
+	10,		// -13	2
+	20,		// -12	3
+	30,		// -11	4
+	50,		// -10	5
+	70,		// -9	6
+	80,		// -8	7
+	85,		// -7	8
+	90,		// -6	9
+	92,		// -5	10
+	94,		// -4	11
+	96,		// -3	12
+	98,		// -2	13
+	100,	// -1	14
+	100,	// 0	15
+	105,	// 1	16
+	110,	// 2	17
+	115,	// 3	18
+	120,	// 4	19
+	125,	// 5	20
+	130,	// 6	21
+	135,	// 7	22
+	140,	// 8	23
+	145,	// 9	24
+	150,	// 10	25
+	155,	// 11	26
+	160,	// 12	27
+	165,	// 13	28
+	170,	// 14	29
+	180,	// 15	30
 };
 
-const DWORD party_exp_distribute_table[PLAYER_MAX_LEVEL_CONST + 1] = 
+const DWORD party_exp_distribute_table[PLAYER_MAX_LEVEL_CONST + 1] =
 {
 	0,
 	10,		10,		10,		10,		15,		15,		20,		25,		30,		40,		// 1 - 10
@@ -493,7 +529,7 @@ Coord aArroundCoords[ARROUND_COORD_MAX_NUM] =
 	{       -707,   707     },
 };
 
-const DWORD guild_exp_table[GUILD_MAX_LEVEL+1] =
+const DWORD guild_exp_table[GUILD_MAX_LEVEL + 1] =
 {
 	0,
 	15000UL,
@@ -554,32 +590,38 @@ const int aiSocketPercentByQty[5][4] =
 
 const int aiWeaponSocketQty[WEAPON_NUM_TYPES] =
 {
-	3,
-	3,
-	3,
-	3,
-	3,
-	3,
-	0,
-	0,
+	3, // WEAPON_SWORD,
+	3, // WEAPON_DAGGER,
+	3, // WEAPON_BOW,
+	3, // WEAPON_TWO_HANDED,
+	3, // WEAPON_BELL,
+	3, // WEAPON_FAN,
+	0, // WEAPON_ARROW,
+	0, // WEAPON_MOUNT_SPEAR
 };
 
 const int aiArmorSocketQty[ARMOR_NUM_TYPES] =
 {
-	3,
-	1,
-	1,
-	0,
-	0,
-	0
+	3, // ARMOR_BODY,
+	1, // ARMOR_HEAD,
+	1, // ARMOR_SHIELD,
+	0, // ARMOR_WRIST,
+	0, // ARMOR_FOOTS,
+	0 // ARMOR_ACCESSORY
 };
 
 TItemAttrMap g_map_itemAttr;
 TItemAttrMap g_map_itemRare;
 
 const TApplyInfo aApplyInfo[MAX_APPLY_NUM] =
+/*
 {
-	{ POINT_NONE,							},
+	DWORD dwPointType;
+}
+*/
+{
+	// Point Type
+	{ POINT_NONE,							}, // APPLY_NONE, // 0
 	{ POINT_MAX_HP,							},
 	{ POINT_MAX_SP,							},
 	{ POINT_HT,								},
@@ -589,7 +631,7 @@ const TApplyInfo aApplyInfo[MAX_APPLY_NUM] =
 	{ POINT_ATT_SPEED,						},
 	{ POINT_MOV_SPEED,						},
 	{ POINT_CASTING_SPEED,					},
-	{ POINT_HP_REGEN,						},
+	{ POINT_HP_REGEN,						}, // APPLY_HP_REGEN, // 10
 	{ POINT_SP_REGEN,						},
 	{ POINT_POISON_PCT,						},
 	{ POINT_STUN_PCT,						},
@@ -599,7 +641,7 @@ const TApplyInfo aApplyInfo[MAX_APPLY_NUM] =
 	{ POINT_ATTBONUS_HUMAN,					},
 	{ POINT_ATTBONUS_ANIMAL,				},
 	{ POINT_ATTBONUS_ORC,					},
-	{ POINT_ATTBONUS_MILGYO,				},
+	{ POINT_ATTBONUS_MILGYO,				}, // APPLY_ATTBONUS_MILGYO, // 20
 	{ POINT_ATTBONUS_UNDEAD,				},
 	{ POINT_ATTBONUS_DEVIL,					},
 	{ POINT_STEAL_HP,						},
@@ -609,7 +651,7 @@ const TApplyInfo aApplyInfo[MAX_APPLY_NUM] =
 	{ POINT_BLOCK,							},
 	{ POINT_DODGE,							},
 	{ POINT_RESIST_SWORD,					},
-	{ POINT_RESIST_TWOHAND,					},
+	{ POINT_RESIST_TWOHAND,					}, // APPLY_RESIST_TWOHAND, // 30
 	{ POINT_RESIST_DAGGER,					},
 	{ POINT_RESIST_BELL,					},
 	{ POINT_RESIST_FAN,						},
@@ -619,7 +661,7 @@ const TApplyInfo aApplyInfo[MAX_APPLY_NUM] =
 	{ POINT_RESIST_MAGIC,					},
 	{ POINT_RESIST_WIND,					},
 	{ POINT_REFLECT_MELEE,					},
-	{ POINT_REFLECT_CURSE,					},
+	{ POINT_REFLECT_CURSE,					}, // APPLY_REFLECT_CURSE, // 40
 	{ POINT_POISON_REDUCE,					},
 	{ POINT_KILL_SP_RECOVER,				},
 	{ POINT_EXP_DOUBLE_BONUS,				},
@@ -629,7 +671,7 @@ const TApplyInfo aApplyInfo[MAX_APPLY_NUM] =
 	{ POINT_KILL_HP_RECOVERY,				},
 	{ POINT_IMMUNE_STUN,					},
 	{ POINT_IMMUNE_SLOW,					},
-	{ POINT_IMMUNE_FALL,					},
+	{ POINT_IMMUNE_FALL,					}, // APPLY_IMMUNE_FALL, // 50
 	{ APPLY_SKILL,							},
 	{ POINT_BOW_DISTANCE,					},
 	{ POINT_ATT_GRADE_BONUS,				},
@@ -639,19 +681,19 @@ const TApplyInfo aApplyInfo[MAX_APPLY_NUM] =
 	{ POINT_CURSE_PCT,						},
 	{ POINT_MAX_STAMINA,					},
 	{ POINT_ATTBONUS_WARRIOR,				},
-	{ POINT_ATTBONUS_ASSASSIN,				},
-	{ POINT_ATTBONUS_SURA,					},
-	{ POINT_ATTBONUS_SHAMAN,				},
-	{ POINT_ATTBONUS_MONSTER				},
-	{ POINT_ATT_BONUS						},
-	{ POINT_MALL_DEFBONUS,					},
-	{ POINT_MALL_EXPBONUS,					},
-	{ POINT_MALL_ITEMBONUS,					},
-	{ POINT_MALL_GOLDBONUS,					},
-	{ POINT_MAX_HP_PCT,						},
-	{ POINT_MAX_SP_PCT,						},
-	{ POINT_SKILL_DAMAGE_BONUS,				},
-	{ POINT_NORMAL_HIT_DAMAGE_BONUS,		},
+	{ POINT_ATTBONUS_ASSASSIN,				}, // APPLY_ATTBONUS_ASSASSIN, // 60
+	{ POINT_ATTBONUS_SURA,					}, // APPLY_ATTBONUS_SURA, // 61
+	{ POINT_ATTBONUS_SHAMAN,				}, // APPLY_ATTBONUS_SHAMAN, // 62
+	{ POINT_ATTBONUS_MONSTER				}, // APPLY_ATTBONUS_MONSTER, // 63
+	{ POINT_ATT_BONUS						}, // APPLY_MALL_ATTBONUS, // 64
+	{ POINT_MALL_DEFBONUS,					}, // APPLY_MALL_DEFBONUS, // 65
+	{ POINT_MALL_EXPBONUS,					}, // APPLY_MALL_EXPBONUS, // 66
+	{ POINT_MALL_ITEMBONUS,					}, // APPLY_MALL_ITEMBONUS, // 67
+	{ POINT_MALL_GOLDBONUS,					}, // APPLY_MALL_GOLDBONUS, // 68
+	{ POINT_MAX_HP_PCT,						}, // APPLY_MAX_HP_PCT, // 69
+	{ POINT_MAX_SP_PCT,						}, // APPLY_MAX_SP_PCT, // 70
+	{ POINT_SKILL_DAMAGE_BONUS,				}, // APPLY_SKILL_DAMAGE_BONUS, // 71
+	{ POINT_NORMAL_HIT_DAMAGE_BONUS,		}, // APPLY_NORMAL_HIT_DAMAGE_BONUS, // 72
 	{ POINT_SKILL_DEFEND_BONUS,				},
 	{ POINT_NORMAL_HIT_DEFEND_BONUS,		},
 	{ APPLY_EXTRACT_HP_PCT,					},
@@ -750,75 +792,82 @@ const int aiSkillBookCountForLevelUp[10] =
 	3, 3, 3, 3, 3, 4, 4, 5, 5, 6
 };
 
+// ADD_GRANDMASTER_SKILL
 const int aiGrandMasterSkillBookCountForLevelUp[10] =
 {
-	3, 3, 5, 5, 7, 7, 10, 10, 10, 20, 
+	3, 3, 5, 5, 7, 7, 10, 10, 10, 20,
 };
 
-const int aiGrandMasterSkillBookMinCount[10] = 
+const int aiGrandMasterSkillBookMinCount[10] =
 {
-	1, 1, 1, 2,  2,  3,  3,  4,  5,  6
+	// 1, 1, 3, 5, 10, 15, 20, 30, 40, 50,
+	// 3, 3, 5, 5, 10, 10, 15, 15, 20, 30
+	1, 1, 1, 2, 2, 3, 3, 4, 5, 6
 };
 
-const int aiGrandMasterSkillBookMaxCount[10] = 
+const int aiGrandMasterSkillBookMaxCount[10] =
 {
-	5,  7,  9, 11, 13, 15, 20, 25, 30, 35
+	// 6, 15, 30, 45, 60, 80, 100, 120, 160, 200,
+	// 6, 10, 15, 20, 30, 40, 50, 60, 70, 80
+	5, 7, 9, 11, 13, 15, 20, 25, 30, 35
 };
+// END_OF_ADD_GRANDMASTER_SKILL
 
 const int CHN_aiPartyBonusExpPercentByMemberCount[9] =
 {
 	0, 0, 12, 18, 26, 40, 53, 70, 100
 };
 
-const int * aiChainLightningCountBySkillLevel = NULL;
+const int* aiChainLightningCountBySkillLevel = NULL;
 
-const int aiChainLightningCountBySkillLevel_euckr[SKILL_MAX_LEVEL+1] =
+const int aiChainLightningCountBySkillLevel_euckr[SKILL_MAX_LEVEL + 1] =
 {
-	0,
-	2,
-	2,
-	2,
-	2,
-	2,
-	2,
-	2,
-	2,
-	3,
-	3,
-	3,
-	3,
-	3,
-	3,
-	3,
-	3,
-	3,
-	3,
-	4,
-	4,
-	4,
-	4,
-	4,
-	5,
-	5,
-	5,
-	5,
-	5,
-	5,
-	5,
-	5,
-	5,
-	5,
-	5,
-	5,
-	5,
-	5,
-	5,
-	5,
-	5,
+	0, // 0
+	2, // 1
+	2, // 2
+	2, // 3
+	2, // 4
+	2, // 5
+	2, // 6
+	2, // 7
+	2, // 8
+	3, // 9
+	3, // 10
+	3, // 11
+	3, // 12
+	3, // 13
+	3, // 14
+	3, // 15
+	3, // 16
+	3, // 17
+	3, // 18
+	4, // 19
+	4, // 20
+	4, // 21
+	4, // 22
+	4, // 23
+	5, // 24
+	5, // 25
+	5, // 26
+	5, // 27
+	5, // 28
+	5, // 29
+	5, // 30
+	5, // 31
+	5, // 32
+	5, // 33
+	5, // 34
+	5, // 35
+	5, // 36
+	5, // 37
+	5, // 38
+	5, // 39
+	5, // 40
 };
 
 const SStoneDropInfo aStoneDrop[STONE_INFO_MAX_NUM] =
 {
+	// mob pct { +0 +1 +2 +3 +4 }
 	{8005,	60,	{30,	30,	30,	9,	1}	},
 	{8006,	60,	{28,	29,	31,	11,	1}	},
 	{8007,	60,	{24,	29,	32,	13,	2}	},
@@ -884,49 +933,59 @@ std::string m_horseText[LOCALE_MAX_NUM] =
 
 const int aiPolymorphPowerByLevel[SKILL_MAX_LEVEL + 1] =
 {
-	10,
-	11,
-	11,
-	12,
-	13,
-	13,
-	14,
-	15,
-	16,
-	17,
-	18,
-	19,
-	20,
-	22,
-	23,
-	24,
-	26,
-	27,
-	29,
-	31,
-	33,
-	35,
-	37,
-	39,
-	41,
-	44,
-	46,
-	49,
-	52,
-	55,
-	59,
-	62,
-	66,
-	70,
-	74,
-	79,
-	84,
-	89,
-	94,
-	100,
+	10, // 1
+	11, // 2
+	11, // 3
+	12, // 4
+	13, // 5
+	13, // 6
+	14, // 7
+	15, // 8
+	16, // 9
+	17, // 10
+	18, // 11
+	19, // 12
+	20, // 13
+	22, // 14
+	23, // 15
+	24, // 16
+	26, // 17
+	27, // 18
+	29, // 19
+	31, // 20
+	33, // 21
+	35, // 22
+	37, // 23
+	39, // 24
+	41, // 25
+	44, // 26
+	46, // 27
+	49, // 28
+	52, // 29
+	55, // 30
+	59, // 31
+	62, // 32
+	66, // 33
+	70, // 34
+	74, // 35
+	79, // 36
+	84, // 37
+	89, // 38
+	94, // 39
+	100, // 40
 };
 
 TGuildWarInfo KOR_aGuildWarInfo[GUILD_WAR_TYPE_MAX_NUM] =
+/*
+{
+	long lMapIndex;
+	int iWarPrice;
+	int iWinnerPotionRewardPctToWinner;
+	int iLoserPotionRewardPctToWinner;
+	int iInitialScore;
+	int iEndScore;
+};
+*/
 {
 	{ 0,        0,      0,      0,      0,      0       },
 	{ 110,      0,      100,    50,     0,      100     },
@@ -938,7 +997,7 @@ const int aiAccessorySocketAddPct[ITEM_ACCESSORY_SOCKET_MAX_NUM] =
 	50, 50, 50
 };
 
-const int aiAccessorySocketEffectivePct[ITEM_ACCESSORY_SOCKET_MAX_NUM + 1] = 
+const int aiAccessorySocketEffectivePct[ITEM_ACCESSORY_SOCKET_MAX_NUM + 1] =
 {
 	0, 10, 20, 40
 };
@@ -952,6 +1011,7 @@ const int aiAccessorySocketPutPct[ITEM_ACCESSORY_SOCKET_MAX_NUM + 1] =
 {
 	90, 80, 70, 0
 };
+// END_OF_ACCESSORY_REFINE
 
 #ifdef ENABLE_GROWTH_PET_SYSTEM
 const TPetEvolution arPetEvolutionTable[3] =

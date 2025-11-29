@@ -2194,4 +2194,40 @@ void initapp()
 #else
 	PyModule_AddIntConstant(poModule, "ENABLE_STYLE_ATTRIBUTE_SYSTEM", 0);
 #endif
+
+#ifdef ENABLE_NEW_SHINING_EFFEKT
+	PyModule_AddIntConstant(poModule, "ENABLE_NEW_SHINING_EFFEKT", true);
+	#ifdef ENABLE_LVL115_ARMOR_EFFECT
+	PyModule_AddIntConstant(poModule, "ENABLE_LVL115_ARMOR_EFFECT", true);
+	#else
+	PyModule_AddIntConstant(poModule, "ENABLE_LVL115_ARMOR_EFFECT", false);
+	#endif
+	#ifdef ENABLE_LVL96_WEAPON_EFFECT
+	PyModule_AddIntConstant(poModule, "ENABLE_LVL96_WEAPON_EFFECT", true);
+	#else
+	PyModule_AddIntConstant(poModule, "ENABLE_LVL96_WEAPON_EFFECT", false);
+	#endif
+	#ifdef ENABLE_LVL96_ARMOR_EFFECT
+	PyModule_AddIntConstant(poModule, "ENABLE_LVL96_ARMOR_EFFECT", true);
+	#else
+	PyModule_AddIntConstant(poModule, "ENABLE_LVL96_ARMOR_EFFECT", false);
+	#endif
+	#ifdef USE_BODY_COSTUME_WITH_EFFECT
+	PyModule_AddIntConstant(poModule, "USE_BODY_COSTUME_WITH_EFFECT", true);
+	#else
+	PyModule_AddIntConstant(poModule, "USE_BODY_COSTUME_WITH_EFFECT", false);
+	#endif
+	#ifdef USE_WEAPON_COSTUME_WITH_EFFECT
+	PyModule_AddIntConstant(poModule, "USE_WEAPON_COSTUME_WITH_EFFECT", true);
+	#else
+	PyModule_AddIntConstant(poModule, "USE_WEAPON_COSTUME_WITH_EFFECT", false);
+	#endif
+#else
+	PyModule_AddIntConstant(poModule, "ENABLE_NEW_SHINING_EFFEKT", false);
+	PyModule_AddIntConstant(poModule, "ENABLE_LVL115_ARMOR_EFFECT", false);
+	PyModule_AddIntConstant(poModule, "ENABLE_LVL96_WEAPON_EFFECT", false);
+	PyModule_AddIntConstant(poModule, "ENABLE_LVL96_ARMOR_EFFECT", false);
+	PyModule_AddIntConstant(poModule, "USE_BODY_COSTUME_WITH_EFFECT", false);
+	PyModule_AddIntConstant(poModule, "USE_WEAPON_COSTUME_WITH_EFFECT", false);
+#endif
 }

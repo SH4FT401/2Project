@@ -2925,10 +2925,10 @@ void CInstanceBase::ChangeHair(DWORD eHair)
 	if (!HAIR_COLOR_ENABLE)
 		return;
 
-	if (IsPC()==false)
+	if (IsPC() == false)
 		return;
 
-	if (GetPart(CRaceData::PART_HAIR)==eHair)
+	if (GetPart(CRaceData::PART_HAIR) == eHair)
 		return;
 
 	SetHair(eHair);
@@ -2944,7 +2944,7 @@ void CInstanceBase::SetArmor(DWORD dwArmor)
 		CItemData * pItemData;
 		if (CItemManager::Instance().GetItemDataPointer(dwArmor, &pItemData))
 		{
-			float fSpecularPower=pItemData->GetSpecularPowerf();
+			float fSpecularPower = pItemData->GetSpecularPowerf();
 			SetShape(dwShape, fSpecularPower);
 			__GetRefinedEffect(pItemData);
 			return;
@@ -3052,7 +3052,7 @@ void CInstanceBase::SetShape(DWORD eShape, float fSpecular)
 {
 	if (IsPoly())
 	{
-		m_GraphicThingInstance.SetShape(0);	
+		m_GraphicThingInstance.SetShape(0);
 	}
 	else
 	{
@@ -3105,10 +3105,16 @@ void CInstanceBase::__ClearWeaponRefineEffect()
 
 void CInstanceBase::__ClearArmorRefineEffect()
 {
-	if (m_armorRefineEffect)
+	if (m_armorRefineEffect[0])
 	{
-		__DetachEffect(m_armorRefineEffect);
-		m_armorRefineEffect = 0;
+		__DetachEffect(m_armorRefineEffect[0]);
+		m_armorRefineEffect[0] = 0;
+	}
+
+	if (m_armorRefineEffect[1])
+	{
+		__DetachEffect(m_armorRefineEffect[1]);
+		m_armorRefineEffect[1] = 0;
 	}
 }
 
@@ -3120,64 +3126,277 @@ UINT CInstanceBase::__GetRefinedEffect(CItemData* pItem)
 	switch (pItem->GetType())
 	{
 		case CItemData::ITEM_TYPE_WEAPON:
+		{
 			__ClearWeaponRefineEffect();
 
-			if (refine < 7)
-				return 0;
+			bool enable_refine = true;
 
-			switch(pItem->GetSubType())
+			switch (pItem->GetSubType())
 			{
+				case CItemData::WEAPON_SWORD:
+				case CItemData::WEAPON_TWO_HANDED:
+				{
+					bool default_effect = true;
+
+#ifdef ENABLE_LVL96_WEAPON_EFFECT
+					if ((330 <= vnum && vnum <= 335) ||		// Kara ejderha kýlýcý
+						(350 <= vnum && vnum <= 355) ||		// Kara ejderha jileti
+						(3240 <= vnum && vnum <= 3245) ||	// Kara ejderha býçaðý
+						(370 <= vnum && vnum <= 375) ||		// Yýlan kýlýcý
+						(390 <= vnum && vnum <= 395) ||		// Yýlan býçaðý
+						(3260 <= vnum && vnum <= 3265))		// Yýlan büyük kýlýcý
+					{
+						default_effect = false;
+						enable_refine = false;
+						m_swordRefineEffectRight = EFFECT_REFINED + EFFECT_SWORD_REFINED7TH;
+					}
+#endif
+
+					if (default_effect)
+					{
+						m_swordRefineEffectRight = EFFECT_REFINED + EFFECT_SWORD_REFINED7 + refine - 7;
+					}
+
+					break;
+				}
+
 				case CItemData::WEAPON_DAGGER:
-					m_swordRefineEffectRight = EFFECT_REFINED+EFFECT_SMALLSWORD_REFINED7 + refine - 7;
-					m_swordRefineEffectLeft = EFFECT_REFINED+EFFECT_SMALLSWORD_REFINED7_LEFT + refine - 7;
-					break;
+				{
+					bool default_effect = true;
 
-				case CItemData::WEAPON_FAN:
-					m_swordRefineEffectRight = EFFECT_REFINED+EFFECT_FANBELL_REFINED7 + refine - 7;
-					break;
+#ifdef ENABLE_LVL96_WEAPON_EFFECT
+					if ((1200 <= vnum && vnum <= 1205) ||	// Kara ejderha hançeri
+						(1220 <= vnum && vnum <= 1225))		// Yýlan hançeri
+					{
+						default_effect = false;
+						enable_refine = false;
+						m_swordRefineEffectRight = EFFECT_REFINED + EFFECT_SMALLSWORD_REFINED7TH;
+						m_swordRefineEffectLeft = EFFECT_REFINED + EFFECT_SMALLSWORD_REFINED7TH_LEFT;
+					}
+#endif
 
-				case CItemData::WEAPON_ARROW:
-				case CItemData::WEAPON_BELL:
-					m_swordRefineEffectRight = EFFECT_REFINED+EFFECT_SMALLSWORD_REFINED7 + refine - 7;
+					if (default_effect)
+					{
+						m_swordRefineEffectRight = EFFECT_REFINED + EFFECT_SMALLSWORD_REFINED7 + refine - 7;
+						m_swordRefineEffectLeft = EFFECT_REFINED + EFFECT_SMALLSWORD_REFINED7_LEFT + refine - 7;
+					}
+
 					break;
+				}//WEAPON_DAGGER
 
 				case CItemData::WEAPON_BOW:
-					m_swordRefineEffectRight = EFFECT_REFINED+EFFECT_BOW_REFINED7 + refine - 7;
+				{
+					bool default_effect = true;
+
+#ifdef ENABLE_LVL96_WEAPON_EFFECT
+					if ((2220 <= vnum && vnum <= 2225) ||	// Kara ejderha yayý
+						(2240 <= vnum && vnum <= 2245))		// Yýlan yayý
+					{
+						default_effect = false;
+						enable_refine = false;
+						m_swordRefineEffectRight = EFFECT_REFINED + EFFECT_BOW_REFINED7TH;
+					}
+#endif
+
+					if (default_effect)
+					{
+						m_swordRefineEffectRight = EFFECT_REFINED + EFFECT_BOW_REFINED7 + refine - 7;
+					}
+
 					break;
+				}//WEAPON_BOW
+
+				case CItemData::WEAPON_BELL:
+				case CItemData::WEAPON_ARROW:
+				{
+					bool default_effect = true;
+
+#ifdef ENABLE_LVL96_WEAPON_EFFECT
+					if ((5180 <= vnum && vnum <= 5185) ||	// Kara ejderha çaný
+						(5210 <= vnum && vnum <= 5215))		// Yýlan çaný
+					{
+						default_effect = false;
+						enable_refine = false;
+						m_swordRefineEffectRight = EFFECT_REFINED + EFFECT_SMALLSWORD_REFINED7TH;
+					}
+#endif
+
+					if (default_effect)
+					{
+						m_swordRefineEffectRight = EFFECT_REFINED + EFFECT_SMALLSWORD_REFINED7 + refine - 7;
+					}
+
+					break;
+				}//WEAPON_TWO_HANDED | WEAPON_BELL
+
+				case CItemData::WEAPON_FAN:
+				{
+					bool default_effect = true;
+
+#ifdef ENABLE_LVL96_WEAPON_EFFECT
+					if ((7320 <= vnum && vnum <= 7325) ||	// Kara ejder. yelpazesi
+						(7340 <= vnum && vnum <= 7345))		// Yýlan yelpazesi
+					{
+						default_effect = false;
+						enable_refine = false;
+						m_swordRefineEffectRight = EFFECT_REFINED + EFFECT_FANBELL_REFINED7TH;
+					}
+#endif
+
+					if (default_effect)
+					{
+						m_swordRefineEffectRight = EFFECT_REFINED + EFFECT_FANBELL_REFINED7 + refine - 7;
+					}
+
+					break;
+				}//WEAPON_FAN
+
+#ifdef ENABLE_WOLFMAN_CHARACTER
+				case CItemData::WEAPON_CLAW:	//8
+				{
+					bool default_effect = true;
+
+#ifdef ENABLE_LVL96_WEAPON_EFFECT
+					if ((6140 <= vnum && vnum <= 6145) ||	// Dunkeldrachenkralle
+						(6160 <= vnum && vnum <= 6165))		// Schlangenkralle
+					{
+						default_effect = false;
+						enable_refine = false;
+						m_swordRefineEffectRight = EFFECT_REFINED + EFFECT_SWORD_REFINED7TH_W;
+						m_swordRefineEffectLeft = EFFECT_REFINED + EFFECT_SWORD_REFINED7TH_W_LEFT;
+					}
+#endif
+
+					if (default_effect)
+					{
+						m_swordRefineEffectRight = EFFECT_REFINED + EFFECT_SWORD_REFINED7_W + refine - 7;
+						m_swordRefineEffectLeft = EFFECT_REFINED + EFFECT_SWORD_REFINED7_W_LEFT + refine - 7;
+					}
+
+					break;
+				}//WEAPON_CLAW
+#endif
 
 				default:
-					m_swordRefineEffectRight = EFFECT_REFINED+EFFECT_SWORD_REFINED7 + refine - 7;
+					TraceError("Weapon set Default!");
+					m_swordRefineEffectRight = EFFECT_REFINED + EFFECT_SWORD_REFINED7 + refine - 7;
+					break;
 			}
+
+			if ((refine < 7) && enable_refine)
+				return 0;
 
 			if (m_swordRefineEffectRight)
 				m_swordRefineEffectRight = __AttachEffect(m_swordRefineEffectRight);
-
 			if (m_swordRefineEffectLeft)
 				m_swordRefineEffectLeft = __AttachEffect(m_swordRefineEffectLeft);
 
 			break;
+		}//END ITEM_TYPE_WEAPON
 
 		case CItemData::ITEM_TYPE_ARMOR:
+		{
 			__ClearArmorRefineEffect();
 
 			if (pItem->GetSubType() == CItemData::ARMOR_BODY)
 			{
-				if (12010 <= vnum && vnum <= 12049)
+				bool default_effect = true;
+				bool enable_refine = true;
+
+	/*----------Kabarcýk-Zýrh----------*/
+				if ((12010 <= vnum && vnum <= 12019) ||	// Mavi Plaka Zýrhý
+					(12020 <= vnum && vnum <= 12029) ||	// Mavi Ejderha Suiti
+					(12030 <= vnum && vnum <= 12039) ||	// Auraplattenpanzer
+					(12040 <= vnum && vnum <= 12049)	// Ejderha Elbisesi
+#ifdef ENABLE_WOLFMAN_CHARACTER
+					|| (21080 <= vnum && vnum <= 21089)	// Ormancý zýrhý
+#endif
+					)
 				{
-					__AttachEffect(EFFECT_REFINED+EFFECT_BODYARMOR_SPECIAL);
-					__AttachEffect(EFFECT_REFINED+EFFECT_BODYARMOR_SPECIAL2);
+					default_effect = false;
+					m_armorRefineEffect[0] = EFFECT_REFINED + EFFECT_BODYARMOR_SPECIAL;	// Kabarcýk-Efekti
+					m_armorRefineEffect[1] = EFFECT_REFINED + EFFECT_BODYARMOR_SPECIAL2;	// Mavi Parlama Efekti
 				}
+
+#ifdef ENABLE_LVL96_ARMOR_EFFECT
+	/*----------96-Zýrh----------*/
+				if ((21220 <= vnum && vnum <= 21225) ||	// Kara ejderha zýrhý		Savaþçý
+					(21240 <= vnum && vnum <= 21245) ||	// Rüzgar ejderha zýrhý		Ninja
+					(21260 <= vnum && vnum <= 21265) ||	// Büyü ejderha zýrhý		Sura
+					(21280 <= vnum && vnum <= 21285)	// Tanrýlar ejderha zýrhý	Þaman
+#ifdef ENABLE_WOLFMAN_CHARACTER
+					|| (21300 <= vnum && vnum <= 21305)	// Gök ejderha zýrhý	Wolfman
+#endif
+					|| (21320 <= vnum && vnum <= 21325)	// Yýlan Mantosu
+					|| (21340 <= vnum && vnum <= 21345)	// Yýlan Yeleði
+					)
+				{
+					default_effect = false;
+					enable_refine = false;
+					m_armorRefineEffect[0] = EFFECT_REFINED + EFFECT_BODYARMOR_SPECIAL_TH;
+				}
+#endif
+
+#ifdef ENABLE_LVL115_ARMOR_EFFECT
+	/*----------Yýldýrým[105-115]-Zýrh----------*/
+				if (
+					// Savaþçý
+					(20760 <= vnum && vnum <= 20769) ||	// Kutup Iþýðý Zýrhý
+					(20860 <= vnum && vnum <= 20869) ||	// Balina Kemiði Zýrhý
+					(20810 <= vnum && vnum <= 20819) ||	// Magma Koru Zýrhý
+					(20910 <= vnum && vnum <= 20919) ||	// Kül Yaðmuru Zýrhý
+
+					// Sura
+					(20780 <= vnum && vnum <= 20789) ||	// Þeytan Pençesi Zýrhý
+					(20880 <= vnum && vnum <= 20889) ||	// Yanýltýcý Iþýk Zýrhý
+					(20830 <= vnum && vnum <= 20839) ||	// Cehennem Koþucu Zýrhý
+					(20930 <= vnum && vnum <= 20930) ||	// Kara Ateþ Zýrhý
+
+					// Ninja
+					(20770 <= vnum && vnum <= 20770) ||	// Suikast Kýyafeti
+					(20870 <= vnum && vnum <= 20870) ||	// Dönüþüm Kýyafeti
+					(20820 <= vnum && vnum <= 20820) ||	// Kanlý Ay Kýyafeti
+					(20920 <= vnum && vnum <= 20920) ||	// Ölüm Gecesi Kýyafeti
+
+					// Þaman
+					(20790 <= vnum && vnum <= 20790) ||	// Ýnanç Kýyafeti
+					(20890 <= vnum && vnum <= 20890) ||	// Ahenk Kýyafeti
+					(20840 <= vnum && vnum <= 20840) ||	// Ateþ Kýyafeti
+					(20940 <= vnum && vnum <= 20940)	// Ay Kýyafeti
+
+#ifdef ENABLE_WOLFMAN_CHARACTER
+					// Wolfman
+					|| (20800 <= vnum && vnum <= 20800)	// Gölge Savaþçý Tanký
+					|| (20900 <= vnum && vnum <= 20900)	// Aytaþý levha zýrh
+					|| (20850 <= vnum && vnum <= 20850)	// Agat levha zýrh
+					|| (20950 <= vnum && vnum <= 20950)	// Onyx zýrhý
+#endif
+					)
+				{
+					enable_refine = false;
+					default_effect = false;
+					m_armorRefineEffect[0] = EFFECT_REFINED + EFFECT_BODYARMOR_SPECIAL3;
+					if (refine > 6)
+						m_armorRefineEffect[1] = EFFECT_REFINED + EFFECT_BODYARMOR_REFINED7 + refine - 7;
+				}
+#endif
+
+				if (default_effect)
+				{
+					m_armorRefineEffect[0] = EFFECT_REFINED + EFFECT_BODYARMOR_REFINED7 + refine - 7;
+				}
+
+				if ((refine < 7) && enable_refine)
+					return 0;
+
+				if (m_armorRefineEffect[0])
+					m_armorRefineEffect[0] = __AttachEffect(m_armorRefineEffect[0]);
+				if (m_armorRefineEffect[1])
+					m_armorRefineEffect[1] = __AttachEffect(m_armorRefineEffect[1]);
 			}
 
-			if (refine < 7)
-				return 0;
-
-			if (pItem->GetSubType() == CItemData::ARMOR_BODY)
-			{
-				m_armorRefineEffect = EFFECT_REFINED+EFFECT_BODYARMOR_REFINED7+refine-7;
-				__AttachEffect(m_armorRefineEffect);
-			}
 			break;
+		}	//END ITEM_TYPE_ARMOR
 #ifdef ENABLE_MDE_EFFECT
 		case CItemData::ITEM_TYPE_COSTUME:
 			if (pItem->GetSubType() == CItemData::COSTUME_WEAPON)
@@ -3788,17 +4007,17 @@ void CInstanceBase::__Initialize()
 	m_dwRace = 0;
 	m_dwVirtualNumber = 0;
 
-	m_dwBaseCmdTime=0;
-	m_dwBaseChkTime=0;
-	m_dwSkipTime=0;
+	m_dwBaseCmdTime = 0;
+	m_dwBaseChkTime = 0;
+	m_dwSkipTime = 0;
 
 	m_GraphicThingInstance.Initialize();
 
-	m_dwAdvActorVID=0;
-	m_dwLastDmgActorVID=0;
+	m_dwAdvActorVID = 0;
+	m_dwLastDmgActorVID = 0;
 
-	m_nAverageNetworkGap=0;
-	m_dwNextUpdateHeightTime=0;
+	m_nAverageNetworkGap = 0;
+	m_dwNextUpdateHeightTime = 0;
 
 	// Moving by keyboard
 	m_iRotatingDirection = DEGREE_DIRECTION_SAME;
@@ -3818,7 +4037,8 @@ void CInstanceBase::__Initialize()
 
 	m_swordRefineEffectRight = 0;
 	m_swordRefineEffectLeft = 0;
-	m_armorRefineEffect = 0;
+	m_armorRefineEffect[0] = 0;
+	m_armorRefineEffect[1] = 0;
 
 #ifdef ENABLE_MDE_EFFECT
 	m_dwSpecialEffect = 0;

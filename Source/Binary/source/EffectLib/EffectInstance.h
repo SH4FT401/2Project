@@ -62,8 +62,6 @@ class CEffectInstance : public CGraphicObjectInstance
 		void OnRenderShadow() {} // Not used
 		void OnRenderPCBlocker() {} // Not used
 
-		const D3DXMATRIX& GetGlobalMatrix() const { return m_matGlobal; };
-
 	protected:
 		void __Initialize();
 
@@ -161,5 +159,8 @@ class CEffectInstance : public CGraphicObjectInstance
 		float GetParticleScale() { return m_fParticleScale; }
 		void SetMeshScale(D3DXVECTOR3 rv3MeshScale) { m_v3MeshScale = rv3MeshScale; }
 		D3DXVECTOR3 GetMeshScale() { return m_v3MeshScale; }
+#endif
+#ifdef ENABLE_RENDERING_ONLY_IN_AREA
+		const D3DXMATRIX& GetGlobalMatrix() const { return m_matGlobal; };
 #endif
 };

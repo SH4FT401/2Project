@@ -290,7 +290,6 @@ bool PackInitialize(const char *c_pszFolder)
 	CSoundData::SetPackMode();
 
 	std::string strPackName, strTexCachePackName;
-
 	for (auto& elem : indexVec)
 	{
 		const std::string& c_rstFolder = elem[0];
@@ -310,7 +309,7 @@ bool PackInitialize(const char *c_pszFolder)
 		return true;
 }
 #else
-bool PackInitialize(const char *c_pszFolder)
+bool PackInitialize(const char * c_pszFolder)
 {
 	NANOBEGIN
 	if (_access(c_pszFolder, 0) != 0)
@@ -337,7 +336,7 @@ bool PackInitialize(const char *c_pszFolder)
 
 	bool bPackFirst = TRUE;
 
-	const std::string& strPackType = TextLoader.GetLineString(0);
+	const std::string & strPackType = TextLoader.GetLineString(0);
 
 	if (strPackType.compare("FILE") && strPackType.compare("PACK"))
 	{
@@ -345,8 +344,12 @@ bool PackInitialize(const char *c_pszFolder)
 		return false;
 	}
 
-	bPackFirst = TRUE;
-	Tracef("알림: 파일 �?드입니다.\n");
+#ifdef NDEBUG // @warme601 _DISTRIBUTE -> NDEBUG
+	Tracef("Note: PackFirst mode enabled. [pack]\n");
+#else
+	bPackFirst = FALSE;
+	Tracef("Note: PackFirst mode not enabled. [file]\n");
+#endif
 
 	CTextFileLoader::SetCacheMode();
 	CEterPackManager::Instance().SetCacheMode();
@@ -530,9 +533,9 @@ bool Main(HINSTANCE hInstance, LPSTR lpCmdLine)
 
 #ifdef _DEBUG
 	OpenConsoleWindow();
-	OpenLogFile(true);
+	OpenLogFile(true); // true == uses syserr.txt and log.txt
 #else
-	OpenLogFile(false);
+	OpenLogFile(false); // false == uses syserr.txt only
 #endif
 
 	static CLZO lzo;

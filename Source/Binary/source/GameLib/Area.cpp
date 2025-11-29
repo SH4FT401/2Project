@@ -1,15 +1,20 @@
 #include "StdAfx.h"
 
-#include "../eterLib/ResourceManager.h"
-#include "../eterLib/StateManager.h"
-#include "../effectLib/EffectManager.h"
+#include "../EterLib/ResourceManager.h"
+#include "../EterLib/StateManager.h"
+#include "../EffectLib/EffectManager.h"
 #include "../SpeedTreeLib/SpeedTreeForestDirectX8.h"
-#include "../eterBase/Timer.h"
+#include "../EterBase/Timer.h"
 
 #include "../UserInterface/StdAfx.h"
+#ifdef ENABLE_RENDERING_ONLY_IN_AREA
+	#include "../UserInterface/StdAfx.h"
+	#include "../UserInterface/PythonCharacterManager.h"
+	#include "../UserInterface/PythonBackground.h"
+#endif
+#ifdef ENABLE_RENDERING_ONLY_IN_AREA_V2
 #include "../UserInterface/PythonApplication.h"
-#include "../UserInterface/PythonBackground.h"
-#include "../UserInterface/PythonCharacterManager.h"
+#endif
 
 #include "Area.h"
 #include "PropertyManager.h"
@@ -72,51 +77,10 @@ void CArea::__UpdateAniThingList()
 			pkThingInst=*i++;
 			pkThingInst->Update();
 		}
-	}	
-}
-
-void CArea::__UpdateEffectList()
-{
-	int peNum;
-	float pfStart, pfEnd, pfFarClip;
-	D3DXVECTOR3 chrPos;
-	CPythonBackground::instance().GetDistanceSetInfo(&peNum, &pfStart, &pfEnd, &pfFarClip);
-	CInstanceBase* pInst = CPythonCharacterManager::instance().GetMainInstancePtr();
-
-	if (!pInst)
-		return;
-
-	chrPos = pInst->GetGraphicThingInstanceRef().GetPosition();
-	CEffectManager& rkEftMgr = CEffectManager::Instance();
-
-	TEffectInstanceIterator i;
-	for (i = m_EffectInstanceMap.begin(); i != m_EffectInstanceMap.end();)
-	{
-		CEffectInstance* pEffectInstance = i->second;
-
-		const D3DMATRIX& gMatrix = pEffectInstance->GetGlobalMatrix();
-		if (pfStart < GetPixelPositionDistance(chrPos, TPixelPosition(gMatrix._41, gMatrix._42, gMatrix._43)))
-		{
-			pEffectInstance->Hide();
-			++i;
-			continue;
-		}
-
-		pEffectInstance->Show();
-		pEffectInstance->Update();
-
-		if (!pEffectInstance->isAlive())
-		{
-			i = m_EffectInstanceMap.erase(i);
-			rkEftMgr.DestroyUnsafeEffectInstance(pEffectInstance);
-		}
-		else
-		{
-			++i;
-		}
 	}
 }
 
+#ifdef ENABLE_RENDERING_ONLY_IN_AREA_V2
 void CArea::__UpdateLoadedObjectInstances(D3DXVECTOR3& v3Player)
 {
 	const float fMaxDist = GetMaxLoadingDistanceSqr();
@@ -131,7 +95,7 @@ void CArea::__UpdateLoadedObjectInstances(D3DXVECTOR3& v3Player)
 			continue;
 
 		bool bDidModify = false;
-		const float fDist = (v3Player.x - c_pObjectData->Position.x) * (v3Player.x - c_pObjectData->Position.x) 
+		const float fDist = (v3Player.x - c_pObjectData->Position.x) * (v3Player.x - c_pObjectData->Position.x)
 			+ (v3Player.y - c_pObjectData->Position.y) * (v3Player.y - c_pObjectData->Position.y);
 
 		if (fMaxDist > fDist)
@@ -223,13 +187,70 @@ float CArea::GetMaxLoadingDistanceSqr() const
 	CPythonBackground::instance().GetDistanceSetInfo(&peNum, &pfStart, &pfEnd, &pfFarClip);
 	return pfFarClip * pfFarClip;
 }
+#endif
 
+void CArea::__UpdateEffectList()
+{
+#ifdef ENABLE_RENDERING_ONLY_IN_AREA
+	int peNum;
+	float pfStart, pfEnd, pfFarClip;
+	D3DXVECTOR3 chrPos;
+	CPythonBackground::instance().GetDistanceSetInfo(&peNum, &pfStart, &pfEnd, &pfFarClip);
+	CInstanceBase* pInst = CPythonCharacterManager::instance().GetMainInstancePtr();
+
+	if (!pInst)
+		return;
+
+	chrPos = pInst->GetGraphicThingInstanceRef().GetPosition();
+#endif
+
+	CEffectManager & rkEftMgr = CEffectManager::Instance();
+
+	// Effect
+	TEffectInstanceIterator i;
+	for (i = m_EffectInstanceMap.begin(); i != m_EffectInstanceMap.end();)
+	{
+		CEffectInstance * pEffectInstance = i->second;
+
+#ifdef ENABLE_RENDERING_ONLY_IN_AREA
+		const D3DMATRIX& gMatrix = pEffectInstance->GetGlobalMatrix();
+		if (pfStart < GetPixelPositionDistance(chrPos, TPixelPosition(gMatrix._41, gMatrix._42, gMatrix._43)))
+		{
+			pEffectInstance->Hide();
+			++i;
+			continue;
+		}
+
+		pEffectInstance->Show();
+#endif
+
+		pEffectInstance->Update();
+
+		if (!pEffectInstance->isAlive())
+		{
+			i = m_EffectInstanceMap.erase(i);
+			rkEftMgr.DestroyUnsafeEffectInstance(pEffectInstance);
+		}
+		else
+		{
+			++i;
+		}
+	}
+}
+
+#ifdef ENABLE_RENDERING_ONLY_IN_AREA_V2
 void CArea::Update(D3DXVECTOR3& v3Player)
 {
 	__UpdateLoadedObjectInstances(v3Player);
 	__UpdateAniThingList();
 	__UpdateEffectList(v3Player);
 }
+#else
+void CArea::Update()
+{
+	__UpdateAniThingList();
+}
+#endif
 
 void CArea::UpdateAroundAmbience(float fX, float fY, float fZ)
 {
@@ -260,12 +281,44 @@ struct CArea_FEffectInstanceRender
 
 void CArea::RenderEffect()
 {
+#ifndef ENABLE_RENDERING_ONLY_IN_AREA_V2
+	__UpdateEffectList();
+#endif
+
 	// Effect
 	STATEMANAGER.SetTexture(0, nullptr);
 	STATEMANAGER.SetTexture(1, nullptr);
 
+#ifdef ENABLE_RENDERING_ONLY_IN_AREA_V2
 	std::sort(m_kVct_pkEftInstSort.begin(), m_kVct_pkEftInstSort.end(), CArea_LessEffectInstancePtrRenderOrder());
 	std::for_each(m_kVct_pkEftInstSort.begin(), m_kVct_pkEftInstSort.end(), CArea_FEffectInstanceRender());
+#else
+	bool m_isDisableSortRendering = false;
+
+	if (m_isDisableSortRendering)
+	{
+		TEffectInstanceIterator i;
+		for (i = m_EffectInstanceMap.begin(); i != m_EffectInstanceMap.end();)
+		{
+			CEffectInstance * pEffectInstance = i->second;
+			pEffectInstance->Render();
+			++i;
+		}
+	}
+	else
+	{
+		static std::vector<CEffectInstance *> s_kVct_pkEftInstSort;
+		s_kVct_pkEftInstSort.clear();
+
+		TEffectInstanceMap & rkMap_pkEftInstSrc = m_EffectInstanceMap;
+		TEffectInstanceMap::iterator i;
+		for (i = rkMap_pkEftInstSrc.begin(); i != rkMap_pkEftInstSrc.end(); ++i)
+			s_kVct_pkEftInstSort.emplace_back(i->second);
+
+		std::sort(s_kVct_pkEftInstSort.begin(), s_kVct_pkEftInstSort.end(), CArea_LessEffectInstancePtrRenderOrder());
+		std::for_each(s_kVct_pkEftInstSort.begin(), s_kVct_pkEftInstSort.end(), CArea_FEffectInstanceRender());
+	}
+#endif
 }
 
 DWORD CArea::DEBUG_GetRenderedCRCNum() 
@@ -440,16 +493,52 @@ void CArea::RenderDungeon()
 	STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAARG2,	D3DTA_CURRENT);
 	STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAOP,	D3DTOP_MODULATE);
 
+#ifdef WORLD_EDITOR
+	bool bRenderTransparent = false;
+
+	uint32_t oldAlphaBlendState = 0;
+	uint32_t oldZWriteenableState = 0;
+
+	if (GetAsyncKeyState(VK_LSHIFT) & 0x8001)
+	{
+		bRenderTransparent = true;
+
+		oldAlphaBlendState = STATEMANAGER.GetRenderState(D3DRS_ALPHABLENDENABLE);
+		oldZWriteenableState = STATEMANAGER.GetRenderState(D3DRS_ZWRITEENABLE);
+
+		STATEMANAGER.SetRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
+		STATEMANAGER.SetRenderState(D3DRS_ZWRITEENABLE, FALSE);
+
+		STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAOP, D3DTOP_MODULATE);
+		STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG1, D3DTA_TEXTURE);
+		STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG2, D3DTA_TFACTOR);
+		STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAOP, D3DTOP_MODULATE);
+		STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAARG1, D3DTA_TEXTURE);
+		STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAARG2, D3DTA_TFACTOR);
+
+		STATEMANAGER.SetRenderState(D3DRS_TEXTUREFACTOR, D3DCOLOR_ARGB(128, 255, 0, 0));
+	}
+#endif
+
 	TDungeonBlockInstanceVector::iterator itor = m_DungeonBlockCloneInstanceVector.begin();
 	for (; itor != m_DungeonBlockCloneInstanceVector.end(); ++itor)
 	{
 		(*itor)->Render();
 	}
 
+#ifdef WORLD_EDITOR
+	if (bRenderTransparent)
+	{
+		STATEMANAGER.SetRenderState(D3DRS_ZWRITEENABLE, oldZWriteenableState);
+		STATEMANAGER.SetRenderState(D3DRS_ALPHABLENDENABLE, oldAlphaBlendState);
+	}
+#endif
+
 	STATEMANAGER.SetTextureStageState(1, D3DTSS_COLOROP,	D3DTOP_DISABLE);
 	STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAOP,	D3DTOP_DISABLE);
 }
 
+#ifdef ENABLE_RENDERING_ONLY_IN_AREA_V2
 void CArea::Refresh(TObjectInstance* pObjectInstance, bool bRemove)
 {
 	if (!pObjectInstance)
@@ -469,7 +558,7 @@ void CArea::Refresh(TObjectInstance* pObjectInstance, bool bRemove)
 			{
 				m_TreeCloneInstaceVector.emplace_back(pObjectInstance->pTree);
 
-				const float *pfPosition;
+				const float* pfPosition;
 				pfPosition = pObjectInstance->pTree->GetPosition();
 				pObjectInstance->pTree->UpdateBoundingSphere();
 				pObjectInstance->pTree->UpdateCollisionData();
@@ -568,15 +657,122 @@ void CArea::Refresh(TObjectInstance* pObjectInstance, bool bRemove)
 		}
 	}
 }
+#else
+void CArea::Refresh()
+{
+	m_TreeCloneInstaceVector.clear();
+	m_ThingCloneInstaceVector.clear();
+	m_DungeonBlockCloneInstanceVector.clear();
+	m_AniThingCloneInstanceVector.clear();
+	m_ShadowThingCloneInstaceVector.clear();
+	m_AmbienceCloneInstanceVector.clear();
+
+	TObjectInstanceVector::iterator it;
+
+	for (it = m_ObjectInstanceVector.begin(); it != m_ObjectInstanceVector.end(); ++it)
+	{
+		TObjectInstance * pObjectInstance = *it;
+
+		if (prt::PROPERTY_TYPE_TREE == pObjectInstance->dwType)
+		{
+			if (pObjectInstance->pTree)
+			{
+				m_TreeCloneInstaceVector.emplace_back(pObjectInstance->pTree);
+
+				const float * pfPosition;
+				pfPosition = pObjectInstance->pTree->GetPosition();
+				pObjectInstance->pTree->UpdateBoundingSphere();
+				pObjectInstance->pTree->UpdateCollisionData();
+			}
+		}
+		else if (prt::PROPERTY_TYPE_BUILDING == pObjectInstance->dwType)
+		{
+			pObjectInstance->pThingInstance->Update();
+			pObjectInstance->pThingInstance->Transform();
+			pObjectInstance->pThingInstance->Show();
+			pObjectInstance->pThingInstance->DeformAll();
+			m_ThingCloneInstaceVector.emplace_back(pObjectInstance->pThingInstance);
+
+			pObjectInstance->pThingInstance->BuildBoundingSphere();
+			pObjectInstance->pThingInstance->UpdateBoundingSphere();
+
+			if (pObjectInstance->pThingInstance->IsMotionThing())
+			{
+				m_AniThingCloneInstanceVector.emplace_back(pObjectInstance->pThingInstance);
+				pObjectInstance->pThingInstance->SetMotion(0);
+			}
+
+			if (pObjectInstance->isShadowFlag)
+				m_ShadowThingCloneInstaceVector.emplace_back(pObjectInstance->pThingInstance);
+
+			if (pObjectInstance->pAttributeInstance)
+			{
+				pObjectInstance->pThingInstance->UpdateCollisionData(
+					&pObjectInstance->pAttributeInstance->GetObjectPointer()->GetCollisionDataVector());
+				pObjectInstance->pAttributeInstance->RefreshObject(pObjectInstance->pThingInstance->GetTransform());
+				pObjectInstance->pThingInstance->UpdateHeightInstance(pObjectInstance->pAttributeInstance);
+			}
+		}
+		else if (prt::PROPERTY_TYPE_EFFECT == pObjectInstance->dwType)
+		{
+		}
+		else if (prt::PROPERTY_TYPE_AMBIENCE == pObjectInstance->dwType)
+			m_AmbienceCloneInstanceVector.emplace_back(pObjectInstance->pAmbienceInstance);
+		else if (prt::PROPERTY_TYPE_DUNGEON_BLOCK == pObjectInstance->dwType)
+		{
+			pObjectInstance->pDungeonBlock->Update();
+			pObjectInstance->pDungeonBlock->Deform();
+			pObjectInstance->pDungeonBlock->UpdateBoundingSphere();
+			m_DungeonBlockCloneInstanceVector.emplace_back(pObjectInstance->pDungeonBlock);
+
+			if (pObjectInstance->pAttributeInstance)
+			{
+				pObjectInstance->pDungeonBlock->UpdateCollisionData(
+					&pObjectInstance->pAttributeInstance->GetObjectPointer()->GetCollisionDataVector());
+				pObjectInstance->pAttributeInstance->RefreshObject(pObjectInstance->pDungeonBlock->GetTransform());
+				pObjectInstance->pDungeonBlock->UpdateHeightInstance(pObjectInstance->pAttributeInstance);
+			}
+		}
+	}
+}
+#endif
 
 void CArea::__Load_BuildObjectInstances()
 {
 	m_ObjectInstanceVector.clear();
+#ifdef ENABLE_RENDERING_ONLY_IN_AREA_V2
 	m_ObjectInstanceVector.resize(GetObjectDataCount(), nullptr);
+#else
+	m_ObjectInstanceVector.resize(GetObjectDataCount());
+#endif
 
 	m_GraphicThingInstanceCRCMap.clear();
 
 	std::sort(m_ObjectDataVector.begin(), m_ObjectDataVector.end(), ObjectDataComp());
+
+#ifndef ENABLE_RENDERING_ONLY_IN_AREA_V2
+	uint32_t i = 0;
+	TObjectInstanceVector::iterator it;
+	for (it = m_ObjectInstanceVector.begin(); it != m_ObjectInstanceVector.end(); ++it, ++i)
+	{
+		*it = ms_ObjectInstancePool.Alloc();
+		(*it)->Clear();
+
+		const TObjectData * c_pObjectData;
+
+		if (!GetObjectDataPointer(i, &c_pObjectData))
+			continue;
+
+		__SetObjectInstance(*it, c_pObjectData);
+
+		if ((*it)->dwType == prt::PROPERTY_TYPE_BUILDING)
+			m_GraphicThingInstanceCRCMap.emplace((*it)->pThingInstance, c_pObjectData->dwCRC);
+	}
+
+	//////////
+	Refresh();
+	//////////
+#endif
 }
 
 void CArea::__SetObjectInstance(TObjectInstance * pObjectInstance, const TObjectData * c_pData)
@@ -585,7 +781,7 @@ void CArea::__SetObjectInstance(TObjectInstance * pObjectInstance, const TObject
 	if (!CPropertyManager::Instance().Get(c_pData->dwCRC, &pProperty))
 		return;
 
-	const char *c_szPropertyType;
+	const char * c_szPropertyType;
 
 	if (!pProperty->GetString("PropertyType", &c_szPropertyType))
 		return;
@@ -650,7 +846,11 @@ void CArea::__SetObjectInstance_SetEffect(TObjectInstance * pObjectInstance, con
 
 	pEffectInstance->SetGlobalMatrix(mat);
 
+#ifdef ENABLE_RENDERING_ONLY_IN_AREA_V2
 	pObjectInstance->dwEffectInstanceIndex = (DWORD)pEffectInstance;
+#else
+	pObjectInstance->dwEffectInstanceIndex = (DWORD)pEffectInstance;
+#endif
 	m_EffectInstanceMap.insert(TEffectInstanceMap::value_type(pObjectInstance->dwEffectInstanceIndex, pEffectInstance));
 }
 
@@ -682,7 +882,7 @@ void CArea::__SetObjectInstance_SetBuilding(TObjectInstance * pObjectInstance, c
 	if (!prt::PropertyBuildingStringToData(pProperty, &Data))
 		return;
 
-	CResourceManager& rkResMgr=CResourceManager::Instance();
+	CResourceManager & rkResMgr = CResourceManager::Instance();
 
 	CGraphicThing * pThing = (CGraphicThing *)rkResMgr.GetResourcePointer(Data.strFileName.c_str());
 	pThing->AddReference();
@@ -709,7 +909,7 @@ void CArea::__SetObjectInstance_SetBuilding(TObjectInstance * pObjectInstance, c
 			pObjectInstance->pThingInstance->SetPortal(j, c_pData->abyPortalID[j]);
 
 	{
-		std::string stSrcModelFileName=Data.strFileName;
+		std::string stSrcModelFileName = Data.strFileName;
 		std::string stLODModelFileName;
 
 		char szLODModelFileNameEnd[256];
@@ -857,11 +1057,11 @@ void CArea::__LoadAttribute(TObjectInstance * pObjectInstance, const char *c_szA
 
 
 /*
-void CArea::__LoadAttribute(TObjectInstance * pObjectInstance, const char *c_szAttributeFileName)
+void CArea::__LoadAttribute(TObjectInstance * pObjectInstance, const char * c_szAttributeFileName)
 {
-	// AABB를 사용한 충돌 정보 자동 �?성.
+	// AABB를 사용한 충돌 정보 자동 생성.
 	const bool bFileExist = CResourceManager::Instance().IsFileExist(c_szAttributeFileName);
-	
+
 	CAttributeData * pAttributeData = (CAttributeData *) CResourceManager::Instance().GetResourcePointer(c_szAttributeFileName);
 
 	CAttributeInstance * pAttrInstance = ms_AttributeInstancePool.Alloc();
@@ -887,10 +1087,10 @@ void CArea::__LoadAttribute(TObjectInstance * pObjectInstance, const char *c_szA
 				collision.v3Position = (v3Min + v3Max) * 0.5f;
 
 				D3DXVECTOR3 vDelta = (v3Max - v3Min);
-				collision.fDimensions[0] = vDelta.x * 0.5f; // v3Min, v3Max를 구하기 위한 가로, 세로, 높이의 �?�?값 저장
+				collision.fDimensions[0] = vDelta.x * 0.5f; // v3Min, v3Max를 구하기 위한 가로, 세로, 높이의 절반값 저장
 				collision.fDimensions[1] = vDelta.y * 0.5f;
 				collision.fDimensions[2] = vDelta.z * 0.5f;
-				
+
 
 				pAttributeData->AddCollisionData(collision);
 			}
@@ -909,11 +1109,11 @@ void CArea::__LoadAttribute(TObjectInstance * pObjectInstance, const char *c_szA
 }
 */
 /*
-void CArea::__LoadAttribute(TObjectInstance * pObjectInstance, const char *c_szAttributeFileName)
+void CArea::__LoadAttribute(TObjectInstance * pObjectInstance, const char * c_szAttributeFileName)
 {
-	// Sphere를 사용한 충돌 정보 자동 �?성.
+	// Sphere를 사용한 충돌 정보 자동 생성.
 	const bool bFileExist = CResourceManager::Instance().IsFileExist(c_szAttributeFileName);
-	
+
 	CAttributeData * pAttributeData = (CAttributeData *) CResourceManager::Instance().GetResourcePointer(c_szAttributeFileName);
 
 	CAttributeInstance * pAttrInstance = ms_AttributeInstancePool.Alloc();
@@ -958,7 +1158,7 @@ void CArea::__LoadAttribute(TObjectInstance * pObjectInstance, const char *c_szA
 
 */
 
-bool CArea::Load(const char *c_szPathName)
+bool CArea::Load(const char * c_szPathName)
 {
 	Clear();
 
@@ -968,11 +1168,11 @@ bool CArea::Load(const char *c_szPathName)
 	__Load_LoadObject(strObjectDataFileName.c_str());
 	__Load_LoadAmbience(strAmbienceDataFileName.c_str());
 	__Load_BuildObjectInstances();
-	
+
 	return true;
 }
 
-bool CArea::__Load_LoadObject(const char *c_szFileName)
+bool CArea::__Load_LoadObject(const char * c_szFileName)
 {
 	CTokenVectorMap stTokenVectorMap;
 
@@ -998,7 +1198,7 @@ bool CArea::__Load_LoadObject(const char *c_szFileName)
 
 	DWORD dwCount = atoi(c_rstrCount.c_str());
 
-	char szObjectName[32+1];
+	char szObjectName[32 + 1];
 
 	for (DWORD i = 0; i < dwCount; ++i)
 	{
@@ -1041,7 +1241,7 @@ bool CArea::__Load_LoadObject(const char *c_szFileName)
 				ObjectData.m_fRoll = atoi(rVector[4].c_str());
 			}
 		}
-		
+
 		ObjectData.m_fHeightBias = 0.0f;
 		if (rVector.size() > 5)
 		{
@@ -1184,7 +1384,11 @@ const bool CArea::GetObjectInstancePointer(const DWORD & dwIndex, const TObjectI
 		return false;
 
 	*ppObjectInstance = m_ObjectInstanceVector[dwIndex];
+#ifdef ENABLE_RENDERING_ONLY_IN_AREA_V2
 	return (*ppObjectInstance) != nullptr;
+#else
+	return true;
+#endif
 }
 
 void CArea::EnablePortal(BOOL bFlag)
@@ -1213,9 +1417,10 @@ void CArea::RefreshPortal()
 	{
 		TObjectData & rData = m_ObjectDataVector[i];
 		TObjectInstance * pInstance = m_ObjectInstanceVector[i];
-
+#ifdef ENABLE_RENDERING_ONLY_IN_AREA_V2
 		if (!pInstance)
 			continue;
+#endif
 
 		for (int j = 0; j < PORTAL_ID_MAX_NUM; ++j)
 		{
@@ -1277,8 +1482,12 @@ void CArea::Clear()
 	TObjectInstanceVector::iterator it;
 	for (it = m_ObjectInstanceVector.begin(); it != m_ObjectInstanceVector.end(); ++it)
 	{
+#ifdef ENABLE_RENDERING_ONLY_IN_AREA_V2
 		if ((*it) != nullptr)
 			__Clear_DestroyObjectInstance(*it);
+#else
+		__Clear_DestroyObjectInstance(*it);
+#endif
 	}
 
 	m_ObjectDataVector.clear();
@@ -1298,7 +1507,7 @@ void CArea::Clear()
 	m_bPortalEnable = FALSE;
 	ClearPortal();
 
-	CEffectManager& rkEftMgr=CEffectManager::Instance();
+	CEffectManager & rkEftMgr = CEffectManager::Instance();
 
 	TEffectInstanceIterator i;
 	for (i = m_EffectInstanceMap.begin(); i != m_EffectInstanceMap.end(); ++i)
@@ -1311,7 +1520,11 @@ void CArea::Clear()
 
 void CArea::__Clear_DestroyObjectInstance(TObjectInstance * pObjectInstance)
 {
-	if (pObjectInstance->dwEffectInstanceIndex!=0)
+#ifdef ENABLE_RENDERING_ONLY_IN_AREA_V2
+	if (pObjectInstance->dwEffectInstanceIndex != 0)
+#else
+	if (pObjectInstance->dwEffectInstanceIndex != 0xffffffff)
+#endif
 	{
 		TEffectInstanceIterator f= m_EffectInstanceMap.find(pObjectInstance->dwEffectInstanceIndex);
 		if (m_EffectInstanceMap.end()!=f)
@@ -1322,7 +1535,11 @@ void CArea::__Clear_DestroyObjectInstance(TObjectInstance * pObjectInstance)
 			if (CEffectManager::InstancePtr())
 				CEffectManager::Instance().DestroyUnsafeEffectInstance(pEffectInstance);
 		}
+#ifdef ENABLE_RENDERING_ONLY_IN_AREA_V2
 		pObjectInstance->dwEffectInstanceIndex = 0;
+#else
+		pObjectInstance->dwEffectInstanceIndex = 0xffffffff;
+#endif
 	}
 
 	if (pObjectInstance->pAttributeInstance)
@@ -1358,7 +1575,7 @@ void CArea::__Clear_DestroyObjectInstance(TObjectInstance * pObjectInstance)
 	}
 
 	pObjectInstance->Clear();
-	
+
 	ms_ObjectInstancePool.Free(pObjectInstance);
 }
 
@@ -1387,7 +1604,9 @@ void CArea::SetMapOutDoor(CMapOutdoor * pOwnerOutdoorMap)
 CArea::CArea()
 {
 	m_wX = m_wY = 0xFF;
+#ifdef ENABLE_RENDERING_ONLY_IN_AREA_V2
 	m_iUpdateCount = 0;
+#endif
 }
 
 CArea::~CArea()
@@ -1502,7 +1721,7 @@ void CArea::TAmbienceInstance::Render()
 {
 	float fBoxSize = 10.0f;
 	STATEMANAGER.SetRenderState(D3DRS_TEXTUREFACTOR, 0xff00ff00);
-	RenderCube(fx-fBoxSize, fy-fBoxSize, fz-fBoxSize, fx+fBoxSize, fy+fBoxSize, fz+fBoxSize);
+	RenderCube(fx - fBoxSize, fy - fBoxSize, fz - fBoxSize, fx + fBoxSize, fy + fBoxSize, fz + fBoxSize);
 	STATEMANAGER.SetRenderState(D3DRS_TEXTUREFACTOR, 0xffffffff);
 	RenderSphere(nullptr, fx, fy, fz, float(dwRange) * fMaxVolumeAreaPercentage, D3DFILL_POINT);
 	RenderSphere(nullptr, fx, fy, fz, float(dwRange), D3DFILL_POINT);
@@ -1511,10 +1730,10 @@ void CArea::TAmbienceInstance::Render()
 
 	for (int i = 0; i < 4; ++i)
 	{
-		float fxAdd = cosf(float(i) * D3DX_PI/4.0f) * float(dwRange) / 2.0f;
-		float fyAdd = sinf(float(i) * D3DX_PI/4.0f) * float(dwRange) / 2.0f;
+		float fxAdd = cosf(float(i) * D3DX_PI / 4.0f) * float(dwRange) / 2.0f;
+		float fyAdd = sinf(float(i) * D3DX_PI / 4.0f) * float(dwRange) / 2.0f;
 
-		if (i%2)
+		if (i % 2)
 		{
 			fxAdd /= 2.0f;
 			fyAdd /= 2.0f;

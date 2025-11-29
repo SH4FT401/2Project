@@ -252,11 +252,13 @@ class GameWindow(ui.ScriptWindow):
 			if background.GetCurrentMapName() == "defensawe_hydra":
 				self.__ShipMastHPShow()
 
+		# START_GAME_ERROR_EXIT
 		try:
 			self.StartGame()
 		except:
 			import exception
 			exception.Abort("GameWindow.Open")
+		# END_OF_START_GAME_ERROR_EXIT
 
 		self.cubeInformation = {}
 		self.currentCubeNPC = 0

@@ -3,13 +3,13 @@
 #define APP_TITLE			"Anka2.com # Gerçek Rekabet Burada Baþlar! | [Best Studio]"				// APP_TITLE binary dosyasýndan yüklenir;
 
 #define DEFAULT_DEFINE_YMIR							// Ymir tarafýndan belirlenen varsayýlan tanýmlama;
-#ifdef DEFAULT_DEFINE_YMIR
-	#define LOCALE_SERVICE_EUROPE					// Avrupa sunucu hizmetine taþýndý;
-	#define ENABLE_ENERGY_SYSTEM					// Resmi enerji sistemi etkin;
-	#define ENABLE_COSTUME_SYSTEM					// Resmi kostüm sistemi etkin;
-	#define ENABLE_DRAGON_SOUL_SYSTEM				// Resmi ejderha ruhu (Dragon Soul) sistemi etkin;
-	#define ENABLE_NEW_EQUIPMENT_SYSTEM				// Resmi yeni ekipman sistemi etkin.
-#endif
+	#ifdef DEFAULT_DEFINE_YMIR
+		#define LOCALE_SERVICE_EUROPE					// Avrupa sunucu hizmetine taþýndý;
+		#define ENABLE_ENERGY_SYSTEM					// Resmi enerji sistemi etkin;
+		#define ENABLE_COSTUME_SYSTEM					// Resmi kostüm sistemi etkin;
+		#define ENABLE_DRAGON_SOUL_SYSTEM				// Resmi ejderha ruhu (Dragon Soul) sistemi etkin;
+		#define ENABLE_NEW_EQUIPMENT_SYSTEM				// Resmi yeni ekipman sistemi etkin.
+	#endif
 
 #define ENABLE_FOG_FIX								// Resmi 16.2 sürümünden sis düzeltmesi;
 #define ENABLE_ENB_MODE								// ENB modu (HD grafik) etkin;
@@ -154,20 +154,17 @@
 #define ENABLE_AUTO_SELL_SYSTEM						// Otomatik item satmayý sistemini etkinleþtir;
 #define ENABLE_STYLE_ATTRIBUTE_SYSTEM      			// Seçmeli özel kadim efsunu sistemini  etkinleþtir;
 #define ENABLE_GM_MOB_VNUM_DISPLAY   				// GM'lere (oyun yöneticilerine) moblarýn VNUM deðerini oyun içi veya log çýktýsýnda gösterir
+#define ENABLE_RENDERING_ONLY_IN_AREA				// Harita bölgesi için aðýr efekt kullanýmýný düzeltir
+#define ENABLE_RENDERING_ONLY_IN_AREA_V2			// Harita yükleme optimizasyonu (V2)
+#define ENABLE_NEW_SHINING_EFFEKT					// Yeni nesil Resmi parlama efekt sistemini açar
+	#ifdef ENABLE_NEW_SHINING_EFFEKT
+	#define ENABLE_LVL115_ARMOR_EFFECT				// 115 seviye zýrhlara özel parlama efektini aktif eder
+	#define ENABLE_LVL96_WEAPON_EFFECT				// 96 seviye silahlara özel parlama efektini aktif eder
+	#define ENABLE_LVL96_ARMOR_EFFECT				// 96 seviye zýrhlara özel parlama efektini aktif eder
 
-/*** DÜZELTMELER ***/
-#define MULTIPLE_DAMAGE_DISPLAY_SYSTEM				// Çoklu damage gösterimi  düzeltir
-#define ENABLE_DAMAGE_EFFECT_ACCUMULATION_FIX		// Damage efekt birikme sorunu düzetlmesi
-#define ENABLE_BOSS_FALLING_FIX						// Bosslarýn zeminden aþaðý düþmesi veya haritanýn dýþýna kaymasý sorununu düzeltir
-#define ENABLE_CLIENT_UNEXPECTED_CLOSE_FIX			// Clientin syserr vermeden aniden kapanmasýna sebep olan durumu düzeltir
-#define ENABLE_INVISIBLE_MODE_EFFECT_FIX			// Görünmez moddan çýktýðýnda karakter üzerinde kalan efektlerin temizlenmesini saðlar
-#define ENABLE_LENS_RENDER_FIX						// Lens / kamera / zoom ile ilgili yanlýþ render problemlerini düzeltir
-#define ENABLE_AUTO_ATTACK_ARCHER_NINJA_FIX     	// Otomatik saldýrýda okçu/ninja sýnýflarýna özel hatalarý giderir
-#define ENABLE_TEXTURE_SCALE_FIX                	// Texture %100 / scaling kaynaklý hatalarý düzeltir
-#define ENABLE_TIMESTAMPED_EXCEPTION_DUMP   		// Her bir istisna için "errorlog" klasörüne zaman damgalý (ErrorLog_DD-MM-YYYY_HH-MM-SS.txt) bir hata dökümü dosyasý yazar ve errorlog.exe'yi çalýþtýrýr
-#define ENABLE_NEW_STOP_ON_BLOCK    				// Engelleyici (ATTRIBUTE_BLOCK) tespit edildiðinde mevcut BlockMovement() çaðrýsýna ek olarak NEW_Stop() fonksiyonunu çaðýrýr (çarpýþma sonrasý hareket durdurma iyileþtirmesi)
-#define ENABLE_ABORT_TRACEBACK_WITH_LINE   			// Abort sýrasýnda Python traceback bilgilerini (filename, funcname, line) loglar. Kullanýlmazsa standart abort davranýþý korunur
-/*** DÜZELTMELER ***/
+	//#define USE_WEAPON_COSTUME_WITH_EFFECT		// Silah kostümlerinin de geliþtirme/parlama efektini göstermesini saðlar
+	//#define USE_BODY_COSTUME_WITH_EFFECT			// Zýrh kostümlerinin de geliþtirme/parlama efektini göstermesini saðlar
+	#endif
 
 /*** TAMAMLANMAMIÞ SÝSTEMLER (YAKINDA) ***/
 #define ENABLE_GUILDRENEWAL_SYSTEM					// Geliþmiþ Resmi gibi lonca altyapýsý için çekirdek yenileme sistemi
@@ -189,3 +186,34 @@
 		//#define ENABLE_GUILDSTORAGE_SYSTEM     	// Loncanýn ortak deposu: üyelerin paylaþýmlý eþya deposu sistemi
 	#endif
 /*** TAMAMLANMAMIÞ SÝSTEMLER (YAKINDA) ***/
+
+/*** DÜZELTMELER ***/
+#define MULTIPLE_DAMAGE_DISPLAY_SYSTEM				// Çoklu damage gösterimi  düzeltir
+#define ENABLE_DAMAGE_EFFECT_ACCUMULATION_FIX		// Damage efekt birikme sorunu düzetlmesi
+#define ENABLE_BOSS_FALLING_FIX						// Bosslarýn zeminden aþaðý düþmesi veya haritanýn dýþýna kaymasý sorununu düzeltir
+#define ENABLE_CLIENT_UNEXPECTED_CLOSE_FIX			// Clientin syserr vermeden aniden kapanmasýna sebep olan durumu düzeltir
+#define ENABLE_INVISIBLE_MODE_EFFECT_FIX			// Görünmez moddan çýktýðýnda karakter üzerinde kalan efektlerin temizlenmesini saðlar
+#define ENABLE_LENS_RENDER_FIX						// Lens / kamera / zoom ile ilgili yanlýþ render problemlerini düzeltir
+#define ENABLE_AUTO_ATTACK_ARCHER_NINJA_FIX     	// Otomatik saldýrýda okçu/ninja sýnýflarýna özel hatalarý giderir
+#define ENABLE_TEXTURE_SCALE_FIX                	// Texture %100 / scaling kaynaklý hatalarý düzeltir
+#define ENABLE_TIMESTAMPED_EXCEPTION_DUMP   		// Her bir istisna için "errorlog" klasörüne zaman damgalý (ErrorLog_DD-MM-YYYY_HH-MM-SS.txt) bir hata dökümü dosyasý yazar ve errorlog.exe'yi çalýþtýrýr
+#define ENABLE_NEW_STOP_ON_BLOCK    				// Engelleyici (ATTRIBUTE_BLOCK) tespit edildiðinde mevcut BlockMovement() çaðrýsýna ek olarak NEW_Stop() fonksiyonunu çaðýrýr (çarpýþma sonrasý hareket durdurma iyileþtirmesi)
+#define ENABLE_ABORT_TRACEBACK_WITH_LINE   			// Abort sýrasýnda Python traceback bilgilerini (filename, funcname, line) loglar. Kullanýlmazsa standart abort davranýþý korunur
+#define ENABLE_EXTENDED_SYSERR						// Geniþletilmiþ hata kayýtlarýný etkinleþtir
+// #define ENABLE_SYSERR_BY_PID						// [Debug.cpp] syserr.txt yerine syserr-{pid}.txt oluþturur
+/*** DÜZELTMELER ***/
+
+/*<----Bilgilendirme---->*/
+// Eðer bir kostüm sistemi devre dýþý býrakýlýrsa, uiscript içindeki costumewindow.py dosyasýný düzenlemeniz gerekir (CostumeSlot'u yorum satýrý haline getirin)
+
+/*
+@#GENEL MAKROLAR
+#define __OBSOLETE__								// Kullanýlmayan ve gereksiz kodlar kaldýrýldý
+#define __UNIMPLEMENTED__							// Uygulanacak yeni þeylerin taslaklarý
+#define __UNIMPLEMENTED_EXTEND__					// Uygulanacak yeni þeylerin geniþletilmiþ taslaklarý
+*/
+
+/*
+#@@Genel Olarak
+@warme601: syserr.txt gibi hata dosyalarý ile birlikte geliþmiþ daðýtým için release sürümünü kullanýn.
+*/

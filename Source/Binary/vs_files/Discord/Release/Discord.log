@@ -1,7 +1,0 @@
-﻿  connection_win.cpp
-  discord_register_win.cpp
-  discord_rpc.cpp
-  dllmain.cpp
-  rpc_connection.cpp
-  serialization.cpp
-  Discord.vcxproj -> C:\Anka2Project\Anka2Project\Source\Binary\extern\library\Discord_r.lib

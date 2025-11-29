@@ -891,6 +891,11 @@ class InventoryWindow(ui.ScriptWindow):
 
 	if app.ENABLE_INVENTORY_EXPANSION_SYSTEM:
 		def OnUpdate(self):
+			if app.ENABLE_STYLE_ATTRIBUTE_SYSTEM:
+				if self.attachBonusDialog:
+					if self.attachBonusDialog.IsShow():
+						self.attachBonusDialog.Update()
+
 			if constInfo.Inventory_Locked["Active"]:
 				if constInfo.Inventory_Locked["Keys_Can_Unlock_%d" % (0)] >= 18:
 					for i in xrange(18):
@@ -1305,12 +1310,6 @@ class InventoryWindow(ui.ScriptWindow):
 			return
 
 		self.attachMetinDialog.Open(metinSlotPos, targetSlotPos)
-
-	def OnUpdate(self):
-		if app.ENABLE_STYLE_ATTRIBUTE_SYSTEM:
-			if self.attachBonusDialog:
-				if self.attachBonusDialog.IsShow():
-					self.attachBonusDialog.Update()
 
 	if app.ENABLE_STYLE_ATTRIBUTE_SYSTEM:
 		def AttachBonusToItem(self, sourceSlotPos, targetSlotPos):

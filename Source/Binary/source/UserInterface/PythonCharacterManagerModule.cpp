@@ -11,7 +11,7 @@
 
 PyObject *chrmgrSetEmpireNameMode(PyObject *poSelf, PyObject *poArgs)
 {
-	int	iEnable;
+	int iEnable;
 	if (!PyTuple_GetInteger(poArgs, 0, &iEnable))
 		return Py_BadArgument();
 
@@ -21,12 +21,12 @@ PyObject *chrmgrSetEmpireNameMode(PyObject *poSelf, PyObject *poArgs)
 	return Py_BuildNone();
 }
 
-PyObject *chrmgrRegisterTitleName(PyObject *poSelf, PyObject *poArgs)
+PyObject * chrmgrRegisterTitleName(PyObject * poSelf, PyObject * poArgs)
 {
-	int	iIndex;
+	int iIndex;
 	if (!PyTuple_GetInteger(poArgs, 0, &iIndex))
 		return Py_BadArgument();
-	char *szTitleName;
+	char * szTitleName;
 	if (!PyTuple_GetString(poArgs, 1, &szTitleName))
 		return Py_BadArgument();
 
@@ -34,12 +34,12 @@ PyObject *chrmgrRegisterTitleName(PyObject *poSelf, PyObject *poArgs)
 	return Py_BuildNone();
 }
 
-PyObject *chrmgrRegisterNameColor(PyObject *poSelf, PyObject *poArgs)
-{	
+PyObject * chrmgrRegisterNameColor(PyObject * poSelf, PyObject * poArgs)
+{
 	int index;
 	if (!PyTuple_GetInteger(poArgs, 0, &index))
 		return Py_BadArgument();
-	
+
 	int ir;
 	if (!PyTuple_GetInteger(poArgs, 1, &ir))
 		return Py_BadArgument();
@@ -54,9 +54,9 @@ PyObject *chrmgrRegisterNameColor(PyObject *poSelf, PyObject *poArgs)
 	return Py_BuildNone();
 }
 
-PyObject *chrmgrRegisterTitleColor(PyObject *poSelf, PyObject *poArgs)
+PyObject * chrmgrRegisterTitleColor(PyObject * poSelf, PyObject * poArgs)
 {
-	int	iIndex;
+	int iIndex;
 	if (!PyTuple_GetInteger(poArgs, 0, &iIndex))
 		return Py_BadArgument();
 	int ir;
@@ -111,9 +111,9 @@ PyObject *chrmgrRegisterTitleSystemColor(PyObject *poSelf, PyObject *poArgs)
 }
 #endif
 
-PyObject *chrmgrGetPickedVID(PyObject *poSelf, PyObject *poArgs)
+PyObject * chrmgrGetPickedVID(PyObject * poSelf, PyObject * poArgs)
 {
-	CPythonCharacterManager& rkChrMgr=CPythonCharacterManager::Instance();
+	CPythonCharacterManager & rkChrMgr = CPythonCharacterManager::Instance();
 
 	DWORD dwPickedActorID;
 	if (rkChrMgr.OLD_GetPickedInstanceVID(&dwPickedActorID))
@@ -122,31 +122,30 @@ PyObject *chrmgrGetPickedVID(PyObject *poSelf, PyObject *poArgs)
 		return Py_BuildValue("i", -1);
 }
 
-PyObject *chrmgrGetVIDInfo(PyObject *poSelf, PyObject *poArgs)
+PyObject * chrmgrGetVIDInfo(PyObject * poSelf, PyObject * poArgs)
 {
-	int	nVID;
+	int nVID;
 	if (!PyTuple_GetInteger(poArgs, 0, &nVID))
 		return Py_BadArgument();
 
-	CPythonCharacterManager& rkChrMgr=CPythonCharacterManager::Instance();
+	CPythonCharacterManager & rkChrMgr = CPythonCharacterManager::Instance();
 
-	char szDetail[256]="";
-	CInstanceBase* pkInstBase=rkChrMgr.GetInstancePtr(nVID);
+	char szDetail[256] = "";
+	CInstanceBase * pkInstBase = rkChrMgr.GetInstancePtr(nVID);
 	if (pkInstBase)
 	{
 		TPixelPosition kPPosInst;
 		pkInstBase->NEW_GetPixelPosition(&kPPosInst);
 
-		LONG xInst=kPPosInst.x;
-		LONG yInst=kPPosInst.y;
+		LONG xInst = kPPosInst.x;
+		LONG yInst = kPPosInst.y;
 
-		CPythonBackground& rkBG=CPythonBackground::Instance();
+		CPythonBackground & rkBG = CPythonBackground::Instance();
 		rkBG.LocalPositionToGlobalPosition(xInst, yInst);
-		sprintf(szDetail, "pos=(%d, %d)", xInst, yInst);
-	}	
-	
+		sprintf(szDetail, "pos=(%ld, %ld)", xInst, yInst);
+	}
 
-	char szInfo[1024];	
+	char szInfo[1024];
 	sprintf(szInfo, "VID %d (isRegistered=%d, isAlive=%d, isDead=%d) %s", 
 		nVID,
 		rkChrMgr.IsRegisteredVID(nVID),
@@ -154,24 +153,24 @@ PyObject *chrmgrGetVIDInfo(PyObject *poSelf, PyObject *poArgs)
 		rkChrMgr.IsDeadVID(nVID),
 		szDetail
 	);
-	
+
 	return Py_BuildValue("s", szInfo);
 }
 
 
-PyObject *chrmgrSetPathName(PyObject *poSelf, PyObject *poArgs)
+PyObject * chrmgrSetPathName(PyObject * poSelf, PyObject * poArgs)
 {
-	char *szPathName;
+	char * szPathName;
 	if (!PyTuple_GetString(poArgs, 0, &szPathName))
 		return Py_BadArgument();
 
-	CRaceManager::Instance().SetPathName(szPathName);	
+	CRaceManager::Instance().SetPathName(szPathName);
 	return Py_BuildNone();
 }
 
-PyObject *chrmgrCreateRace(PyObject *poSelf, PyObject *poArgs)
+PyObject * chrmgrCreateRace(PyObject * poSelf, PyObject * poArgs)
 {
-	int	iRace;
+	int iRace;
 	if (!PyTuple_GetInteger(poArgs, 0, &iRace))
 		return Py_BadArgument();
 
@@ -179,9 +178,9 @@ PyObject *chrmgrCreateRace(PyObject *poSelf, PyObject *poArgs)
 	return Py_BuildNone();
 }
 
-PyObject *chrmgrSelectRace(PyObject *poSelf, PyObject *poArgs)
+PyObject * chrmgrSelectRace(PyObject * poSelf, PyObject * poArgs)
 {
-	int	iRace;
+	int iRace;
 	if (!PyTuple_GetInteger(poArgs, 0, &iRace))
 		return Py_BadArgument();
 
@@ -189,12 +188,12 @@ PyObject *chrmgrSelectRace(PyObject *poSelf, PyObject *poArgs)
 	return Py_BuildNone();
 }
 
-PyObject *chrmgrRegisterAttachingBoneName(PyObject *poSelf, PyObject *poArgs)
+PyObject * chrmgrRegisterAttachingBoneName(PyObject * poSelf, PyObject * poArgs)
 {
 	int iPartIndex;
 	if (!PyTuple_GetInteger(poArgs, 0, &iPartIndex))
 		return Py_BadArgument();
-	char *szBoneName;
+	char * szBoneName;
 	if (!PyTuple_GetString(poArgs, 1, &szBoneName))
 		return Py_BadArgument();
 
@@ -206,9 +205,9 @@ PyObject *chrmgrRegisterAttachingBoneName(PyObject *poSelf, PyObject *poArgs)
 	return Py_BuildNone();
 }
 
-PyObject *chrmgrRegisterMotionMode(PyObject *poSelf, PyObject *poArgs)
+PyObject * chrmgrRegisterMotionMode(PyObject * poSelf, PyObject * poArgs)
 {
-	int	iMotionIndex;
+	int iMotionIndex;
 	if (!PyTuple_GetInteger(poArgs, 0, &iMotionIndex))
 		return Py_BadArgument();
 
@@ -220,9 +219,7 @@ PyObject *chrmgrRegisterMotionMode(PyObject *poSelf, PyObject *poArgs)
 	return Py_BuildNone();
 }
 
-
-
-PyObject *chrmgrSetMotionRandomWeight(PyObject *poSelf, PyObject *poArgs)
+PyObject * chrmgrSetMotionRandomWeight(PyObject * poSelf, PyObject * poArgs)
 {
 	int iMode;
 	if (!PyTuple_GetInteger(poArgs, 0, &iMode))
@@ -250,7 +247,7 @@ PyObject *chrmgrSetMotionRandomWeight(PyObject *poSelf, PyObject *poArgs)
 	return Py_BuildNone();
 }
 
-PyObject *chrmgrRegisterNormalAttack(PyObject *poSelf, PyObject *poArgs)
+PyObject * chrmgrRegisterNormalAttack(PyObject * poSelf, PyObject * poArgs)
 {
 	int iMode;
 	if (!PyTuple_GetInteger(poArgs, 0, &iMode))
@@ -270,7 +267,7 @@ PyObject *chrmgrRegisterNormalAttack(PyObject *poSelf, PyObject *poArgs)
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // 없어질 함수들
-PyObject *chrmgrReserveComboAttack(PyObject *poSelf, PyObject *poArgs)
+PyObject * chrmgrReserveComboAttack(PyObject * poSelf, PyObject * poArgs)
 {
 	int iMode;
 	if (!PyTuple_GetInteger(poArgs, 0, &iMode))
@@ -288,7 +285,7 @@ PyObject *chrmgrReserveComboAttack(PyObject *poSelf, PyObject *poArgs)
 	return Py_BuildNone();
 }
 
-PyObject *chrmgrRegisterComboAttack(PyObject *poSelf, PyObject *poArgs)
+PyObject * chrmgrRegisterComboAttack(PyObject * poSelf, PyObject * poArgs)
 {
 	int iMode;
 	if (!PyTuple_GetInteger(poArgs, 0, &iMode))
@@ -312,7 +309,7 @@ PyObject *chrmgrRegisterComboAttack(PyObject *poSelf, PyObject *poArgs)
 // 없어질 함수들
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-PyObject *chrmgrReserveComboAttackNew(PyObject *poSelf, PyObject *poArgs)
+PyObject * chrmgrReserveComboAttackNew(PyObject * poSelf, PyObject * poArgs)
 {
 	int iMotionMode;
 	if (!PyTuple_GetInteger(poArgs, 0, &iMotionMode))
@@ -334,7 +331,7 @@ PyObject *chrmgrReserveComboAttackNew(PyObject *poSelf, PyObject *poArgs)
 	return Py_BuildNone();
 }
 
-PyObject *chrmgrRegisterComboAttackNew(PyObject *poSelf, PyObject *poArgs)
+PyObject * chrmgrRegisterComboAttackNew(PyObject * poSelf, PyObject * poArgs)
 {
 	int iMotionMode;
 	if (!PyTuple_GetInteger(poArgs, 0, &iMotionMode))
@@ -360,9 +357,9 @@ PyObject *chrmgrRegisterComboAttackNew(PyObject *poSelf, PyObject *poArgs)
 	return Py_BuildNone();
 }
 
-PyObject *chrmgrLoadRaceData(PyObject *poSelf, PyObject *poArgs)
+PyObject * chrmgrLoadRaceData(PyObject * poSelf, PyObject * poArgs)
 {
-	char *szFileName;
+	char * szFileName;
 	if (!PyTuple_GetString(poArgs, 0, &szFileName))
 		return Py_BadArgument();
 
@@ -370,7 +367,7 @@ PyObject *chrmgrLoadRaceData(PyObject *poSelf, PyObject *poArgs)
 	if (!pRaceData)
 		return Py_BuildException("RaceData has not selected!");
 
-	const char *c_szFullFileName = CRaceManager::Instance().GetFullPathFileName(szFileName);
+	const char * c_szFullFileName = CRaceManager::Instance().GetFullPathFileName(szFileName);
 	if (!pRaceData->LoadRaceData(c_szFullFileName))
 	{
 		TraceError("Failed to load race data : %s\n", c_szFullFileName);
@@ -379,9 +376,9 @@ PyObject *chrmgrLoadRaceData(PyObject *poSelf, PyObject *poArgs)
 	return Py_BuildNone();
 }
 
-PyObject *chrmgrLoadLocalRaceData(PyObject *poSelf, PyObject *poArgs)
+PyObject * chrmgrLoadLocalRaceData(PyObject * poSelf, PyObject * poArgs)
 {
-	char *szFileName;
+	char * szFileName;
 	if (!PyTuple_GetString(poArgs, 0, &szFileName))
 		return Py_BadArgument();
 
@@ -397,7 +394,7 @@ PyObject *chrmgrLoadLocalRaceData(PyObject *poSelf, PyObject *poArgs)
 	return Py_BuildNone();
 }
 
-PyObject *chrmgrRegisterCacheMotionData(PyObject *poSelf, PyObject *poArgs)
+PyObject * chrmgrRegisterCacheMotionData(PyObject * poSelf, PyObject * poArgs)
 {
 	int iMode;
 	if (!PyTuple_GetInteger(poArgs, 0, &iMode))
@@ -407,7 +404,7 @@ PyObject *chrmgrRegisterCacheMotionData(PyObject *poSelf, PyObject *poArgs)
 	if (!PyTuple_GetInteger(poArgs, 1, &iMotion))
 		return Py_BadArgument();
 
-	char *szFileName;
+	char * szFileName;
 	if (!PyTuple_GetString(poArgs, 2, &szFileName))
 		return Py_BadArgument();
 
@@ -419,8 +416,8 @@ PyObject *chrmgrRegisterCacheMotionData(PyObject *poSelf, PyObject *poArgs)
 	if (!pRaceData)
 		return Py_BuildException("RaceData has not selected!");
 
-	const char *c_szFullFileName = CRaceManager::Instance().GetFullPathFileName(szFileName);
-	CGraphicThing* pkMotionThing=pRaceData->RegisterMotionData(iMode, iMotion, c_szFullFileName, iWeight);
+	const char * c_szFullFileName = CRaceManager::Instance().GetFullPathFileName(szFileName);
+	CGraphicThing * pkMotionThing = pRaceData->RegisterMotionData(iMode, iMotion, c_szFullFileName, iWeight);
 
 	if (pkMotionThing)
 		CResourceManager::Instance().LoadStaticCache(pkMotionThing->GetFileName());
@@ -428,7 +425,7 @@ PyObject *chrmgrRegisterCacheMotionData(PyObject *poSelf, PyObject *poArgs)
 	return Py_BuildNone();
 }
 
-PyObject *chrmgrRegisterMotionData(PyObject *poSelf, PyObject *poArgs)
+PyObject * chrmgrRegisterMotionData(PyObject * poSelf, PyObject * poArgs)
 {
 	int iMode;
 	if (!PyTuple_GetInteger(poArgs, 0, &iMode))
@@ -438,7 +435,7 @@ PyObject *chrmgrRegisterMotionData(PyObject *poSelf, PyObject *poArgs)
 	if (!PyTuple_GetInteger(poArgs, 1, &iMotion))
 		return Py_BadArgument();
 
-	char *szFileName;
+	char * szFileName;
 	if (!PyTuple_GetString(poArgs, 2, &szFileName))
 		return Py_BadArgument();
 
@@ -460,13 +457,13 @@ PyObject *chrmgrRegisterMotionData(PyObject *poSelf, PyObject *poArgs)
 	return Py_BuildNone();
 }
 
-PyObject *chrmgrRegisterRaceSrcName(PyObject *poSelf, PyObject *poArgs)
+PyObject * chrmgrRegisterRaceSrcName(PyObject * poSelf, PyObject * poArgs)
 {
-	char *szName;
+	char * szName;
 	if (!PyTuple_GetString(poArgs, 0, &szName))
 		return Py_BadArgument();
 
-	char *szSrcName;
+	char * szSrcName;
 	if (!PyTuple_GetString(poArgs, 1, &szSrcName))
 		return Py_BadArgument();
 
@@ -475,13 +472,13 @@ PyObject *chrmgrRegisterRaceSrcName(PyObject *poSelf, PyObject *poArgs)
 	return Py_BuildNone();
 }
 
-PyObject *chrmgrRegisterRaceName(PyObject *poSelf, PyObject *poArgs)
+PyObject * chrmgrRegisterRaceName(PyObject * poSelf, PyObject * poArgs)
 {
 	int iRaceIndex;
 	if (!PyTuple_GetInteger(poArgs, 0, &iRaceIndex))
 		return Py_BadArgument();
 
-	char *szName;
+	char * szName;
 	if (!PyTuple_GetString(poArgs, 1, &szName))
 		return Py_BadArgument();
 
@@ -490,13 +487,13 @@ PyObject *chrmgrRegisterRaceName(PyObject *poSelf, PyObject *poArgs)
 	return Py_BuildNone();
 }
 
-PyObject *chrmgrSetShapeModel(PyObject *poSelf, PyObject *poArgs)
+PyObject * chrmgrSetShapeModel(PyObject * poSelf, PyObject * poArgs)
 {
 	int eShape;
 	if (!PyTuple_GetInteger(poArgs, 0, &eShape))
 		return Py_BadArgument();
 
-	char *szFileName;
+	char * szFileName;
 	if (!PyTuple_GetString(poArgs, 1, &szFileName))
 		return Py_BadArgument();
 
@@ -509,7 +506,7 @@ PyObject *chrmgrSetShapeModel(PyObject *poSelf, PyObject *poArgs)
 	return Py_BuildNone();
 }
 
-PyObject *chrmgrAppendShapeSkin(PyObject *poSelf, PyObject *poArgs)
+PyObject * chrmgrAppendShapeSkin(PyObject * poSelf, PyObject * poArgs)
 {
 	int eShape;
 	if (!PyTuple_GetInteger(poArgs, 0, &eShape))
@@ -519,11 +516,11 @@ PyObject *chrmgrAppendShapeSkin(PyObject *poSelf, PyObject *poArgs)
 	if (!PyTuple_GetInteger(poArgs, 1, &ePart))
 		return Py_BadArgument();
 
-	char *szSrcFileName;
+	char * szSrcFileName;
 	if (!PyTuple_GetString(poArgs, 2, &szSrcFileName))
 		return Py_BadArgument();
 
-	char *szDstFileName;
+	char * szDstFileName;
 	if (!PyTuple_GetString(poArgs, 3, &szDstFileName))
 		return Py_BadArgument();
 
@@ -538,16 +535,16 @@ PyObject *chrmgrAppendShapeSkin(PyObject *poSelf, PyObject *poArgs)
 // RaceData 관련 끝
 //////////////////////////////////////////////////////////////////////////
 
-PyObject *chrmgrSetMovingSpeed(PyObject *poSelf, PyObject *poArgs)
+PyObject * chrmgrSetMovingSpeed(PyObject * poSelf, PyObject * poArgs)
 {
-#ifndef _DISTRIBUTE
-	int	nMovSpd;
+#ifndef NDEBUG // @warme601 _DISTRIBUTE -> NDEBUG
+	int nMovSpd;
 	if (!PyTuple_GetInteger(poArgs, 0, &nMovSpd))
 		return Py_BadArgument();
 
-	if (nMovSpd<0)
+	if (nMovSpd < 0)
 		return Py_BuildException("MovingSpeed < 0");
-	
+
 	CInstanceBase * pkInst = CPythonCharacterManager::Instance().GetSelectedInstancePtr();
 
 	if (!pkInst)
@@ -558,17 +555,17 @@ PyObject *chrmgrSetMovingSpeed(PyObject *poSelf, PyObject *poArgs)
 	return Py_BuildNone();
 }
 
-PyObject *chrmgrRegisterEffect(PyObject *poSelf, PyObject *poArgs)
+PyObject * chrmgrRegisterEffect(PyObject * poSelf, PyObject * poArgs)
 {
 	int eEftType;
 	if (!PyTuple_GetInteger(poArgs, 0, &eEftType))
 		return Py_BadArgument();
 
-	char *szBoneName;
+	char * szBoneName;
 	if (!PyTuple_GetString(poArgs, 1, &szBoneName))
 		return Py_BadArgument();
-	
-	char *szPathName;
+
+	char * szPathName;
 	if (!PyTuple_GetString(poArgs, 2, &szPathName))
 		return Py_BadArgument();
 
@@ -576,17 +573,17 @@ PyObject *chrmgrRegisterEffect(PyObject *poSelf, PyObject *poArgs)
 	return Py_BuildNone();
 }
 
-PyObject *chrmgrRegisterCacheEffect(PyObject *poSelf, PyObject *poArgs)
+PyObject * chrmgrRegisterCacheEffect(PyObject * poSelf, PyObject * poArgs)
 {
 	int eEftType;
 	if (!PyTuple_GetInteger(poArgs, 0, &eEftType))
 		return Py_BadArgument();
 
-	char *szBoneName;
+	char * szBoneName;
 	if (!PyTuple_GetString(poArgs, 1, &szBoneName))
 		return Py_BadArgument();
-	
-	char *szPathName;
+
+	char * szPathName;
 	if (!PyTuple_GetString(poArgs, 2, &szPathName))
 		return Py_BadArgument();
 
@@ -595,7 +592,7 @@ PyObject *chrmgrRegisterCacheEffect(PyObject *poSelf, PyObject *poArgs)
 	return Py_BuildNone();
 }
 
-PyObject *chrmgrSetDustGap(PyObject *poSelf, PyObject *poArgs)
+PyObject * chrmgrSetDustGap(PyObject * poSelf, PyObject * poArgs)
 {
 	int nGap;
 	if (!PyTuple_GetInteger(poArgs, 0, &nGap))
@@ -605,7 +602,7 @@ PyObject *chrmgrSetDustGap(PyObject *poSelf, PyObject *poArgs)
 	return Py_BuildNone();
 }
 
-PyObject *chrmgrSetHorseDustGap(PyObject *poSelf, PyObject *poArgs)
+PyObject * chrmgrSetHorseDustGap(PyObject * poSelf, PyObject * poArgs)
 {
 	int nGap;
 	if (!PyTuple_GetInteger(poArgs, 0, &nGap))
@@ -615,31 +612,31 @@ PyObject *chrmgrSetHorseDustGap(PyObject *poSelf, PyObject *poArgs)
 	return Py_BuildNone();
 }
 
-PyObject *chrmgrToggleDirectionLine(PyObject *poSelf, PyObject *poArgs)
+PyObject * chrmgrToggleDirectionLine(PyObject * poSelf, PyObject * poArgs)
 {
-	static bool s_isVisible=true;
+	static bool s_isVisible = true;
 	CActorInstance::ShowDirectionLine(s_isVisible);
 
-	s_isVisible=!s_isVisible;
+	s_isVisible = !s_isVisible;
 	return Py_BuildNone();
 }
 
-PyObject *chrmgrRegisterPointEffect(PyObject *poSelf, PyObject *poArgs)
+PyObject * chrmgrRegisterPointEffect(PyObject * poSelf, PyObject * poArgs)
 {
 	int iEft;
 	if (!PyTuple_GetInteger(poArgs, 0, &iEft))
 		return Py_BadArgument();
 
-	char *szFileName;
+	char * szFileName;
 	if (!PyTuple_GetString(poArgs, 1, &szFileName))
 		return Py_BadArgument();
 
-	CPythonCharacterManager& rkChrMgr=CPythonCharacterManager::Instance();
+	CPythonCharacterManager & rkChrMgr = CPythonCharacterManager::Instance();
 	rkChrMgr.RegisterPointEffect(iEft, szFileName);
 	return Py_BuildNone();
 }
 
-PyObject *chrmgrShowPointEffect(PyObject *poSelf, PyObject *poArgs)
+PyObject * chrmgrShowPointEffect(PyObject * poSelf, PyObject * poArgs)
 {
 	int nVID;
 	if (!PyTuple_GetInteger(poArgs, 0, &nVID))
@@ -664,7 +661,7 @@ void CPythonCharacterManager::SCRIPT_SetAffect(DWORD dwVID, DWORD eState, BOOL i
 	pkInstSel->SCRIPT_SetAffect(eState, isVisible ? true : false);
 }
 
-PyObject *chrmgrSetAffect(PyObject *poSelf, PyObject *poArgs)
+PyObject * chrmgrSetAffect(PyObject * poSelf, PyObject * poArgs)
 {
 	int nVID;
 	if (!PyTuple_GetInteger(poArgs, 0, &nVID))
@@ -688,7 +685,7 @@ void CPythonCharacterManager::SetEmoticon(DWORD dwVID, DWORD eState)
 	CInstanceBase * pkInstSel = (dwVID == 0xffffffff) ? GetSelectedInstancePtr() : GetInstancePtr(dwVID);
 	if (!pkInstSel)
 		return;
-	
+
 	pkInstSel->SetEmoticon(eState);
 }
 
@@ -697,27 +694,27 @@ bool CPythonCharacterManager::IsPossibleEmoticon(DWORD dwVID)
 	CInstanceBase * pkInstSel = (dwVID == 0xffffffff) ? GetSelectedInstancePtr() : GetInstancePtr(dwVID);
 	if (!pkInstSel)
 		return false;
-	
+
 	return pkInstSel->IsPossibleEmoticon();
 }
 
-PyObject *chrmgrSetEmoticon(PyObject *poSelf, PyObject *poArgs)
+PyObject * chrmgrSetEmoticon(PyObject * poSelf, PyObject * poArgs)
 {
 	int nVID;
 	if (!PyTuple_GetInteger(poArgs, 0, &nVID))
 		return Py_BadArgument();
-	
+
 	int nEft;
 	if (!PyTuple_GetInteger(poArgs, 1, &nEft))
 		return Py_BadArgument();
-	
+
 	CPythonCharacterManager & rkChrMgr = CPythonCharacterManager::Instance();
 	rkChrMgr.SetEmoticon(nVID >= 0 ? nVID : 0xffffffff, nEft);
 	return Py_BuildNone();
 }
 
-PyObject *chrmgrIsPossibleEmoticon(PyObject *poSelf, PyObject *poArgs)
-{	
+PyObject * chrmgrIsPossibleEmoticon(PyObject * poSelf, PyObject * poArgs)
+{
 	int nVID;
 	if (!PyTuple_GetInteger(poArgs, 0, &nVID))
 		return Py_BadArgument();
@@ -728,7 +725,7 @@ PyObject *chrmgrIsPossibleEmoticon(PyObject *poSelf, PyObject *poArgs)
 	return Py_BuildValue("i", result);
 }
 
-PyObject *chrmgrSetRaceHeight(PyObject *poSelf, PyObject *poArgs)
+PyObject * chrmgrSetRaceHeight(PyObject* poSelf, PyObject* poArgs)
 {
 	int iRaceIndex;
 	if (!PyTuple_GetInteger(poArgs, 0, &iRaceIndex))

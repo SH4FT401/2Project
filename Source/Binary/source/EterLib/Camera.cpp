@@ -255,6 +255,7 @@ void CCamera::SetViewMatrix()
 
     D3DXVec3Cross(&m_v3Up, &m_v3View, &m_v3Cross);
 	D3DXVec3Normalize(&m_v3Up, &m_v3Up);
+
 	const auto vv = D3DXVECTOR3(0.0f, 0.0f, 1.0f);
 	m_fPitch = D3DXVec3Dot(&m_v3Up, &vv);// / D3DXVec2Length(&v2ViewYZ);
 	if (m_fPitch >= 1)
@@ -407,17 +408,19 @@ void CCamera::MoveVertical(float fDistance)
 	SetViewMatrix();
 }
 
-//void CCamera::RotateUpper(float fDegree)
-//{
-//	D3DXMATRIX matRot;
-//	D3DXMatrixRotationAxis(&matRot, &m_v3Cross, -D3DXToRadian(fDegree));
-//	D3DXVec3TransformCoord(&m_v3View, &m_v3View, &matRot) ;
-//    D3DXVec3Cross(&m_v3Up, &m_v3View, &m_v3Cross);
-//
-//	m_v3Target = m_v3Eye + m_v3View;
-//
-//	SetViewMatrix() ;
-//}
+/*
+void CCamera::RotateUpper(float fDegree)
+{
+	D3DXMATRIX matRot;
+	D3DXMatrixRotationAxis(&matRot, &m_v3Cross, -D3DXToRadian(fDegree));
+	D3DXVec3TransformCoord(&m_v3View, &m_v3View, &matRot);
+	D3DXVec3Cross(&m_v3Up, &m_v3View, &m_v3Cross);
+
+	m_v3Target = m_v3Eye + m_v3View;
+
+	SetViewMatrix();
+}
+*/
 
 void CCamera::RotateEyeAroundTarget(float fPitchDegree, float fRollDegree)
 {
@@ -588,7 +591,7 @@ bool CCameraManager::isCurrentCamera(unsigned char ucCameraNum)
 
 bool CCameraManager::AddCamera(unsigned char ucCameraNum)
 {
-	if(m_CameraMap.end() != m_CameraMap.find(ucCameraNum))
+	if (m_CameraMap.end() != m_CameraMap.find(ucCameraNum))
 		return false;
 	m_CameraMap.insert(TCameraMap::value_type(ucCameraNum, new CCamera));
 	return true;
@@ -597,7 +600,7 @@ bool CCameraManager::AddCamera(unsigned char ucCameraNum)
 bool CCameraManager::RemoveCamera(unsigned char ucCameraNum)
 {
 	TCameraMap::iterator itor = m_CameraMap.find(ucCameraNum);
-	if(m_CameraMap.end() == itor)
+	if (m_CameraMap.end() == itor)
 		return false;
 	m_CameraMap.erase(itor);
 	return true;
@@ -608,7 +611,7 @@ unsigned char CCameraManager::GetCurrentCameraNum()
 	if (!m_pCurrentCamera)
 		return NO_CURRENT_CAMERA;
 	for (TCameraMap::iterator itor = m_CameraMap.begin(); itor != m_CameraMap.end(); ++itor)
-		if(m_pCurrentCamera == (*itor).second)
+		if (m_pCurrentCamera == (*itor).second)
 			return (*itor).first;
 	return NO_CURRENT_CAMERA;
 }

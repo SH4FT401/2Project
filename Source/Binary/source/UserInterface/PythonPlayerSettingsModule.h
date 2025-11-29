@@ -305,55 +305,97 @@ static const std::vector<TEffectList> vecEffectList =
 	{ CInstanceBase::EFFECT_AFFECT + 45, "Bip01", "d:/ymir work/ui/game/staff_effect/tgm/tgm.mse", true},
 #endif
 
-	{ CInstanceBase::EFFECT_REFINED + 1, "PART_WEAPON", "D:/ymir work/pc/common/effect/sword/sword_7.mse", true},
-	{ CInstanceBase::EFFECT_REFINED + 2, "PART_WEAPON", "D:/ymir work/pc/common/effect/sword/sword_8.mse", true},
-	{ CInstanceBase::EFFECT_REFINED + 3, "PART_WEAPON", "D:/ymir work/pc/common/effect/sword/sword_9.mse", true},
-	{ CInstanceBase::EFFECT_REFINED + 4, "PART_WEAPON_LEFT", "D:/ymir work/pc/common/effect/sword/sword_7_b.mse", true},
-	{ CInstanceBase::EFFECT_REFINED + 5, "PART_WEAPON_LEFT", "D:/ymir work/pc/common/effect/sword/sword_8_b.mse", true},
-	{ CInstanceBase::EFFECT_REFINED + 6, "PART_WEAPON_LEFT", "D:/ymir work/pc/common/effect/sword/sword_9_b.mse", true},
-	{ CInstanceBase::EFFECT_REFINED + 7, "PART_WEAPON", "D:/ymir work/pc/common/effect/sword/sword_7_f.mse", true},
-	{ CInstanceBase::EFFECT_REFINED + 8, "PART_WEAPON", "D:/ymir work/pc/common/effect/sword/sword_8_f.mse", true},
-	{ CInstanceBase::EFFECT_REFINED + 9, "PART_WEAPON", "D:/ymir work/pc/common/effect/sword/sword_9_f.mse", true},
-	{ CInstanceBase::EFFECT_REFINED + 10, "PART_WEAPON", "D:/ymir work/pc/common/effect/sword/sword_7_s.mse", true},
-	{ CInstanceBase::EFFECT_REFINED + 11, "PART_WEAPON", "D:/ymir work/pc/common/effect/sword/sword_8_s.mse", true},
-	{ CInstanceBase::EFFECT_REFINED + 12, "PART_WEAPON", "D:/ymir work/pc/common/effect/sword/sword_9_s.mse", true},
-	{ CInstanceBase::EFFECT_REFINED + 13, "PART_WEAPON_LEFT", "D:/ymir work/pc/common/effect/sword/sword_7_s.mse", true},
-	{ CInstanceBase::EFFECT_REFINED + 14, "PART_WEAPON_LEFT", "D:/ymir work/pc/common/effect/sword/sword_8_s.mse", true},
-	{ CInstanceBase::EFFECT_REFINED + 15, "PART_WEAPON_LEFT", "D:/ymir work/pc/common/effect/sword/sword_9_s.mse", true},
-	{ CInstanceBase::EFFECT_REFINED + 16, "Bip01", "D:/ymir work/pc/common/effect/armor/armor_7.mse", true},
-	{ CInstanceBase::EFFECT_REFINED + 17, "Bip01", "D:/ymir work/pc/common/effect/armor/armor_8.mse", true},
-	{ CInstanceBase::EFFECT_REFINED + 18, "Bip01", "D:/ymir work/pc/common/effect/armor/armor_9.mse", true},
-	{ CInstanceBase::EFFECT_REFINED + 19, "Bip01", "D:/ymir work/pc/common/effect/armor/armor-4-2-1.mse", true},
-	{ CInstanceBase::EFFECT_REFINED + 20, "Bip01", "D:/ymir work/pc/common/effect/armor/armor-4-2-2.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SWORD_REFINED7, "PART_WEAPON", "D:/ymir work/pc/common/effect/sword/sword_7.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SWORD_REFINED8, "PART_WEAPON", "D:/ymir work/pc/common/effect/sword/sword_8.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SWORD_REFINED9, "PART_WEAPON", "D:/ymir work/pc/common/effect/sword/sword_9.mse", true},
+#ifdef ENABLE_LVL96_WEAPON_EFFECT
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SWORD_REFINED7TH, "PART_WEAPON", "D:/ymir work/pc/common/effect/sword/sword_7th.mse", true},
+#endif
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_BOW_REFINED7, "PART_WEAPON_LEFT", "D:/ymir work/pc/common/effect/sword/sword_7_b.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_BOW_REFINED8, "PART_WEAPON_LEFT", "D:/ymir work/pc/common/effect/sword/sword_8_b.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_BOW_REFINED9, "PART_WEAPON_LEFT", "D:/ymir work/pc/common/effect/sword/sword_9_b.mse", true},
+#ifdef ENABLE_LVL96_WEAPON_EFFECT
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_BOW_REFINED7TH, "PART_WEAPON_LEFT", "D:/ymir work/pc/common/effect/sword/sword_7th_b.mse", true},
+#endif
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_FANBELL_REFINED7, "PART_WEAPON", "D:/ymir work/pc/common/effect/sword/sword_7_f.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_FANBELL_REFINED8, "PART_WEAPON", "D:/ymir work/pc/common/effect/sword/sword_8_f.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_FANBELL_REFINED9, "PART_WEAPON", "D:/ymir work/pc/common/effect/sword/sword_9_f.mse", true},
+#ifdef ENABLE_LVL96_WEAPON_EFFECT
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_FANBELL_REFINED7TH, "PART_WEAPON", "D:/ymir work/pc/common/effect/sword/sword_7th_f.mse", true},
+#endif
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SMALLSWORD_REFINED7, "PART_WEAPON", "D:/ymir work/pc/common/effect/sword/sword_7_s.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SMALLSWORD_REFINED8, "PART_WEAPON", "D:/ymir work/pc/common/effect/sword/sword_8_s.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SMALLSWORD_REFINED9, "PART_WEAPON", "D:/ymir work/pc/common/effect/sword/sword_9_s.mse", true},
+#ifdef ENABLE_LVL96_WEAPON_EFFECT
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SMALLSWORD_REFINED7TH, "PART_WEAPON", "D:/ymir work/pc/common/effect/sword/sword_7th_s.mse", true},
+#endif
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SMALLSWORD_REFINED7_LEFT, "PART_WEAPON_LEFT", "D:/ymir work/pc/common/effect/sword/sword_7_s.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SMALLSWORD_REFINED8_LEFT, "PART_WEAPON_LEFT", "D:/ymir work/pc/common/effect/sword/sword_8_s.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SMALLSWORD_REFINED9_LEFT, "PART_WEAPON_LEFT", "D:/ymir work/pc/common/effect/sword/sword_9_s.mse", true},
+#ifdef ENABLE_LVL96_WEAPON_EFFECT
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SMALLSWORD_REFINED7TH_LEFT, "PART_WEAPON_LEFT", "D:/ymir work/pc/common/effect/sword/sword_7th_s.mse", true},
+#endif
+#ifdef ENABLE_WOLFMAN_CHARACTER
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SWORD_REFINED7_W, "PART_WEAPON", "D:/ymir work/pc/common/effect/sword/sword_7_w.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SWORD_REFINED8_W, "PART_WEAPON", "D:/ymir work/pc/common/effect/sword/sword_8_w.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SWORD_REFINED9_W, "PART_WEAPON", "D:/ymir work/pc/common/effect/sword/sword_9_w.mse", true},
+#ifdef ENABLE_LVL96_WEAPON_EFFECT
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SWORD_REFINED7TH_W, "PART_WEAPON", "D:/ymir work/pc/common/effect/sword/sword_7th_w.mse", true},
+#endif
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SWORD_REFINED7_W_LEFT, "PART_WEAPON_LEFT", "D:/ymir work/pc/common/effect/sword/sword_7_w.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SWORD_REFINED8_W_LEFT, "PART_WEAPON_LEFT", "D:/ymir work/pc/common/effect/sword/sword_8_w.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SWORD_REFINED9_W_LEFT, "PART_WEAPON_LEFT", "D:/ymir work/pc/common/effect/sword/sword_9_w.mse", true},
+#ifdef ENABLE_LVL96_WEAPON_EFFECT
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SWORD_REFINED7TH_W_LEFT, "PART_WEAPON_LEFT", "D:/ymir work/pc/common/effect/sword/sword_7th_w.mse", true},
+#endif
+#endif
+#ifdef ENABLE_LVL96_ARMOR_EFFECT
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_BODYARMOR_SPECIAL_TH, "Bip01", "D:/ymir work/pc/common/effect/armor/armor_7th_01.mse", true},
+#endif
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_BODYARMOR_REFINED7, "Bip01", "D:/ymir work/pc/common/effect/armor/armor_7.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_BODYARMOR_REFINED8, "Bip01", "D:/ymir work/pc/common/effect/armor/armor_8.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_BODYARMOR_REFINED9, "Bip01", "D:/ymir work/pc/common/effect/armor/armor_9.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_BODYARMOR_SPECIAL, "Bip01", "D:/ymir work/pc/common/effect/armor/armor-4-2-1.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_BODYARMOR_SPECIAL2, "Bip01", "D:/ymir work/pc/common/effect/armor/armor-4-2-2.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_BODYARMOR_SPECIAL3, "Bip01", "D:/ymir work/pc/common/effect/armor/armor-5-1.mse", true},
+#ifdef USE_BODY_COSTUME_WITH_EFFECT
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_COSTUMEBODY_YELLOW, "Bip01", "D:/ymir work/pc/common/effect/armor/costumebody_yellow.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_COSTUMEBODY_ORANGE, "Bip01", "D:/ymir work/pc/common/effect/armor/costumebody_orange.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_COSTUMEBODY_BLUE, "Bip01", "D:/ymir work/pc/common/effect/armor/costumebody_blue.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_COSTUMEBODY_RED, "Bip01", "D:/ymir work/pc/common/effect/armor/costumebody_red.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_COSTUMEBODY_GREEN, "Bip01", "D:/ymir work/pc/common/effect/armor/costumebody_green.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_COSTUMEBODY_VIOLETT, "Bip01", "D:/ymir work/pc/common/effect/armor/costumebody_violett.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_COSTUMEBODY_WHITE, "Bip01", "D:/ymir work/pc/common/effect/armor/costumebody_white.mse", true},
+#endif
 #ifdef ENABLE_ACCE_COSTUME_SYSTEM
-	{ CInstanceBase::EFFECT_REFINED + 21, "Bip01", "d:/ymir work/pc/common/effect/armor/acc_01.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_ACCE, "Bip01", "d:/ymir work/pc/common/effect/armor/acc_01.mse", true},
 #endif
 #ifdef ENABLE_MDE_EFFECT
-	{ CInstanceBase::EFFECT_REFINED + 22, "PART_WEAPON", "D:/ymir work/effect/sword/fms.mse", true},
-	{ CInstanceBase::EFFECT_REFINED + 23, "PART_WEAPON", "D:/ymir work/effect/sword/tryton.mse", true},
-	{ CInstanceBase::EFFECT_REFINED + 24, "PART_WEAPON", "D:/ymir work/effect/sword/zatruty2.mse", true},
-	{ CInstanceBase::EFFECT_REFINED + 25, "PART_WEAPON", "D:/ymir work/effect/sword/lwi.mse", true},
-	{ CInstanceBase::EFFECT_REFINED + 26, "PART_WEAPON", "D:/ymir work/effect/sword/brzegowe.mse", true},
-	{ CInstanceBase::EFFECT_REFINED + 27, "PART_WEAPON", "D:/ymir work/effect/sword/swiety.mse", true},
-	{ CInstanceBase::EFFECT_REFINED + 28, "PART_WEAPON", "D:/ymir work/effect/sword/rib.mse", true},
-	{ CInstanceBase::EFFECT_REFINED + 29, "PART_WEAPON", "D:/ymir work/effect/sword/zal.mse", true},
-	{ CInstanceBase::EFFECT_REFINED + 30, "PART_WEAPON_LEFT", "D:/ymir work/effect/sword/jelonek.mse", true},
-	{ CInstanceBase::EFFECT_REFINED + 31, "PART_WEAPON_LEFT", "D:/ymir work/effect/sword/kruk.mse", true},
-	{ CInstanceBase::EFFECT_REFINED + 32, "PART_WEAPON_LEFT", "D:/ymir work/effect/sword/diabla_l.mse", true},
-	{ CInstanceBase::EFFECT_REFINED + 33, "PART_WEAPON", "D:/ymir work/effect/sword/antyk.mse", true},
-	{ CInstanceBase::EFFECT_REFINED + 34, "PART_WEAPON", "D:/ymir work/effect/sword/bambus.mse", true},
-	{ CInstanceBase::EFFECT_REFINED + 35, "PART_WEAPON", "D:/ymir work/effect/sword/szczeki.mse", true},
-	{ CInstanceBase::EFFECT_REFINED + 36, "PART_WEAPON", "D:/ymir work/effect/sword/kozik.mse", true},
-	{ CInstanceBase::EFFECT_REFINED + 37, "PART_WEAPON_LEFT", "D:/ymir work/effect/sword/kozik.mse", true},
-	{ CInstanceBase::EFFECT_REFINED + 38, "PART_WEAPON", "D:/ymir work/effect/sword/skrzydla.mse", true},
-	{ CInstanceBase::EFFECT_REFINED + 39, "PART_WEAPON_LEFT", "D:/ymir work/effect/sword/skrzydla.mse", true},
-	{ CInstanceBase::EFFECT_REFINED + 40, "PART_WEAPON", "D:/ymir work/effect/sword/bezduszne.mse", true},
-	{ CInstanceBase::EFFECT_REFINED + 41, "PART_WEAPON_LEFT", "D:/ymir work/effect/sword/bezduszne.mse", true},
-	{ CInstanceBase::EFFECT_REFINED + 42, "PART_WEAPON", "D:/ymir work/effect/sword/jesion.mse", true},
-	{ CInstanceBase::EFFECT_REFINED + 43, "PART_WEAPON_LEFT", "D:/ymir work/effect/sword/jesion.mse", true},
-	{ CInstanceBase::EFFECT_REFINED + 44, "PART_WEAPON", "D:/ymir work/effect/sword/diabla_w.mse", true},
-	{ CInstanceBase::EFFECT_REFINED + 45, "PART_WEAPON_LEFT", "D:/ymir work/effect/sword/diabla_w.mse", true},
-	{ CInstanceBase::EFFECT_REFINED + 46, "PART_WEAPON", "D:/ymir work/effect/sword/piekielne.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SPECIAL_SWORD_30_1, "PART_WEAPON", "D:/ymir work/effect/sword/fms.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SPECIAL_SWORD_90_1, "PART_WEAPON", "D:/ymir work/effect/sword/tryton.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SPECIAL_SWORD_75_1, "PART_WEAPON", "D:/ymir work/effect/sword/zatruty2.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SPECIAL_SWORD_75_2, "PART_WEAPON", "D:/ymir work/effect/sword/lwi.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SPECIAL_SWORD_90_2, "PART_WEAPON", "D:/ymir work/effect/sword/brzegowe.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SPECIAL_SWORD_90_3, "PART_WEAPON", "D:/ymir work/effect/sword/swiety.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SPECIAL_BLADE_30, "PART_WEAPON", "D:/ymir work/effect/sword/rib.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SPECIAL_BLADE_75, "PART_WEAPON", "D:/ymir work/effect/sword/zal.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SPECIAL_BOW_30, "PART_WEAPON_LEFT", "D:/ymir work/effect/sword/jelonek.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SPECIAL_BOW_75, "PART_WEAPON_LEFT", "D:/ymir work/effect/sword/kruk.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SPECIAL_BOW_90, "PART_WEAPON_LEFT", "D:/ymir work/effect/sword/diabla_l.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SPECIAL_BELL_30, "PART_WEAPON", "D:/ymir work/effect/sword/antyk.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SPECIAL_BELL_70, "PART_WEAPON", "D:/ymir work/effect/sword/bambus.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SPECIAL_BELL_90, "PART_WEAPON", "D:/ymir work/effect/sword/szczeki.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SPECIAL_DAGGER_30, "PART_WEAPON", "D:/ymir work/effect/sword/kozik.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SPECIAL_DAGGER_30_LEFT, "PART_WEAPON_LEFT", "D:/ymir work/effect/sword/kozik.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SPECIAL_DAGGER_75, "PART_WEAPON", "D:/ymir work/effect/sword/skrzydla.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SPECIAL_DAGGER_75_LEFT, "PART_WEAPON_LEFT", "D:/ymir work/effect/sword/skrzydla.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SPECIAL_DAGGER_90, "PART_WEAPON", "D:/ymir work/effect/sword/bezduszne.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SPECIAL_DAGGER_90_LEFT, "PART_WEAPON_LEFT", "D:/ymir work/effect/sword/bezduszne.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SPECIAL_FAN_30, "PART_WEAPON", "D:/ymir work/effect/sword/jesion.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SPECIAL_FAN_30_LEFT, "PART_WEAPON_LEFT", "D:/ymir work/effect/sword/jesion.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SPECIAL_FAN_90, "PART_WEAPON", "D:/ymir work/effect/sword/diabla_w.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SPECIAL_FAN_90_LEFT, "PART_WEAPON_LEFT", "D:/ymir work/effect/sword/diabla_w.mse", true},
+	{ CInstanceBase::EFFECT_REFINED + CInstanceBase::EFFECT_SPECIAL_BLADE_90, "PART_WEAPON", "D:/ymir work/effect/sword/piekielne.mse", true},
 #endif
 
 	{ CInstanceBase::EFFECT_DUST, "", "d:/ymir work/effect/etc/dust/dust.mse", true},

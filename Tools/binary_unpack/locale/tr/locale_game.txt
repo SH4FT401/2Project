@@ -3406,14 +3406,14 @@ TOOLTIP_APPLY_ATTBONUS_DESERT	Çöl canavarýna karþý güçlü +%d%%	SA
 TOOLTIP_APPLY_ATTBONUS_DEVIL	Þeytanlara karþý güçlü +%%%d	SA
 TOOLTIP_APPLY_ATTBONUS_DRAGON	Ejderhalara karþý güçlü +%d %%	SA
 TOOLTIP_APPLY_ATTBONUS_FAN	Yelpaze savunmasýndan kopuþ +%%%d	SA
-TOOLTIP_APPLY_ATTBONUS_BOSS	Bosslara karþý güçlü +%d%%
-TOOLTIP_APPLY_ATTBONUS_DARK	Karanlýða karþý güçlü +%d%%
-TOOLTIP_APPLY_ATTBONUS_EARTH	Topraða karþý güçlü +%d%%
-TOOLTIP_APPLY_ATTBONUS_ELEC	Yýldýrýma karþý güçlü +%d%%
-TOOLTIP_APPLY_ATTBONUS_FIRE	Ateþe karþý güçlü +%d%%
+TOOLTIP_APPLY_ATTBONUS_BOSS	Bosslara karþý güçlü +%d%%	SA
+TOOLTIP_APPLY_ATTBONUS_DARK	Karanlýða karþý güçlü +%d%%	SA
+TOOLTIP_APPLY_ATTBONUS_EARTH	Topraða karþý güçlü +%d%%	SA
+TOOLTIP_APPLY_ATTBONUS_ELEC	Yýldýrýma karþý güçlü +%d%%	SA
+TOOLTIP_APPLY_ATTBONUS_FIRE	Ateþe karþý güçlü +%d%%	SA
 TOOLTIP_APPLY_ATTBONUS_HUMAN	Yarý insanlara karþý güçlü +%%%d	SA
-TOOLTIP_APPLY_ATTBONUS_ICE	Buza karþý güçlü +%d%%
-TOOLTIP_APPLY_ATTBONUS_METIN	Metin taþlarýna karþý güçlü +%d%%
+TOOLTIP_APPLY_ATTBONUS_ICE	Buza karþý güçlü +%d%%	SA
+TOOLTIP_APPLY_ATTBONUS_METIN	Metin taþlarýna karþý güçlü +%d%%	SA
 TOOLTIP_APPLY_ATTBONUS_INSECT	Böceklere karþý güçlü +%d%%	SA
 TOOLTIP_APPLY_ATTBONUS_MILGYO	Mistiklere karþý güçlü +%%%d	SA
 TOOLTIP_APPLY_ATTBONUS_MONSTER	Canavarlara karþý güçlü +%%%d	SA
@@ -3425,7 +3425,7 @@ TOOLTIP_APPLY_ATTBONUS_SWORD	Kýlýç savunmasýndan kopuþ +%d%%	SA
 TOOLTIP_APPLY_ATTBONUS_TWOHAND	Çift el savunmasýndan kopuþ +%d%%	SA
 TOOLTIP_APPLY_ATTBONUS_UNDEAD	Ölümsüzlere karþý güçlü +%%%d	SA
 TOOLTIP_APPLY_ATTBONUS_WARRIOR	Savasçýlara karþý güçlü +%%%d	SA
-TOOLTIP_APPLY_ATTBONUS_WIND	Rüzgara karþý güçlü +%d%%
+TOOLTIP_APPLY_ATTBONUS_WIND	Rüzgara karþý güçlü +%d%%	SA
 TOOLTIP_APPLY_ATTBONUS_WOLFMAN	Lycanlar'a karþý güçlü + %%%d	SA
 TOOLTIP_APPLY_BLEEDING_PCT	Kanama Saldýrýsý +%%%d	SA
 TOOLTIP_APPLY_BLEEDING_REDUCE	Kanama saldýrýlarýnda direnç +%%%d	SA

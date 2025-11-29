@@ -11,6 +11,7 @@
 		<File ArchivedPath="emotion.py"><![CDATA[../binary_unpack/root/emotion.py]]></File>
 		<File ArchivedPath="exception.py"><![CDATA[../binary_unpack/root/exception.py]]></File>
 		<File ArchivedPath="game.py"><![CDATA[../binary_unpack/root/game.py]]></File>
+		<File ArchivedPath="game.py.bak"><![CDATA[../binary_unpack/root/game.py.bak]]></File>
 		<File ArchivedPath="interfacemodule.py"><![CDATA[../binary_unpack/root/interfacemodule.py]]></File>
 		<File ArchivedPath="introcreate.py"><![CDATA[../binary_unpack/root/introcreate.py]]></File>
 		<File ArchivedPath="introempire.py"><![CDATA[../binary_unpack/root/introempire.py]]></File>
@@ -110,6 +111,7 @@
 		<File ArchivedPath="uiteleport.py"><![CDATA[../binary_unpack/root/uiteleport.py]]></File>
 		<File ArchivedPath="uitip.py"><![CDATA[../binary_unpack/root/uitip.py]]></File>
 		<File ArchivedPath="uitooltip.py"><![CDATA[../binary_unpack/root/uitooltip.py]]></File>
+		<File ArchivedPath="uitooltip.py.bak"><![CDATA[../binary_unpack/root/uitooltip.py.bak]]></File>
 		<File ArchivedPath="uitrack.py"><![CDATA[../binary_unpack/root/uitrack.py]]></File>
 		<File ArchivedPath="uiuploadmark.py"><![CDATA[../binary_unpack/root/uiuploadmark.py]]></File>
 		<File ArchivedPath="uiweb.py"><![CDATA[../binary_unpack/root/uiweb.py]]></File>

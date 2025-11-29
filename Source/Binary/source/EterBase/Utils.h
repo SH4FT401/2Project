@@ -83,20 +83,6 @@ const char *		_getf(const char* c_szFormat, ...);
 PCHAR*				CommandLineToArgv( PCHAR CmdLine, int* _argc );
 
 template<typename T>
-constexpr T LinearInterpolation(const T& tMin, const T& tMax, float fRatio)
-{
-	return T((1.0f - fRatio) * tMin + fRatio * tMax);
-}
-
-template<typename T>
-constexpr T HermiteInterpolation(const T& tMin, const T& tMax, float fRatio)
-{
-	fRatio = MINMAX(0.0f, fRatio, 1.0f);
-	fRatio = fRatio * fRatio * (3.0f - 2.0f * fRatio);
-	return LinearInterpolation(tMin, tMax, fRatio);
-}
-
-template<typename T>
 T EL_DegreeToRadian(T degree)
 {
 	const T PI = T(3.141592);
@@ -222,6 +208,22 @@ __forceinline int htoi(const char *s)
 
     return x;
 }
+
+//#ifdef ENABLE_RENDERING_ONLY_IN_AREA_V2
+template<typename T>
+constexpr T LinearInterpolation(const T& tMin, const T& tMax, float fRatio)
+{
+	return T((1.0f - fRatio) * tMin + fRatio * tMax);
+}
+
+template<typename T>
+constexpr T HermiteInterpolation(const T& tMin, const T& tMax, float fRatio)
+{
+	fRatio = MINMAX(0.0f, fRatio, 1.0f);
+	fRatio = fRatio * fRatio * (3.0f - 2.0f * fRatio);
+	return LinearInterpolation(tMin, tMax, fRatio);
+}
+//#endif
 
 typedef std::vector<std::string> TTokenVector;
 

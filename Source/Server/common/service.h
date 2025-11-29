@@ -128,6 +128,7 @@
 #define ENABLE_PLAYERS_ONLINE                  		// Çevrimiçi oyuncu /players_online komutunu  etkinleþtir;
 #define ENABLE_STYLE_ATTRIBUTE_SYSTEM      			// Seçmeli özel kadim efsunu sistemini  etkinleþtir;
 #define ENABLE_ITEM_MODIFIER_AVG_SKILL				// Ortalama ve Beceri efsun nesnesi sistemini etkinleþtir;
+#define ENABLE_RANDOM_STATUS_PER_LEVEL 				// Seviye atladýkça karaktere rastgele ek statüler kazandýrýr
 
 /*** DÜZELTMELER ***/
 #define FIX_SyncPosition                       		// Pozisyon senkronizasyon sorunlarýný düzeltir

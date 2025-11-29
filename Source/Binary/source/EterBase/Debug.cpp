@@ -1,10 +1,14 @@
 #include "StdAfx.h"
+#include "../UserInterface/Locale_inc.h"
 
 #include <time.h>
 #include <stdio.h>
 #include "Debug.h"
 #include "Singleton.h"
 #include "Timer.h"
+#ifdef ENABLE_SYSERR_BY_PID
+	#include <fmt/fmt.h>
+#endif
 
 const DWORD DEBUG_STRING_MAX_LEN = 1024;
 
@@ -55,39 +59,38 @@ class CLogFile : public CSingleton<CLogFile>
 };
 
 static CLogFile gs_logfile;
-
-static UINT gs_uLevel=0;
+static UINT gs_uLevel = 0;
 
 void SetLogLevel(UINT uLevel)
 {
-	gs_uLevel=uLevel;
+	gs_uLevel = uLevel;
 }
 
 void Log(UINT uLevel, const char *c_szMsg)
 {
-	if (uLevel>=gs_uLevel)
+	if (uLevel >= gs_uLevel)
 		Trace(c_szMsg);
 }
 
 void Logn(UINT uLevel, const char *c_szMsg)
 {
-	if (uLevel>=gs_uLevel)
+	if (uLevel >= gs_uLevel)
 		Tracen(c_szMsg);
 }
 
 void Logf(UINT uLevel, const char *c_szFormat, ...)
 {
-	if (uLevel<gs_uLevel)
+	if (uLevel < gs_uLevel)
 		return;
-	
-	char szBuf[DEBUG_STRING_MAX_LEN+1];
+
+	char szBuf[DEBUG_STRING_MAX_LEN + 1];
 
 	va_list args;
 	va_start(args, c_szFormat);
 	_vsnprintf(szBuf, sizeof(szBuf), c_szFormat, args);
 	va_end(args);
 #ifdef _DEBUG
-	OutputDebugString(szBuf);	
+	OutputDebugString(szBuf);
 	fputs(szBuf, stdout);
 #endif
 
@@ -97,14 +100,14 @@ void Logf(UINT uLevel, const char *c_szFormat, ...)
 
 void Lognf(UINT uLevel, const char *c_szFormat, ...)
 {
-	if (uLevel<gs_uLevel)
+	if (uLevel < gs_uLevel)
 		return;
 
 	va_list args;
 	va_start(args, c_szFormat);
 
-	char szBuf[DEBUG_STRING_MAX_LEN+2];
-	int len = _vsnprintf(szBuf, sizeof(szBuf)-1, c_szFormat, args);
+	char szBuf[DEBUG_STRING_MAX_LEN + 2];
+	int len = _vsnprintf(szBuf, sizeof(szBuf) - 1, c_szFormat, args);
 
 	if (len > 0)
 	{
@@ -113,7 +116,7 @@ void Lognf(UINT uLevel, const char *c_szFormat, ...)
 	}
 	va_end(args);
 #ifdef _DEBUG
-	OutputDebugString(szBuf);	
+	OutputDebugString(szBuf);
 	puts(szBuf);
 #endif
 
@@ -122,7 +125,7 @@ void Lognf(UINT uLevel, const char *c_szFormat, ...)
 }
 
 
-void Trace(const char *c_szMsg)
+void Trace(const char * c_szMsg)
 {
 #ifdef _DEBUG
 	OutputDebugString(c_szMsg);
@@ -133,10 +136,10 @@ void Trace(const char *c_szMsg)
 		LogFile(c_szMsg);
 }
 
-void Tracen(const char *c_szMsg)
+void Tracen(const char * c_szMsg)
 {
 #ifdef _DEBUG
-	char szBuf[DEBUG_STRING_MAX_LEN+1];
+	char szBuf[DEBUG_STRING_MAX_LEN + 1];
 	_snprintf(szBuf, sizeof(szBuf), "%s\n", c_szMsg);
 	OutputDebugString(szBuf);
 	puts(c_szMsg);
@@ -160,8 +163,8 @@ void Tracenf(const char *c_szFormat, ...)
 	va_list args;
 	va_start(args, c_szFormat);
 
-	char szBuf[DEBUG_STRING_MAX_LEN+2];
-	int len = _vsnprintf(szBuf, sizeof(szBuf)-1, c_szFormat, args);
+	char szBuf[DEBUG_STRING_MAX_LEN + 2];
+	int len = _vsnprintf(szBuf, sizeof(szBuf) - 1, c_szFormat, args);
 
 	if (len > 0)
 	{
@@ -170,7 +173,7 @@ void Tracenf(const char *c_szFormat, ...)
 	}
 	va_end(args);
 #ifdef _DEBUG
-	OutputDebugString(szBuf);	
+	OutputDebugString(szBuf);
 	printf("%s", szBuf);
 #endif
 
@@ -178,9 +181,9 @@ void Tracenf(const char *c_szFormat, ...)
 		LogFile(szBuf);
 }
 
-void Tracef(const char *c_szFormat, ...)
+void Tracef(const char * c_szFormat, ...)
 {
-	char szBuf[DEBUG_STRING_MAX_LEN+1];
+	char szBuf[DEBUG_STRING_MAX_LEN + 1];
 
 	va_list args;
 	va_start(args, c_szFormat);
@@ -188,7 +191,7 @@ void Tracef(const char *c_szFormat, ...)
 	va_end(args);
 
 #ifdef _DEBUG
-	OutputDebugString(szBuf);	
+	OutputDebugString(szBuf);
 	fputs(szBuf, stdout);
 #endif
 
@@ -196,11 +199,11 @@ void Tracef(const char *c_szFormat, ...)
 		LogFile(szBuf);
 }
 
-void TraceError(const char *c_szFormat, ...)
+void TraceError(const char * c_szFormat, ...)
 {
-#ifndef _DISTRIBUTE 
+#ifndef _DISTRIBUTE
 
-	char szBuf[DEBUG_STRING_MAX_LEN+2];
+	char szBuf[DEBUG_STRING_MAX_LEN + 2];
 
 	strncpy(szBuf, "SYSERR: ", DEBUG_STRING_MAX_LEN);
 	int len = strlen(szBuf);
@@ -236,9 +239,9 @@ void TraceError(const char *c_szFormat, ...)
 #endif
 }
 
-void TraceErrorWithoutEnter(const char *c_szFormat, ...)
+void TraceErrorWithoutEnter(const char * c_szFormat, ...)
 {
-#ifndef _DISTRIBUTE 
+#ifndef _DISTRIBUTE
 
 	char szBuf[DEBUG_STRING_MAX_LEN];
 
@@ -269,7 +272,7 @@ void TraceErrorWithoutEnter(const char *c_szFormat, ...)
 #endif
 }
 
-void LogBoxf(const char *c_szFormat, ...)
+void LogBoxf(const char * c_szFormat, ...)
 {
 	va_list args;
 	va_start(args, c_szFormat);
@@ -280,7 +283,7 @@ void LogBoxf(const char *c_szFormat, ...)
 	LogBox(szBuf);
 }
 
-void LogBox(const char *c_szMsg, const char *c_szCaption, HWND hWnd)
+void LogBox(const char * c_szMsg, const char * c_szCaption, HWND hWnd)
 {
 	if (!hWnd)
 		hWnd = g_PopupHwnd;
@@ -289,25 +292,39 @@ void LogBox(const char *c_szMsg, const char *c_szCaption, HWND hWnd)
 	Tracen(c_szMsg);
 }
 
-void LogFile(const char *c_szMsg)
+void LogFile(const char * c_szMsg)
 {
 	CLogFile::Instance().Write(c_szMsg);
 }
 
-void LogFilef(const char *c_szMessage, ...)
+void LogFilef(const char * c_szMessage, ...)
 {
 	va_list args;
 	va_start(args, c_szMessage);
-	char szBuf[DEBUG_STRING_MAX_LEN+1];
+	char szBuf[DEBUG_STRING_MAX_LEN + 1];
 	_vsnprintf(szBuf, sizeof(szBuf), c_szMessage, args);
 
 	CLogFile::Instance().Write(szBuf);
 }
 
+#ifdef ENABLE_EXTENDED_SYSERR
 void OpenLogFile(bool bUseLogFIle)
 {
-#ifndef _DISTRIBUTE 
-	freopen("syserr.txt", "w", stderr);
+
+	time_t rawtime;
+	struct tm * timeinfo;
+	char buffer[80];
+	time(&rawtime);
+	timeinfo = localtime(&rawtime);
+	strftime(buffer, sizeof(buffer), "./syserr/%d-%m-%Y-%H-%M-%S-syserr.txt", timeinfo);
+	const char* str(buffer);
+
+#if !defined(_DISTRIBUTE) || defined(_USE_LOG_FILE)
+	#ifdef ENABLE_SYSERR_BY_PID
+	freopen(fmt::format("./syserr/syserr-{}.txt", GetCurrentProcessId()).c_str(), "w", stderr);
+	#else
+	freopen(str, "w", stderr);
+	#endif
 
 	if (bUseLogFIle)
 	{
@@ -316,6 +333,24 @@ void OpenLogFile(bool bUseLogFIle)
 	}
 #endif
 }
+#else
+void OpenLogFile(bool bUseLogFIle)
+{
+#ifndef _DISTRIBUTE
+	#ifdef ENABLE_SYSERR_BY_PID
+	freopen(fmt::format("./syserr/syserr-{}.txt", GetCurrentProcessId()).c_str(), "w", stderr);
+	#else
+	freopen("syserr.txt", "w", stderr);
+	#endif
+
+	if (bUseLogFIle)
+	{
+		isLogFile = true;
+		CLogFile::Instance().Initialize();
+	}
+#endif
+}
+#endif
 
 void OpenConsoleWindow()
 {

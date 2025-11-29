@@ -250,19 +250,26 @@ void CEventManager::Enqueue(BYTE bQueue, TEventTable* table)
 	if (bQueue == QUEUE_TYPE_START)
 	{
 		info->bQueue = QUEUE_TYPE_START;
-		const long startTime = table->startTime - get_global_time();
+		const long startTimeLeft = table->startTime - get_global_time(); // baþlangýca ne kadar kaldý
 
-		if (startTime <= get_global_time())
-			SetEventState(table, true);
+		if (startTimeLeft <= 0)
+			SetEventState(table, true); // zaten baþlamýþ olmalýydý
 		else
-			m_mapEventStartQueue.insert(EventQueue::value_type(table->dwID, event_create(queue_event_process, info, PASSES_PER_SEC(startTime))));
+			m_mapEventStartQueue.insert(EventQueue::value_type(
+				table->dwID,
+				event_create(queue_event_process, info, PASSES_PER_SEC(startTimeLeft))));
 	}
-	else if(bQueue == QUEUE_TYPE_END)
+	else if (bQueue == QUEUE_TYPE_END)
 	{
 		info->bQueue = QUEUE_TYPE_END;
-		const long endTime = table->endTime - get_global_time();
+		const long endTimeLeft = table->endTime - get_global_time();
 
-		m_mapEventEndQueue.insert(EventQueue::value_type(table->dwID, event_create(queue_event_process, info, PASSES_PER_SEC(endTime))));
+		if (endTimeLeft <= 0)
+			SetEventState(table, false); // zaten bitmiþ olmalýydý
+		else
+			m_mapEventEndQueue.insert(EventQueue::value_type(
+				table->dwID,
+				event_create(queue_event_process, info, PASSES_PER_SEC(endTimeLeft))));
 	}
 }
 

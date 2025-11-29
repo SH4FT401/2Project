@@ -481,15 +481,13 @@ bool CHARACTER::LearnSkillByBook(DWORD dwSkillVnum, BYTE bProb)
 	}
 	else
 	{
+		// M1 (level 21) -> M2 için idx 0, M2 (level 22) -> M3 için idx 1, ...
+		// M5 (level 25) -> M6 için idx 4, M10 (level 30) -> GM için idx 9
 		int idx = MIN(9, GetSkillLevel(dwSkillVnum) - 20);
 
 		sys_log(0, "LearnSkillByBook %s table idx %d value %d", GetName(), idx, aiSkillBookCountForLevelUp[idx]);
 
-#ifndef DEFAULT_55_BOOKS
-		int need_bookcount = 0;
-#else
 		int need_bookcount = GetSkillLevel(dwSkillVnum) - 20;
-#endif
 
 #ifdef ENABLE_GOLD_LIMIT
 		PointChange(POINT_EXP, -static_cast<long long>(need_exp));
@@ -764,7 +762,8 @@ void CHARACTER::SkillLevelUp(DWORD dwVnum, BYTE bMethod)
 					}
 					else
 					{
-						SetSkillLevel(pkSk->dwVnum, 20);
+						if (number(1, 21 - MIN(20, GetSkillLevel(pkSk->dwVnum))) == 1)
+							SetSkillLevel(pkSk->dwVnum, 20);
 					}
 				}
 				break;
@@ -855,11 +854,11 @@ void CHARACTER::ComputePassiveSkill(DWORD dwVnum)
 struct FFindNearVictim
 {
 	FFindNearVictim(LPCHARACTER center, LPCHARACTER attacker, const CHARACTER_SET& excepts_set = empty_set_)
-		: m_pkChrCenter(center),
-	m_pkChrNextTarget(NULL),
-	m_pkChrAttacker(attacker),
-	m_count(0),
-	m_excepts_set(excepts_set)
+			: m_pkChrCenter(center),
+			  m_pkChrNextTarget(NULL),
+			  m_pkChrAttacker(attacker),
+			  m_count(0),
+			  m_excepts_set(excepts_set)
 	{
 	}
 
@@ -868,9 +867,10 @@ struct FFindNearVictim
 		if (!ent->IsType(ENTITY_CHARACTER))
 			return;
 
-		LPCHARACTER pkChr = (LPCHARACTER) ent;
+		LPCHARACTER pkChr = (LPCHARACTER)ent;
 
-		if (!m_excepts_set.empty()) {
+		if (!m_excepts_set.empty())
+		{
 			if (m_excepts_set.find(pkChr) != m_excepts_set.end())
 				return;
 		}
@@ -905,8 +905,9 @@ struct FFindNearVictim
 	LPCHARACTER m_pkChrCenter;
 	LPCHARACTER m_pkChrNextTarget;
 	LPCHARACTER m_pkChrAttacker;
-	int		m_count;
-	const CHARACTER_SET & m_excepts_set;
+	int m_count;
+	const CHARACTER_SET& m_excepts_set;
+
 private:
 	static CHARACTER_SET empty_set_;
 };
@@ -915,12 +916,12 @@ CHARACTER_SET FFindNearVictim::empty_set_;
 
 EVENTINFO(chain_lightning_event_info)
 {
-	DWORD			dwVictim;
-	DWORD			dwChr;
+	DWORD dwVictim;
+	DWORD dwChr;
 
 	chain_lightning_event_info()
-	: dwVictim(0)
-	, dwChr(0)
+			: dwVictim(0)
+			, dwChr(0)
 	{
 	}
 };
@@ -950,11 +951,13 @@ EVENTFUNC(ChainLightningEvent)
 
 	if (!pkTarget)
 	{
+		// 1. Find Next victim
 		FFindNearVictim f(pkChrVictim, pkChr, pkChr->GetChainLightingExcept());
 
 		if (pkChrVictim->GetSectree())
 		{
 			pkChrVictim->GetSectree()->ForEachAround(f);
+			// 2. If exist, compute it again
 			pkTarget = f.GetVictim();
 		}
 	}

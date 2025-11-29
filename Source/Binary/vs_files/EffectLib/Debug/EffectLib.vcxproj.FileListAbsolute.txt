@@ -1,1 +1,0 @@
-C:\M2Project_1.2\Source\Binary\vs_files\EffectLib\Debug\EffectLib.lib

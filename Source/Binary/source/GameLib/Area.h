@@ -133,7 +133,11 @@ class CArea
 				dwType = prt::PROPERTY_TYPE_NONE;
 
 				dwEffectID = 0xffffffff;
+#ifdef ENABLE_RENDERING_ONLY_IN_AREA_V2
 				dwEffectInstanceIndex = 0;
+#else
+				dwEffectInstanceIndex = 0xffffffff;
+#endif
 				isShadowFlag = false;
 
 				pTree=NULL;
@@ -216,16 +220,22 @@ class CArea
 
 		//////////////////////////////////////////////////////////////////////////
 
+#ifdef ENABLE_RENDERING_ONLY_IN_AREA_V2
 		void			Update(D3DXVECTOR3& v3Player);
+#else
+		void 			Update();
+#endif
 		void			UpdateAroundAmbience(float fX, float fY, float fZ);
-
 		void			Render();
 		void			RenderEffect();
 		void			RenderCollision();
 		void			RenderAmbience();
 		void			RenderDungeon();
+#ifdef ENABLE_RENDERING_ONLY_IN_AREA_V2
 		void			Refresh(TObjectInstance* pObjectInstance, bool bRemove);
-
+#else
+		void 			Refresh();
+#endif
 		//////////////////////////////////////////////////////////////////////////
 
 		void			SetCoordinate(const WORD & c_usCoordX, const WORD & c_usCoordY);
@@ -248,11 +258,12 @@ class CArea
 		void			__Load_BuildObjectInstances();
 
 		void			__UpdateAniThingList();
-		void			__UpdateEffectList();
-
+#ifdef ENABLE_RENDERING_ONLY_IN_AREA_V2
 		void			__UpdateLoadedObjectInstances(D3DXVECTOR3& v3Player);
 		void			__UpdateEffectList(D3DXVECTOR3& v3Player);
 		float			GetMaxLoadingDistanceSqr() const;
+#endif
+		void			__UpdateEffectList();
 
 		void			__LoadAttribute(TObjectInstance * pObjectInstance, const char *c_szAttributeFileName);
 
@@ -300,10 +311,11 @@ class CArea
 		TEffectInstanceMap								m_EffectInstanceMap;
 
 		BOOL											m_bPortalEnable;
+#ifdef ENABLE_RENDERING_ONLY_IN_AREA_V2
 		std::vector<CEffectInstance*>					m_kVct_pkEftInstSort;
 		int												m_iUpdateCount;
+#endif
 		TShowingPortalIDSet								m_kSet_ShowingPortalID;
-
 	public:
 		static void DestroySystem();
 

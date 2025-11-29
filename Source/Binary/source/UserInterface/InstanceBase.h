@@ -128,48 +128,48 @@ class CInstanceBase
 
 		enum
 		{
-			AFFECT_YMIR,
-			AFFECT_INVISIBILITY,
-			AFFECT_SPAWN,
-			AFFECT_POISON,
-			AFFECT_SLOW,
-			AFFECT_STUN,
-			AFFECT_DUNGEON_READY,
-			AFFECT_SHOW_ALWAYS,
-			AFFECT_BUILDING_CONSTRUCTION_SMALL,
-			AFFECT_BUILDING_CONSTRUCTION_LARGE,
-			AFFECT_BUILDING_UPGRADE,
-			AFFECT_MOV_SPEED_POTION,
-			AFFECT_ATT_SPEED_POTION,
-			AFFECT_FISH_MIND,
-			AFFECT_JEONGWI,
-			AFFECT_GEOMGYEONG,
-			AFFECT_CHEONGEUN,
-			AFFECT_GYEONGGONG,
-			AFFECT_EUNHYEONG,
-			AFFECT_GWIGEOM,
-			AFFECT_GONGPO,
-			AFFECT_JUMAGAP,
-			AFFECT_HOSIN,
-			AFFECT_BOHO,
-			AFFECT_KWAESOK,
-			AFFECT_HEUKSIN,
-			AFFECT_MUYEONG,
-			AFFECT_REVIVE_INVISIBILITY,
-			AFFECT_FIRE,
-			AFFECT_GICHEON,
-			AFFECT_JEUNGRYEOK,
-			AFFECT_DASH,
-			AFFECT_PABEOP,
-			AFFECT_FALLEN_CHEONGEUN,
-			AFFECT_POLYMORPH,
-			AFFECT_WAR_FLAG1,
-			AFFECT_WAR_FLAG2,
-			AFFECT_WAR_FLAG3,
-			AFFECT_CHINA_FIREWORK,
-			AFFECT_PREMIUM_SILVER,
-			AFFECT_PREMIUM_GOLD,
-			AFFECT_RAMADAN_RING,
+			AFFECT_YMIR,						// 0
+			AFFECT_INVISIBILITY,				// 1
+			AFFECT_SPAWN,						// 2
+			AFFECT_POISON,						// 3
+			AFFECT_SLOW,						// 4
+			AFFECT_STUN,						// 5
+			AFFECT_DUNGEON_READY,				// 6
+			AFFECT_SHOW_ALWAYS,					// 7
+			AFFECT_BUILDING_CONSTRUCTION_SMALL,	// 8
+			AFFECT_BUILDING_CONSTRUCTION_LARGE,	// 9
+			AFFECT_BUILDING_UPGRADE,			// 10
+			AFFECT_MOV_SPEED_POTION,			// 11
+			AFFECT_ATT_SPEED_POTION,			// 12
+			AFFECT_FISH_MIND,					// 13
+			AFFECT_JEONGWI,						// 14
+			AFFECT_GEOMGYEONG,					// 15
+			AFFECT_CHEONGEUN,					// 16
+			AFFECT_GYEONGGONG,					// 17
+			AFFECT_EUNHYEONG,					// 18
+			AFFECT_GWIGEOM,						// 19
+			AFFECT_GONGPO,						// 20
+			AFFECT_JUMAGAP,						// 21
+			AFFECT_HOSIN,						// 22
+			AFFECT_BOHO,						// 23
+			AFFECT_KWAESOK,						// 24
+			AFFECT_HEUKSIN,						// 25
+			AFFECT_MUYEONG,						// 26
+			AFFECT_REVIVE_INVISIBILITY,			// 27
+			AFFECT_FIRE,						// 28
+			AFFECT_GICHEON,						// 29
+			AFFECT_JEUNGRYEOK,					// 30
+			AFFECT_DASH,						// 31
+			AFFECT_PABEOP,						// 32
+			AFFECT_FALLEN_CHEONGEUN,			// 33
+			AFFECT_POLYMORPH,					// 34
+			AFFECT_WAR_FLAG1,					// 35
+			AFFECT_WAR_FLAG2,					// 36
+			AFFECT_WAR_FLAG3,					// 37
+			AFFECT_CHINA_FIREWORK,				// 38
+			AFFECT_PREMIUM_SILVER,				// 39
+			AFFECT_PREMIUM_GOLD,				// 40
+			AFFECT_RAMADAN_RING,				// 41
 #ifdef ENABLE_RENEWAL_TEAM_AFFECT
 			AFFECT_TEAM_SA,
 			AFFECT_TEAM_GA,
@@ -194,27 +194,28 @@ class CInstanceBase
 			NEW_AFFECT_ATT_GRADE,
 			NEW_AFFECT_INVISIBILITY,
 			NEW_AFFECT_STR,
-			NEW_AFFECT_DEX,
+			NEW_AFFECT_DEX,                 // 205
 			NEW_AFFECT_CON,
 			NEW_AFFECT_INT,
 			NEW_AFFECT_FISH_MIND_PILL,
 			NEW_AFFECT_POISON,
-			NEW_AFFECT_STUN,
+			NEW_AFFECT_STUN,                // 210
 			NEW_AFFECT_SLOW,
 			NEW_AFFECT_DUNGEON_READY,
 			NEW_AFFECT_DUNGEON_UNIQUE,
 			NEW_AFFECT_BUILDING,
-			NEW_AFFECT_REVIVE_INVISIBLE,
+			NEW_AFFECT_REVIVE_INVISIBLE,    // 215
 			NEW_AFFECT_FIRE,
 			NEW_AFFECT_CAST_SPEED,
 			NEW_AFFECT_HP_RECOVER_CONTINUE,
-			NEW_AFFECT_SP_RECOVER_CONTINUE, 
-			NEW_AFFECT_POLYMORPH,
+			NEW_AFFECT_SP_RECOVER_CONTINUE,
+			NEW_AFFECT_POLYMORPH,           // 220
 			NEW_AFFECT_MOUNT,
-			NEW_AFFECT_WAR_FLAG,
-			NEW_AFFECT_BLOCK_CHAT,
+			NEW_AFFECT_WAR_FLAG,            // 222
+			NEW_AFFECT_BLOCK_CHAT,          // 223
 			NEW_AFFECT_CHINA_FIREWORK,
-			NEW_AFFECT_BOW_DISTANCE,
+			NEW_AFFECT_BOW_DISTANCE,        // 225
+
 			NEW_AFFECT_RAMADAN_ABILITY = 300,
 			NEW_AFFECT_RAMADAN_RING = 301,
 			NEW_AFFECT_NOG_POCKET_ABILITY = 302,
@@ -375,32 +376,86 @@ class CInstanceBase
 		{
 			EFFECT_REFINED_NONE,
 
+/*---------------------------------------------------*/
+			/*---------------SWORD---------------*/
 			EFFECT_SWORD_REFINED7,
 			EFFECT_SWORD_REFINED8,
 			EFFECT_SWORD_REFINED9,
+#ifdef ENABLE_LVL96_WEAPON_EFFECT
+			EFFECT_SWORD_REFINED7TH,
+#endif
 
+			/*---------------BOW---------------*/
 			EFFECT_BOW_REFINED7,
 			EFFECT_BOW_REFINED8,
 			EFFECT_BOW_REFINED9,
+#ifdef ENABLE_LVL96_WEAPON_EFFECT
+			EFFECT_BOW_REFINED7TH,
+#endif
 
+			/*---------------FAN---------------*/
 			EFFECT_FANBELL_REFINED7,
 			EFFECT_FANBELL_REFINED8,
 			EFFECT_FANBELL_REFINED9,
+#ifdef ENABLE_LVL96_WEAPON_EFFECT
+			EFFECT_FANBELL_REFINED7TH,
+#endif
 
+			/*---------------DAGGER---------------*/
+			//RIGHT
 			EFFECT_SMALLSWORD_REFINED7,
 			EFFECT_SMALLSWORD_REFINED8,
 			EFFECT_SMALLSWORD_REFINED9,
-
+#ifdef ENABLE_LVL96_WEAPON_EFFECT
+			EFFECT_SMALLSWORD_REFINED7TH,
+#endif
+			//LEFT
 			EFFECT_SMALLSWORD_REFINED7_LEFT,
 			EFFECT_SMALLSWORD_REFINED8_LEFT,
 			EFFECT_SMALLSWORD_REFINED9_LEFT,
+#ifdef ENABLE_LVL96_WEAPON_EFFECT
+			EFFECT_SMALLSWORD_REFINED7TH_LEFT,
+#endif
 
+			/*---------------CLAW---------------*/
+#ifdef ENABLE_WOLFMAN_CHARACTER
+			//RIGHT
+			EFFECT_SWORD_REFINED7_W,
+			EFFECT_SWORD_REFINED8_W,
+			EFFECT_SWORD_REFINED9_W,
+#ifdef ENABLE_LVL96_WEAPON_EFFECT
+			EFFECT_SWORD_REFINED7TH_W,
+#endif
+			//LEFT
+			EFFECT_SWORD_REFINED7_W_LEFT,
+			EFFECT_SWORD_REFINED8_W_LEFT,
+			EFFECT_SWORD_REFINED9_W_LEFT,
+#ifdef ENABLE_LVL96_WEAPON_EFFECT
+			EFFECT_SWORD_REFINED7TH_W_LEFT,
+#endif
+#endif
+
+	/*---------------------------------------------------*/
+			/*---------------ARMOR---------------*/
 			EFFECT_BODYARMOR_REFINED7,
 			EFFECT_BODYARMOR_REFINED8,
 			EFFECT_BODYARMOR_REFINED9,
+#ifdef ENABLE_LVL96_ARMOR_EFFECT
+			EFFECT_BODYARMOR_SPECIAL_TH,
+#endif
+			EFFECT_BODYARMOR_SPECIAL,	// 4-2-1	Bubbles-Effekt
+			EFFECT_BODYARMOR_SPECIAL2,	// 4-2-2	Blue-Shining-Effekt
+			EFFECT_BODYARMOR_SPECIAL3,	// 5-1		Blitze-Effekt	ENABLE_LVL115_ARMOR_EFFECT
 
-			EFFECT_BODYARMOR_SPECIAL,
-			EFFECT_BODYARMOR_SPECIAL2,
+#ifdef USE_BODY_COSTUME_WITH_EFFECT
+			EFFECT_COSTUMEBODY_YELLOW,
+			EFFECT_COSTUMEBODY_ORANGE,
+			EFFECT_COSTUMEBODY_BLUE,
+			EFFECT_COSTUMEBODY_RED,
+			EFFECT_COSTUMEBODY_GREEN,
+			EFFECT_COSTUMEBODY_VIOLETT,
+			EFFECT_COSTUMEBODY_WHITE,
+#endif
 
 #ifdef ENABLE_ACCE_COSTUME_SYSTEM
 			EFFECT_ACCE,
@@ -436,15 +491,15 @@ class CInstanceBase
 
 			EFFECT_REFINED_NUM,
 		};
-		
+
 		enum DamageFlag
 		{
-			DAMAGE_NORMAL = (1<<0),
-			DAMAGE_POISON = (1<<1),
-			DAMAGE_DODGE = (1<<2),
-			DAMAGE_BLOCK = (1<<3),
-			DAMAGE_PENETRATE = (1<<4),
-			DAMAGE_CRITICAL = (1<<5),
+			DAMAGE_NORMAL	= (1 << 0),
+			DAMAGE_POISON	= (1 << 1),
+			DAMAGE_DODGE	= (1 << 2),
+			DAMAGE_BLOCK	= (1 << 3),
+			DAMAGE_PENETRATE= (1 << 4),
+			DAMAGE_CRITICAL = (1 << 5),
 		};
 
 		enum
@@ -670,6 +725,7 @@ class CInstanceBase
 		void RenderCollision();
 		void RegisterBoundingSphere();
 
+		// Temporary
 		void GetBoundBox(D3DXVECTOR3 * vtMin, D3DXVECTOR3 * vtMax);
 
 		void SetNameString(const char *c_szName, int len);
@@ -778,6 +834,7 @@ class CInstanceBase
 		bool CanPickInstance();
 		bool CanViewTargetHP(CInstanceBase& rkInstVictim);
 
+		// Movement
 		BOOL IsGoing();
 		bool NEW_Goto(const TPixelPosition& c_rkPPosDst, float fDstRot);
 		void EndGoing();
@@ -863,6 +920,7 @@ class CInstanceBase
 		void EndWalking(float fBlendingTime = 0.15f);
 		void EndWalkingWithoutBlending();
 
+		// Battle
 		void SetEventHandler(CActorInstance::IEventHandler* pkEventHandler);
 
 		void PushUDPState(DWORD dwCmdTime, const TPixelPosition& c_rkPPosDst, float fDstRot, UINT eFunc, UINT uArg);
@@ -912,6 +970,7 @@ class CInstanceBase
 		bool NEW_IsLastPixelPosition();
 		const TPixelPosition& NEW_GetLastPixelPositionRef();
 
+		// Battle
 		BOOL isNormalAttacking();
 		BOOL isComboAttacking();
 		MOTION_KEY GetNormalAttackIndex();
@@ -925,7 +984,6 @@ class CInstanceBase
 
 		CInstanceBase* FindNearestVictim();
 		BOOL CheckAdvancing();
-
 
 		bool AvoidObject(const CGraphicObjectInstance& c_rkBGObj);
 		bool IsBlockObject(const CGraphicObjectInstance& c_rkBGObj);
@@ -943,6 +1001,7 @@ class CInstanceBase
 		void GetBlendingPosition(TPixelPosition * pPixelPosition);
 		void SetBlendingPosition(const TPixelPosition & c_rPixelPosition);
 
+		// Fishing
 		void StartFishing(float frot);
 		void StopFishing();
 		void ReactFishing();
@@ -950,15 +1009,18 @@ class CInstanceBase
 		void CatchFail();
 		BOOL GetFishingRot(int * pirot);
 
+		// Render Mode
 		void RestoreRenderMode();
 		void SetAddRenderMode();
 		void SetModulateRenderMode();
 		void SetRenderMode(int iRenderMode);
 		void SetAddColor(const D3DXCOLOR & c_rColor);
 
+		// Position
 		void SCRIPT_SetPixelPosition(float fx, float fy);
 		void NEW_GetPixelPosition(TPixelPosition * pPixelPosition);
 
+		// Rotation
 		void NEW_LookAtFlyTarget();
 		void NEW_LookAtDestInstance(CInstanceBase& rkInstDst);
 		void NEW_LookAtDestPixelPosition(const TPixelPosition& c_rkPPosDst);
@@ -972,20 +1034,26 @@ class CInstanceBase
 		void BlendDirection(int dir, float blendTime);
 		float GetDegreeFromDirection(int dir);
 
+		// Motion
+		//	Motion Deque
 		BOOL isLock();
 
 		void SetMotionMode(int iMotionMode);
 		int GetMotionMode(DWORD dwMotionIndex);
 
+		// Motion
+		//	Pushing Motion
 		void ResetLocalTime();
 		void SetLoopMotion(WORD wMotion, float fBlendTime=0.1f, float fSpeedRatio=1.0f);
 		void PushOnceMotion(WORD wMotion, float fBlendTime=0.1f, float fSpeedRatio=1.0f);
 		void PushLoopMotion(WORD wMotion, float fBlendTime=0.1f, float fSpeedRatio=1.0f);
 		void SetEndStopMotion();
 
+		// Intersect
 		bool IntersectDefendingSphere();
 		bool IntersectBoundingBox();
 
+		// Part
 		void Refresh(DWORD dwMotIndex, bool isLoop);
 
 		float GetDistance(CInstanceBase * pkTargetInst);
@@ -993,6 +1061,7 @@ class CInstanceBase
 
 		float GetBaseHeight();
 
+		// ETC
 		CActorInstance& GetGraphicThingInstanceRef();
 		CActorInstance* GetGraphicThingInstancePtr();
 
@@ -1046,6 +1115,7 @@ class CInstanceBase
 
 		bool __IsInDustRange();
 
+		// Emotion
 		void __ProcessFunctionEmotion(DWORD dwMotionNumber, DWORD dwTargetVID, const TPixelPosition & c_rkPosDst);
 		void __EnableChangingTCPState();
 		void __DisableChangingTCPState();
@@ -1054,6 +1124,7 @@ class CInstanceBase
 		bool __CanRender();
 		bool __IsInViewFrustum();
 
+		// HORSE
 		void __AttachHorseSaddle();
 		void __DetachHorseSaddle();
 
@@ -1090,6 +1161,7 @@ class CInstanceBase
 
 
 	protected:
+		// Blend Mode
 		void __SetBlendRenderingMode();
 		void __SetAlphaValue(float fAlpha);
 		float __GetAlphaValue();
@@ -1125,6 +1197,7 @@ class CInstanceBase
 	protected:
 		BOOL m_isTextTail;
 
+		// Instance Data
 		std::string m_stName;
 
 		DWORD m_awPart[CRaceData::PART_MAX_NUM];
@@ -1230,7 +1303,7 @@ class CInstanceBase
 
 		DWORD m_swordRefineEffectRight;
 		DWORD m_swordRefineEffectLeft;
-		DWORD m_armorRefineEffect;
+		DWORD m_armorRefineEffect[2];
 
 #ifdef ENABLE_MDE_EFFECT
 		DWORD m_dwSpecialEffect;
